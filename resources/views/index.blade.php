@@ -155,21 +155,21 @@
 					<div class="search_panel active">
 						<form action="#" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
 							<div class="search_item">
-								<div>Điểm đến</div>
+								<div>Điểm đến hoặc tên khách sạn</div>
 								<input type="text" class="destination search_input" required="required">
 							</div>
 							<div class="search_item">
-								<div>check in</div>
+								<div>Ngày Thuê Phòng</div>
 								<input type="date" class="check_out search_input"  value='<?php echo date('Y-m-d');?>' min="<?php echo date('Y-m-d');?>">
 							</div>
 							<div class="search_item">
-								<div>check out</div>
+								<div>Ngày Trả Phòng</div>
 								
 									
 								<input type="date" class="check_out search_input"  value='<?php echo date('Y-m-d');?>' min="<?php echo date('Y-m-d');?>">
 							</div>
 							<div class="search_item">
-								<div>adults</div>
+								<div>Người Lớn</div>
 								<select name="adults" id="adults_1" class="dropdown_item_select search_input">
 									<option>01</option>
 									<option>02</option>
@@ -177,14 +177,14 @@
 								</select>
 							</div>
 							<div class="search_item">
-								<div>children</div>
+								<div>Trẻ Nhỏ (< 6 Tuổi) </div>
 								<select name="children" id="children_1" class="dropdown_item_select search_input">
 									<option>0</option>
 									<option>02</option>
 									<option>03</option>
 								</select>
 							</div>
-							<button class="button search_button">search<span></span><span></span><span></span></button>
+							<button class="button search_button">Tìm Kiếm<span></span><span></span><span></span></button>
 						</form>
 					</div>
 
@@ -193,19 +193,19 @@
 					<div class="search_panel">
 						<form action="#" id="search_form_2" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
 							<div class="search_item">
-								<div>destination</div>
+								<div>Địa Điểm Du Lịch</div>
 								<input type="text" class="destination search_input" required="required">
 							</div>
 							<div class="search_item">
-								<div>check in</div>
+								<div>Ngày Khởi Hành</div>
 								<input type="date" class="check_out search_input"  value='<?php echo date('Y-m-d');?>' min="<?php echo date('Y-m-d');?>">
 							</div>
 							<div class="search_item">
-								<div>check out</div>
+								<div>Ngày Kết Thúc</div>
 								<input type="date" class="check_out search_input"  value='<?php echo date('Y-m-d');?>' min="<?php echo date('Y-m-d');?>">
 							</div>
 							<div class="search_item">
-								<div>adults</div>
+								<div>Người Lớn</div>
 								<select name="adults" id="adults_2" class="dropdown_item_select search_input">
 									<option>01</option>
 									<option>02</option>
@@ -213,14 +213,14 @@
 								</select>
 							</div>
 							<div class="search_item">
-								<div>children</div>
+								<div>Trẻ Em ( < 6 Tuổi )</div>
 								<select name="children" id="children_2" class="dropdown_item_select search_input">
 									<option>0</option>
 									<option>02</option>
 									<option>03</option>
 								</select>
 							</div>
-							<button class="button search_button">search<span></span><span></span><span></span></button>
+							<button class="button search_button">Tìm Kiếm<span></span><span></span><span></span></button>
 						</form>
 					</div>
 
@@ -229,34 +229,11 @@
 					<div class="search_panel">
 						<form action="#" id="search_form_3" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
 							<div class="search_item">
-								<div>destination</div>
+								<div>Nhập địa điểm cần tra thông tin</div>
 								<input type="text" class="destination search_input" required="required">
 							</div>
-							<div class="search_item">
-								<div>check in</div>
-								<input type="date" class="check_out search_input"  value='<?php echo date('Y-m-d');?>' min="<?php echo date('Y-m-d');?>">
-							</div>
-							<div class="search_item">
-								<div>check out</div>
-								<input type="date" class="check_out search_input"  value='<?php echo date('Y-m-d');?>' min="<?php echo date('Y-m-d');?>">
-							</div>
-							<div class="search_item">
-								<div>adults</div>
-								<select name="adults" id="adults_3" class="dropdown_item_select search_input">
-									<option>01</option>
-									<option>02</option>
-									<option>03</option>
-								</select>
-							</div>
-							<div class="search_item">
-								<div>children</div>
-								<select name="children" id="children_3" class="dropdown_item_select search_input">
-									<option>0</option>
-									<option>02</option>
-									<option>03</option>
-								</select>
-							</div>
-							<button class="button search_button">search<span></span><span></span><span></span></button>
+						
+							<button class="button search_button">Tìm Kiếm<span></span><span></span><span></span></button>
 						</form>
 					</div>
 
@@ -297,7 +274,7 @@
 						<div class="intro_item_background" style="background-image:url(images/intro_1.jpg)"></div>
 						<div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
 							<div class="intro_date">May 25th - June 01st</div>
-							<div class="button intro_button"><div class="button_bcg"></div><a href="#">see more<span></span><span></span><span></span></a></div>
+							<div class="button intro_button"><div class="button_bcg"></div><a href="#">Xem Thêm<span></span><span></span><span></span></a></div>
 							<div class="intro_center text-center">
 								<h1>Mauritius</h1>
 								<div class="intro_price">From $1450</div>
@@ -322,7 +299,7 @@
 						<div class="intro_item_background" style="background-image:url(images/intro_2.jpg)"></div>
 						<div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
 							<div class="intro_date">May 25th - June 01st</div>
-							<div class="button intro_button"><div class="button_bcg"></div><a href="#">see more<span></span><span></span><span></span></a></div>
+							<div class="button intro_button"><div class="button_bcg"></div><a href="#">Xem Thêm<span></span><span></span><span></span></a></div>
 							<div class="intro_center text-center">
 								<h1>Greece</h1>
 								<div class="intro_price">From $1450</div>
@@ -347,7 +324,7 @@
 						<div class="intro_item_background" style="background-image:url(images/intro_3.jpg)"></div>
 						<div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
 							<div class="intro_date">May 25th - June 01st</div>
-							<div class="button intro_button"><div class="button_bcg"></div><a href="#">see more<span></span><span></span><span></span></a></div>
+							<div class="button intro_button"><div class="button_bcg"></div><a href="#">Xem Thêm<span></span><span></span><span></span></a></div>
 							<div class="intro_center text-center">
 								<h1>Scotland</h1>
 								<div class="intro_price">From $1450</div>
@@ -393,7 +370,7 @@
 									<i></i>
 								</div>
 								<p class="cta_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec. Proin bibendum, augue faucibus tincidunt ultrices, tortor augue gravida lectus, et efficitur enim justo vel ligula.</p>
-								<div class="button cta_button"><div class="button_bcg"></div><a href="#">book now<span></span><span></span><span></span></a></div>
+								<div class="button cta_button"><div class="button_bcg"></div><a href="#">Đặt Ngay<span></span><span></span><span></span></a></div>
 							</div>
 
 							<!-- CTA Slider Item -->
@@ -407,7 +384,7 @@
 									<i></i>
 								</div>
 								<p class="cta_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec. Proin bibendum, augue faucibus tincidunt ultrices, tortor augue gravida lectus, et efficitur enim justo vel ligula.</p>
-								<div class="button cta_button"><div class="button_bcg"></div><a href="#">book now<span></span><span></span><span></span></a></div>
+								<div class="button cta_button"><div class="button_bcg"></div><a href="#">Đặt Ngay<span></span><span></span><span></span></a></div>
 							</div>
 
 							<!-- CTA Slider Item -->
@@ -421,7 +398,7 @@
 									<i></i>
 								</div>
 								<p class="cta_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec. Proin bibendum, augue faucibus tincidunt ultrices, tortor augue gravida lectus, et efficitur enim justo vel ligula.</p>
-								<div class="button cta_button"><div class="button_bcg"></div><a href="#">book now<span></span><span></span><span></span></a></div>
+								<div class="button cta_button"><div class="button_bcg"></div><a href="#">Đặt Ngay<span></span><span></span><span></span></a></div>
 							</div>
 							
 						</div>
@@ -511,7 +488,7 @@
 											<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
 										</ul>
 									</div>
-									<div class="offers_link"><a href="offers.html">read more</a></div>
+									<div class="offers_link"><a href="offers.html">Đọc Thêm</a></div>
 								</div>
 							</div>
 						</div>
@@ -548,7 +525,7 @@
 											<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
 										</ul>
 									</div>
-									<div class="offers_link"><a href="offers.html">read more</a></div>
+									<div class="offers_link"><a href="offers.html">Đọc Thêm</a></div>
 								</div>
 							</div>
 						</div>
@@ -585,7 +562,7 @@
 											<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
 										</ul>
 									</div>
-									<div class="offers_link"><a href="offers.html">read more</a></div>
+									<div class="offers_link"><a href="offers.html">Đọc Thêm</a></div>
 								</div>
 							</div>
 						</div>
@@ -622,7 +599,7 @@
 											<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
 										</ul>
 									</div>
-									<div class="offers_link"><a href="offers.html">read more</a></div>
+									<div class="offers_link"><a href="offers.html">Đọc Thêm</a></div>
 								</div>
 							</div>
 						</div>
@@ -926,13 +903,13 @@
 				</div>
 				<div class="col-lg-7">
 					<div class="contact_form_container">
-						<div class="contact_title">get in touch</div>
+						<div class="contact_title">Liên Hệ Chúng Tôi</div>
 						<form action="#" id="contact_form" class="contact_form">
 							<input type="text" id="contact_form_name" class="contact_form_name input_field" placeholder="Name" required="required" data-error="Name is required.">
 							<input type="text" id="contact_form_email" class="contact_form_email input_field" placeholder="E-mail" required="required" data-error="Email is required.">
 							<input type="text" id="contact_form_subject" class="contact_form_subject input_field" placeholder="Subject" required="required" data-error="Subject is required.">
 							<textarea id="contact_form_message" class="text_field contact_form_message" name="message" rows="4" placeholder="Message" required="required" data-error="Please, write us a message."></textarea>
-							<button type="submit" id="form_submit_button" class="form_submit_button button">send message<span></span><span></span><span></span></button>
+							<button type="submit" id="form_submit_button" class="form_submit_button button">Gửi Tin Nhắn<span></span><span></span><span></span></button>
 						</form>
 					</div>
 				</div>

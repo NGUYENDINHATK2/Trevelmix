@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Travelix</title>
+<title>Travelvn</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Travelix Project">
@@ -16,7 +16,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link href="{{ asset('css/auth.css') }}" rel="stylesheet">
 {{-- about uss --}}
 
@@ -226,10 +226,10 @@
                 <div class="logo menu_logo"><a href="#"><img src="images/logo.png" alt=""></a></div>
                 <ul>
                     <li class="menu_item"><a href="#">home</a></li>
-                    <li class="menu_item"><a href="about.html">about us</a></li>
-                    <li class="menu_item"><a href="offers.html">offers</a></li>
-                    <li class="menu_item"><a href="blog.html">news</a></li>
-                    <li class="menu_item"><a href="contact.html">contact</a></li>
+                    <li class="menu_item"><a href="about">about us</a></li>
+                    <li class="menu_item"><a href="offers">offers</a></li>
+                    <li class="menu_item"><a href="blog">news</a></li>
+                    <li class="menu_item"><a href="contact">contact</a></li>
                 </ul>
             </div>
         </div>
@@ -253,7 +253,7 @@
 					<div class="footer_col">
 						<div class="footer_content footer_about">
 							<div class="logo_container footer_logo">
-								<div class="logo"><a href="#"><img src="images/logo.png" alt="">travelix</a></div>
+								<div class="logo"><a href="#"><img src="images/logo.png" alt="">travelvn</a></div>
 							</div>
 							<p class="footer_about_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis vu lputate eros, iaculis consequat nisl. Nunc et suscipit urna. Integer eleme ntum orci eu vehicula pretium.</p>
 							<ul class="footer_social_list">
