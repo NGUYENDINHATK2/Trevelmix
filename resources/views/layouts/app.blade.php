@@ -27,100 +27,24 @@
 <style>
     ::selection{
         color:rgb(255, 255, 255);
-        background-color:rgba(91, 7, 146, 0.575);
+        background-color:rgba(121, 15, 192, 0.575);
     }
 </style>
 </head>
 <body>
-{{--   
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav> --}}
 
      <div class="super_container">
         <header class="header">
 
-            <!-- Top Bar -->
-    
-            {{-- <div class="top_bar">
-                <div class="container">
-                    <div class="row">
-                        <div class="col d-flex flex-row">
-                            <div class="phone">+45 345 3324 56789</div>
-                            <div class="social">
-                                <ul class="social_list">
-                                    <li class="social_list_item"><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                                    <li class="social_list_item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li class="social_list_item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li class="social_list_item"><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                                    <li class="social_list_item"><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-                                    <li class="social_list_item"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="user_box ml-auto">
-                                <div class="user_box_login user_box_link"><a href="#">login</a></div>
-                                <div class="user_box_register user_box_link"><a href="#">register</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>		
-            </div> --}}
-    
-            <!-- Main Navigation -->
+        
     
             <nav class="main_nav">
                 <div class="container">
                     <div class="row">
                         <div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
                             <div class="logo_container">
-                                <div class="logo"><a href="/"><img src="images/logo.png" alt="">TravelVn</a></div>
+                                <div class="logo" id="logoid"><a href="/"><img src="images/logo.png" alt="">TravelVn</a></div>
                             </div>
                             <div class="main_nav_container ml-auto">
                                 <ul class="main_nav_list">
@@ -220,12 +144,12 @@
     
         </header>
     
-        <div class="menu trans_500">
-            <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+        <div class="menu trans_500 " style="background: none;">
+            <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center " style="background-color:rgba(21, 180, 253, 0.842);">
                 <div class="menu_close_container"><div class="menu_close"></div></div>
-                <div class="logo menu_logo"><a href="#"><img src="images/logo.png" alt=""></a></div>
+              
                 <ul>
-                    <li class="menu_item"><a href="#">home</a></li>
+                    <li class="menu_item"><a href="/">home</a></li>
                     <li class="menu_item"><a href="about">about us</a></li>
                     <li class="menu_item"><a href="offers">offers</a></li>
                     <li class="menu_item"><a href="blog">news</a></li>
@@ -255,13 +179,13 @@
 							<div class="logo_container footer_logo">
 								<div class="logo"><a href="#"><img src="images/logo.png" alt="">travelvn</a></div>
 							</div>
-							<p class="footer_about_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis vu lputate eros, iaculis consequat nisl. Nunc et suscipit urna. Integer eleme ntum orci eu vehicula pretium.</p>
+							<p class="footer_about_text">1 Tour du lịch thật ý nghĩa dành cho bạn và người thân bên cạnh bạn,cùng họ trải qua khoảng khắc đáng nhớ này</p>
 							<ul class="footer_social_list">
-								<li class="footer_social_item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-								<li class="footer_social_item"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-								<li class="footer_social_item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li class="footer_social_item"><a href="#"><i class="fa fa-dribbble"></i></a></li>
-								<li class="footer_social_item"><a href="#"><i class="fa fa-behance"></i></a></li>
+								<li class="footer_social_item"><a href="#"><i class="fab fa-facebook"></i></i></a></li>
+								<li class="footer_social_item"><a href="#"><i class="fab fa-instagram"></i></i></a></li>
+								<li class="footer_social_item"><a href="#"><i class="fab fa-youtube"></i></a></li>
+								<li class="footer_social_item"><a href="#"><i class="fab fa-facebook-messenger"></i></a></li>
+								{{-- <li class="footer_social_item"><a href="#"><i class="fa fa-behance"></i></a></li> --}}
 							</ul>
 						</div>
 					</div>
@@ -371,10 +295,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 						<div class="footer_nav">
 							<ul class="footer_nav_list">
 								<li class="footer_nav_item"><a href="#">home</a></li>
-								<li class="footer_nav_item"><a href="about.html">about us</a></li>
-								<li class="footer_nav_item"><a href="offers.html">offers</a></li>
-								<li class="footer_nav_item"><a href="blog.html">news</a></li>
-								<li class="footer_nav_item"><a href="contact.html">contact</a></li>
+								<li class="footer_nav_item"><a href="about">about us</a></li>
+								<li class="footer_nav_item"><a href="offers">offers</a></li>
+								<li class="footer_nav_item"><a href="blog">news</a></li>
+								<li class="footer_nav_item"><a href="contact">contact</a></li>
 							</ul>
 						</div>
 					</div>
@@ -386,9 +310,26 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
           
         
   
+     <a id="back-to-top" style=" background:rgb(38, 250, 10);position: fixed; bottom: 15px; right:15px;" href="#" class="btn text-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
 
-
-  
+  <script>
+      $(document).ready(function(){
+	$(window).scroll(function () {
+			if ($(this).scrollTop() > 50) {
+				$('#back-to-top').fadeIn();
+			} else {
+				$('#back-to-top').fadeOut();
+			}
+		});
+		// scroll body to 0px on click
+		$('#back-to-top').click(function () {
+			$('body,html').animate({
+				scrollTop: 0
+			}, 400);
+			return false;
+		});
+});
+  </script>
 
 </body>
 </html>

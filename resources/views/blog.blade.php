@@ -17,7 +17,7 @@
 	<div class="home">
 		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/blog_background.jpg"></div>
 		<div class="home_content">
-			<div class="home_title">the blog</div>
+			<div class="home_title">Bài Viết</div>
 		</div>
 	</div>
 
@@ -54,9 +54,9 @@
 							<div class="blog_post_text">
 								<p>Aenean in lacus ligula. Phasellus euismod gravida eros. Aenean nec ipsum aliquet, pharetra magna id, interdum sapien. Etiam id lorem eu nisl pellentesque semper. Nullam tincidunt metus placerat, suscipit leo ut, tempus nulla. Fusce at eleifend tellus. Ut eleifend dui nunc, non fermentum qua.</p>
 							</div>
-							<div class="blog_post_link"><a href="#">read more</a></div>
+							<div class="blog_post_link "><a href="#">read more</a></div>
 						</div>
-
+						<hr>
 						<!-- Blog Post -->
 						
 						<div class="blog_post">
@@ -80,7 +80,7 @@
 							</div>
 							<div class="blog_post_link"><a href="#">read more</a></div>
 						</div>
-
+						<hr>
 						<!-- Blog Post -->
 						
 						<div class="blog_post">
@@ -152,28 +152,28 @@
 					
 					<!-- Sidebar Archives -->
 					<div class="sidebar_archives">
-						<div class="sidebar_title">Archives</div>
+						<div class="sidebar_title">Kho Lưu Trữ</div>
 						<div class="sidebar_list">
 							<ul>
-								<li><a href="#">March 2017</a></li>
-								<li><a href="#">April 2017</a></li>
-								<li><a href="#">May 2017</a></li>
+								<li><a href="#">Tháng 6 năm 2021</a></li>
+								<li><a href="#">Tháng 6 năm 2019</a></li>
+								<li><a href="#">Mới Nhất</a></li>
 							</ul>
 						</div>
 					</div>
 					
 					<!-- Sidebar Archives -->
 					<div class="sidebar_categories">
-						<div class="sidebar_title">Categories</div>
+						<div class="sidebar_title">Thể Loại</div>
 						<div class="sidebar_list">
 							<ul>
-								<li><a href="#">Travel</a></li>
-								<li><a href="#">Exotic Destinations</a></li>
-								<li><a href="#">City Breaks</a></li>
-								<li><a href="#">Travel Tips</a></li>
-								<li><a href="#">Lifestyle & Travel</a></li>
-								<li><a href="#">City Breaks</a></li>
-								<li><a href="#">Uncategorized</a></li>
+								<li><a href="#">Du Lịch</a></li>
+								<li><a href="#">Điểm đến kỳ lạ</a></li>
+							
+								<li><a href="#">Lời khuyên du lịch </a></li>
+								<li><a href="#">Phong cách du lịch </a></li>
+							
+								<li><a href="#">Tất cả</a></li>
 							</ul>
 						</div>
 					</div>
@@ -181,7 +181,7 @@
 					<!-- Sidebar Latest Posts -->
 
 					<div class="sidebar_latest_posts">
-						<div class="sidebar_title">Latest Posts</div>
+						<div class="sidebar_title">Bài Viết Nổi Bật</div>
 						<div class="latest_posts_container">
 							<ul>
 
