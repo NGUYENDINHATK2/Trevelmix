@@ -33,6 +33,7 @@
 </head>
 <body>
 
+	{{-- {{Auth::user()->is_Admin}} --}}
 
      <div class="super_container">
         <header class="header">

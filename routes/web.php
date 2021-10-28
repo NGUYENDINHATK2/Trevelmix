@@ -29,7 +29,9 @@ Route::get('/offers', function () {
     return view('offers');
 });
 
-
+Route::get('/admin', function () {
+    return view('layoutadmin.index');
+})->middleware('auth');
 
 Auth::routes();
 
