@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\admincontroller;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -29,9 +30,11 @@ Route::get('/offers', function () {
     return view('offers');
 });
 
-Route::get('/admin', function () {
-    return view('layoutadmin.index');
-})->middleware('auth');
+
+
+
+Route::resource('admin', admincontroller::class)->middleware('auth');
+
 
 Auth::routes();
 

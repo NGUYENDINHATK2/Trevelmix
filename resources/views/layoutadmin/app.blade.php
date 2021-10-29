@@ -15,13 +15,10 @@
 <body>
 
 
-       @if (Auth::user()->is_Admin==0 || Auth::user()->is_Admin==1)
+ 
 
        @yield('contentadmin')
-       @else
-            <h1>Định Hack Web bố à ,cút mau !</h1>  
-       @endif
-
+  
 
 </body>
 </html>
