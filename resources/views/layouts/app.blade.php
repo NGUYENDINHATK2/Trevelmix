@@ -121,7 +121,7 @@
                                       </div>
 
 									  @if (Auth::user()->is_Admin==0||Auth::user()->is_Admin==1)
-									  <a href="" class="dropdown-item">Admin</a>
+									  <a href="admin" class="dropdown-item">Admin</a>
 										  
 									  @endif
                                     

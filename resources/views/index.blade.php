@@ -197,13 +197,19 @@
 								<input type="text" class="destination search_input" required="required">
 							</div>
 							<div class="search_item">
-								<div>Ngày Khởi Hành</div>
-								<input type="date" class="check_out search_input"  value='<?php echo date('Y-m-d');?>' min="<?php echo date('Y-m-d');?>">
-							</div>
+								<div>giá tiền</div>
+								<select name="adults" id="adults_2" class="dropdown_item_select search_input">
+									<option>01</option>
+									<option>02</option>
+									<option>03</option>
+								</select>							</div>
 							<div class="search_item">
-								<div>Ngày Kết Thúc</div>
-								<input type="date" class="check_out search_input"  value='<?php echo date('Y-m-d');?>' min="<?php echo date('Y-m-d');?>">
-							</div>
+								<div>Nơi Khởi Hành</div>
+								<select name="adults" id="adults_2" class="dropdown_item_select search_input">
+									<option>01</option>
+									<option>02</option>
+									<option>03</option>
+								</select>							</div>
 							<div class="search_item">
 								<div>Người Lớn</div>
 								<select name="adults" id="adults_2" class="dropdown_item_select search_input">

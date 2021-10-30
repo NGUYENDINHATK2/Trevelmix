@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
 class admincontroller extends Controller
 {
     /**
@@ -16,7 +17,11 @@ class admincontroller extends Controller
     public function index()
     {
         //
-      if (Auth::user()->is_Admin==0||Auth::user()->is_Admin==1) {
+
+        // $user=User::orderBy('ID', 'desc')->limit(1)->first();
+        // dd( $user->id);
+       
+        if (Auth::user()->is_Admin==0||Auth::user()->is_Admin==1) {
         return view('layoutadmin.index');
           # code...
       }

@@ -34,7 +34,7 @@ Route::get('/offers', function () {
 
 
 Route::resource('admin', admincontroller::class)->middleware('auth');
-
+//->middleware('auth')
 
 Auth::routes();
 

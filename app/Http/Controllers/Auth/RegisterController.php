@@ -50,6 +50,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+            'user_id'=>['unique'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -64,7 +65,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $user=User::orderBy('ID', 'desc')->limit(1)->first();
+        
+        $user_id='TVUS0';
+        if (!empty($user)) {
+            $user_id= 'TVUS0'.$user->id+1;
+            # code...
+        }
+
         return User::create([
+            
+            'user_id'=>$user_id,
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
