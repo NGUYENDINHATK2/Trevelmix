@@ -57,7 +57,7 @@
                             <li>
                                 <div class="dropdown-title">You have 4 new notification</div>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <div class="notif-center">
                                     <a href="#">
                                         <div class="notif-icon notif-primary"> <i class="la la-user-plus"></i> </div>
@@ -98,7 +98,7 @@
                                         </div>
                                     </a>
                                 </div>
-                            </li>
+                            </li> --}}
                             <li>
                                 <a  class="see-all" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="la la-angle-right"></i> </a>
                             </li>
@@ -222,36 +222,11 @@
         </div>
         <div class="main-panel">
             <div class="content">
-                <input type="text">
-                
-            
+             <div class="container bg-primary">
+                 
+             </div>
             </div>
-            <footer class="footer">
-                <div class="container-fluid">
-                    <nav class="pull-left">
-                        <ul class="nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="http://www.themekita.com">
-                                    ThemeKita
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    Help
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://themewagon.com/license/#free-item">
-                                    Licenses
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="copyright ml-auto">
-                        2018, made with <i class="la la-heart heart text-danger"></i> by <a href="http://www.themekita.com">ThemeKita</a>
-                    </div>				
-                </div>
-            </footer>
+        
         </div>
     </div>
 </div>

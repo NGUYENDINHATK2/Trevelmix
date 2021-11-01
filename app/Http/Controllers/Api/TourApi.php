@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
-use App\Models\Tour;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class TourController extends Controller
+class TourApi extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,6 +15,7 @@ class TourController extends Controller
     public function index()
     {
         //
+     
     }
 
     /**
@@ -25,6 +26,7 @@ class TourController extends Controller
     public function create()
     {
         //
+     
     }
 
     /**
@@ -36,15 +38,16 @@ class TourController extends Controller
     public function store(Request $request)
     {
         //
+        dd($request->all());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Tour  $tour
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Tour $tour)
+    public function show($id)
     {
         //
     }
@@ -52,10 +55,10 @@ class TourController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Tour  $tour
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tour $tour)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +67,10 @@ class TourController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Tour  $tour
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tour $tour)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +78,10 @@ class TourController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Tour  $tour
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tour $tour)
+    public function destroy($id)
     {
         //
     }

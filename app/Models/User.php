@@ -44,7 +44,7 @@ class User extends Authenticatable
     ];
 
 
-    public function infousera(){
+    public function Infouser(){
         return $this->hasOne(infouser::class);
     }
 }

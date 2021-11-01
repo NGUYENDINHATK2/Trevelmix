@@ -25,6 +25,8 @@ class CreateBooktoursTable extends Migration
             $table->set('thanhtoan',['yes','no']);
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('tour_id');
+            $table->unsignedBigInteger('staff1_id');
+            $table->unsignedBigInteger('staff2_id');
          
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('tour_id')->references('id')->on('tours');

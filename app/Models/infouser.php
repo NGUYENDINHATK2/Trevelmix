@@ -10,7 +10,7 @@ class infouser extends Model
     use HasFactory;
     protected $table='infousers';
 
-    public function user(){
+    public function User(){
         return $this->hasOne(User::class);
     }
 }
