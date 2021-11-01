@@ -33,7 +33,8 @@ Route::get('/offers', function () {
 
 
 
-Route::resource('admin', admincontroller::class)->middleware('auth');
+Route::get('admin', [admincontroller::class,'index'])->middleware('auth');
+Route::get('admin/tour', [admincontroller::class,'tour'])->middleware('auth');
 //->middleware('auth')
 
 Auth::routes();

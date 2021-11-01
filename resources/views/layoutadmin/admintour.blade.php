@@ -13,7 +13,7 @@
 <div class="wrapper">
     <div class="main-header">
         <div class="logo-header">
-            <a href="index.html" class="text-decoration-none logo">
+            <a href="admin" class="text-decoration-none logo">
                 Trang Chính 
 
               
@@ -100,16 +100,16 @@
                                 </div>
                             </li>
                             <li>
-                                <a class="see-all" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="la la-angle-right"></i> </a>
+                                <a  class="see-all" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="la la-angle-right"></i> </a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="dropdown-toggle profile-pic text-decoration-none" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="assets/img/profile.jpg" alt="user-img" width="36" class="img-circle"><span > {{Auth::user()->name}}</span></span> </a>
+                        <a class="dropdown-toggle profile-pic text-decoration-none" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="https://webcongnghe247.com/wp-content/uploads/2021/07/nh-dai-dien-FB-mac-dinh-nu-800x800.jpg" alt="user-img" width="36" class="img-circle"><span > {{Auth::user()->name}}</span></span> </a>
                         <ul class="dropdown-menu dropdown-user">
                             <li>
                                 <div class="user-box">
-                                    <div class="u-img"><img src="assets/img/profile.jpg" alt="user"></div>
+                                    <div class="u-img"><img src="https://webcongnghe247.com/wp-content/uploads/2021/07/nh-dai-dien-FB-mac-dinh-nu-800x800.jpg" alt="user"></div>
                                     <div class="u-text">
                                         <h4> {{Auth::user()->name}}</h4>
                                         <p class="text-muted">hello@themekita.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
@@ -134,7 +134,7 @@
             <div class="scrollbar-inner sidebar-wrapper">
                 <div class="user">
                     <div class="photo">
-                        <img src="assets/img/profile.jpg">
+                        <img src="https://webcongnghe247.com/wp-content/uploads/2021/07/nh-dai-dien-FB-mac-dinh-nu-800x800.jpg">
                     </div>
                     <div class="info">
                         <a class="text-decoration-none" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
@@ -168,15 +168,15 @@
                     </div>
                 </div>
                 <ul class="nav">
-                    <li class="nav-item active">
-                        <a href="#" class="text-decoration-none">
+                    <li class="nav-item ">
+                        <a href="/admin" class="text-decoration-none">
                             <i class="la la-dashboard"></i>
                             <p>Trang Chính</p>
                          
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="admin/tour" class="text-decoration-none">
+                    <li class="nav-item active">
+                        <a href="#" class="text-decoration-none">
                             <i class="la la-table"></i>
                             <p>Quản Lý Tour</p>
                        
