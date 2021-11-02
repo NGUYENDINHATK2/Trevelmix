@@ -183,7 +183,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="forms.html" class="text-decoration-none">
+                        <a href="/admin/hotel" class="text-decoration-none">
                             <i class="la la-keyboard-o"></i>
                             <p>Quản Lý Khách Sạn</p>
                         
@@ -246,12 +246,12 @@
                             <h5 for="" class="">Giá Cho Người Lớn</h5>
                             <div class="row  p-3 pt-0 ">
                               
-                                <input type="text" name="price_adults" class="border-0" placeholder="Ví Dụ :1.600.000 VND" style="width:100%;height: 40px;border-radius:2px; "  >
+                                <input type="text" name="price_adults" class="border-0" placeholder="Ví Dụ :1.600.000" style="width:100%;height: 40px;border-radius:2px; "  >
                             </div>
                             <h5 for="" class="">Giá Cho Trẻ Em Dưới 6 Tuổi</h5>
                             <div class="row  p-3 pt-0 ">
                               
-                                <input type="text" name="price_children" class="border-0" placeholder="Ví Dụ :1.600.000 VND" style="width:100%;height: 40px;border-radius:2px; "  >
+                                <input type="text" name="price_children" class="border-0" placeholder="Ví Dụ :1.600.000" style="width:100%;height: 40px;border-radius:2px; "  >
                             </div>
 
                             <h5 for="" class="">Sale</h5>

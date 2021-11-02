@@ -44,5 +44,19 @@ class admincontroller extends Controller
       else
       return view('index');
     }
+    public function hotel()
+    {
+        //
+
+        // $user=User::orderBy('ID', 'desc')->limit(1)->first();
+        // dd( $user->id);
+       
+        if (Auth::user()->is_Admin==0||Auth::user()->is_Admin==1) {
+        return view('layoutadmin.adminhotel');
+          # code...
+      }
+      else
+      return view('index');
+    }
     
 }

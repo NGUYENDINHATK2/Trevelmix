@@ -35,6 +35,7 @@ Route::get('/offers', function () {
 
 Route::get('admin', [admincontroller::class,'index'])->middleware('auth');
 Route::get('admin/tour', [admincontroller::class,'tour'])->middleware('auth');
+Route::get('admin/hotel', [admincontroller::class,'hotel'])->middleware('auth');
 //->middleware('auth')
 
 Auth::routes();

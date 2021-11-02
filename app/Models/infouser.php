@@ -11,6 +11,6 @@ class infouser extends Model
     protected $table='infousers';
 
     public function User(){
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 }

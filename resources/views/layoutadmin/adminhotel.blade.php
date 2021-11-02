@@ -175,15 +175,15 @@
                          
                         </a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item ">
                         <a href="#" class="text-decoration-none">
                             <i class="la la-table"></i>
                             <p>Quản Lý Tour</p>
                        
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="forms.html" class="text-decoration-none">
+                    <li class="nav-item active">
+                        <a href="/admin/hotel" class="text-decoration-none">
                             <i class="la la-keyboard-o"></i>
                             <p>Quản Lý Khách Sạn</p>
                         
@@ -222,8 +222,185 @@
         </div>
         <div class="main-panel">
             <div class="content">
-             <div class="container bg-primary">
-                 
+             <div class="container  ">
+                 <div class="row mb-4">
+                     <h4>Thêm Tour Vào Hệ Thống</h4>
+                 </div>
+                <div class="row  shadow pb-2">
+                  <form action="/api/tour " method="POST" enctype="multipart/form-data">
+
+                    <div class="row">
+                       
+                        <div class="col-sm-12 col-md-6 col-lg-6  ">
+                            <h5 for="" class="">Tên Tour</h5>
+                            <div class="row  p-3 pt-0 ">
+                              
+                                <input type="text" name="name_tour" class="border-0" placeholder="Nhập Tên Tour" style="width:100%;height: 40px;border-radius:2px; "  >
+                            </div>
+
+                            <h5 for="" class="">Thời Gian Tour</h5>
+                            <div class="row  p-3 pt-0 ">
+                              
+                                <input type="text" name="time_tour" class="border-0" placeholder="Ví dụ : 3 Ngày 2 Đêm" style="width:100%;height: 40px;border-radius:2px; "  >
+                            </div>
+                            <h5 for="" class="">Giá Cho Người Lớn</h5>
+                            <div class="row  p-3 pt-0 ">
+                              
+                                <input type="text" name="price_adults" class="border-0" placeholder="Ví Dụ :1.600.000" style="width:100%;height: 40px;border-radius:2px; "  >
+                            </div>
+                            <h5 for="" class="">Giá Cho Trẻ Em Dưới 6 Tuổi</h5>
+                            <div class="row  p-3 pt-0 ">
+                              
+                                <input type="text" name="price_children" class="border-0" placeholder="Ví Dụ :1.600.000" style="width:100%;height: 40px;border-radius:2px; "  >
+                            </div>
+
+                            <h5 for="" class="">Sale</h5>
+                            <div class="row  p-3 pt-0 ">
+                              
+                                <input type="text" name="sale" class="border-0" placeholder="Ví Dụ :30% " style="width:100%;height: 40px;border-radius:2px; "  >
+                            </div>
+
+                            <h5 for="" class="">Gói Quà Tặng Có Trong Tour</h5>
+                            <div class="row  p-3 pt-0 ">
+                              
+                                <input type="text" name="gift" class="border-0" placeholder="Ví Dụ :2 vé cáp treo free,..." style="width:100%;height: 40px;border-radius:2px; "  >
+                            </div>
+
+                            <h5 for="" class="">Ngày Khởi Hành Tour</h5>
+                            <div class="row  p-3 pt-0 ">
+                              
+                                <input type="date" name="departure_day" value='<?php echo date('Y-m-d');?>' min="<?php echo date('Y-m-d');?>" class="border-0"  style="width:100%;height: 40px;border-radius:2px; "  >
+                            </div>
+
+                            <h5 for="" class="">Nơi Nhận Khách</h5>
+                            <div class="row  p-3 pt-0 ">
+                              
+                                <input type="text" name="receiving_address" class="border-0" placeholder="Ví Dụ :Chợ bến thành  .TP HCM" style="width:100%;height: 40px;border-radius:2px; "  >
+                            </div>
+
+                            <h5 for="" class="">Ảnh  10</h5>
+                            <div class="row  p-3 pt-0 ">
+                              
+                                <input type="file" class="border-0"  style="width:100%;height: 40px;border-radius:2px;  "  >
+                            </div>
+                                
+                           
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+
+                            @for ($i = 1; $i <= 9; $i++)
+                            <h5 for="" class="">Ảnh  {{$i}}</h5>
+                            <div class="row  p-3 pt-0 ">
+                              
+                                <input type="file" class="border-0"  style="width:100%;height: 40px;border-radius:2px;  "  >
+                            </div>
+                                
+                            @endfor
+                           
+                        </div>
+
+                    </div>
+
+                    <div class="row shadow pb-5 p-3">
+
+                        <h5 class="text-center mt-3 mb-4">Chi Tiết Tour</h5>
+                       
+                       <div>
+                        <h5 for="" class="">Tiêu Đề Giới Thiệu </h5>
+                       
+                          
+                        <input type="text" class="border-0 ps-3" placeholder="Ví Dụ :Phú Quốc – Thiên đường nghỉ dưỡng lý tưởng" style="width:100%;height: 40px;border-radius:2px; "  >
+                        
+                       </div>
+
+
+                           
+                       <div class="mt-3">
+                        <h5 for="" class="">Mô tả  Giới Thiệu </h5>
+                       
+                          
+                       <textarea class="p-3 pt-2" name="" id="" rows="5" style="width:100%;" placeholder="Ví Dụ :Phú Quốc được mệnh danh là Đảo Ngọc. Với những bãi biển nước xanh trong vắt như Bãi Sao và Bãi Dài, Phú Quốc thực sự là thiên đường cho những người yêu biển"></textarea>
+                        
+                       </div>
+
+                       <div class="mt-3">
+                        <h5 for="" class="">Những Trải Nghiệm Thú Vị Trong Tour </h5>
+                       
+                          
+                       <textarea class="p-3 pt-2" name="" id="" rows="10" style="width:100%;" placeholder="Ví Dụ :Phú Quốc được mệnh danh là thiên đường nghỉ dưỡng với..."></textarea>
+                        
+                       </div>
+                       <h5 class="text-center">Chương Trình Đón Khách</h5>
+                       <div class="mt-3">
+                        <h5 for="" class="">Ngày 1:Tiêu Đề</h5>
+                       
+                          
+                        <input type="text" class="border-0 ps-3" placeholder="Ví Dụ :NGÀY 1: TP.HCM - HÀ TIÊN - PHÚ QUỐC - VINPEARLAND/SAFARI ( ĂN SÁNG, TRƯA)" style="width:100%;height: 40px;border-radius:2px; "  >
+                        
+                       </div>
+
+                       <div class="mt-3">
+                        <h5 for="" class="">Ngày 1:Mô Tả</h5>
+                       
+                          
+                        <textarea class="p-3 pt-2" name="" id="" rows="10" style="width:100%;" placeholder="Ví Dụ :06:30: Đến Hà Tiên, đoàn dùng điểm tâm sáng, nghỉ ngơi . 07:30: Đoàn ra bến Tàu, đáp chuyến tàu cao tốc đi Phú Quốc."></textarea>
+                        
+                       </div>
+                       <div class="mt-3">
+                        <h5 for="" class="">Ngày 2:Tiêu Đề</h5>
+                       
+                          
+                        <input type="text" class="border-0 ps-3" placeholder="Ví Dụ :NGÀY 1: TP.HCM - HÀ TIÊN - PHÚ QUỐC - VINPEARLAND/SAFARI ( ĂN SÁNG, TRƯA)" style="width:100%;height: 40px;border-radius:2px; "  >
+                        
+                       </div>
+
+                       <div class="mt-3">
+                        <h5 for="" class="">Ngày 2:Mô Tả</h5>
+                       
+                          
+                        <textarea class="p-3 pt-2" name="" id="" rows="10" style="width:100%;" placeholder="Ví Dụ :06:30: Đến Hà Tiên, đoàn dùng điểm tâm sáng, nghỉ ngơi . 07:30: Đoàn ra bến Tàu, đáp chuyến tàu cao tốc đi Phú Quốc."></textarea>
+                        
+                       </div>
+                       <div class="mt-3">
+                        <h5 for="" class="">Ngày 3:Tiêu Đề</h5>
+                       
+                          
+                        <input type="text" class="border-0 ps-3" placeholder="Ví Dụ :NGÀY 1: TP.HCM - HÀ TIÊN - PHÚ QUỐC - VINPEARLAND/SAFARI ( ĂN SÁNG, TRƯA)" style="width:100%;height: 40px;border-radius:2px; "  >
+                        
+                       </div>
+
+                       <div class="mt-3">
+                        <h5 for="" class="">Ngày 3:Mô Tả</h5>
+                       
+                          
+                        <textarea class="p-3 pt-2" name="" id="" rows="10" style="width:100%;" placeholder="Ví Dụ :06:30: Đến Hà Tiên, đoàn dùng điểm tâm sáng, nghỉ ngơi . 07:30: Đoàn ra bến Tàu, đáp chuyến tàu cao tốc đi Phú Quốc."></textarea>
+                        
+                       </div>
+                       <div class="mt-3">
+                        <h5 for="" class="">Ngày Còn lại:Tiêu Đề</h5>
+                       
+                          
+                        <input type="text" class="border-0 ps-3" placeholder="Ví Dụ :NGÀY 1: TP.HCM - HÀ TIÊN - PHÚ QUỐC - VINPEARLAND/SAFARI ( ĂN SÁNG, TRƯA)" style="width:100%;height: 40px;border-radius:2px; "  >
+                        
+                       </div>
+
+                       <div class="mt-3">
+                        <h5 for="" class="">Ngày Còn Lại:Mô Tả</h5>
+                       
+                          
+                        <textarea class="p-3 pt-2" name="" id="" rows="10" style="width:100%;" placeholder="Ví Dụ :06:30: Đến Hà Tiên, đoàn dùng điểm tâm sáng, nghỉ ngơi . 07:30: Đoàn ra bến Tàu, đáp chuyến tàu cao tốc đi Phú Quốc."></textarea>
+                        
+                       </div>
+                       
+                      
+
+                    </div>
+                    <div class="row mt-3">
+                        <button type="submit" class="btn btn-success">Thêm Tour</button>
+                    </div>
+                
+                    </form>
+                </div>
              </div>
             </div>
         

@@ -1,3 +1,3 @@
 @foreach ($data as $item)
-{{$item->infousera->address}}
+{{$item->Infouser->address}}
 @endforeach
