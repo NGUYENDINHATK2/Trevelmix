@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Controllers\UploadImgDrive;
 use App\Models\imagestours;
+use App\Models\tour_details;
 
 class TourApi extends Controller
 {
@@ -54,6 +55,20 @@ class TourApi extends Controller
             'img8' => 'required|mimes:png,jpg,jpeg,|max:5048',
             'img9' => 'required|mimes:png,jpg,jpeg,|max:5048',
             'img10' => 'required|mimes:png,jpg,jpeg,|max:5048',
+
+
+            'title'=>'required',
+            'description'=>'required',
+            'experience_tour'=>'required',
+            'title_day_1'=>'required',
+            'description_day_1'=>'required',
+            'title_day_2'=>'required',
+            'description_day_2'=>'required',
+            'title_day_3'=>'required',
+            'description_day_3'=>'required',
+            'title_day_back'=>'required',
+            'description_day_back'=>'required',
+            
         ]);
 
         $sale=$request->sale;
@@ -108,6 +123,27 @@ class TourApi extends Controller
             'id_img_tour'=>$id_tour
         ];
         imagestours::create($dataimg);
+
+
+        $datatourdetails=[
+        'title'=>$request->title,
+        'description'=>$request->description,
+        'experience_tour'=>$request->experience_tour,
+        'title_day_1'=>$request->title_day_1,
+        'description_day_1'=>$request->description_day_1,
+        'title_day_2'=>$request->title_day_2,
+        'description_day_2'=>$request->description_day_2,
+        'title_day_3'=>$request->title_day_3,
+        'description_day_3'=>$request->description_day_3,
+        'title_day_back'=>$request->title_day_back,
+        'description_day_back'=>$request->description_day_back,
+        'tour_id'=>$id_tour,
+        ];
+
+        tour_details::create($datatourdetails);
+
+
+
     }
 
     /**
