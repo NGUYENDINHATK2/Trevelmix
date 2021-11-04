@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\MailController;
 
 class RegisterController extends Controller
 {
@@ -72,7 +73,8 @@ class RegisterController extends Controller
         //     $user_id= 'TVUS0'.$user->id+1;
         //     # code...
         // }
-
+        $mail=new MailController();
+        $mail->sendEmail($data['email']);
         return User::create([
             
             // 'user_id'=>$user_id,

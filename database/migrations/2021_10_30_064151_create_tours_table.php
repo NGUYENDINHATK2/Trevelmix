@@ -19,8 +19,8 @@ class CreateToursTable extends Migration
             $table->string('time_tour');
             $table->string('price_adults');
             $table->string('price_children');
-            $table->string('sale');
-            $table->string('gift');
+            $table->string('sale')->default('0%');
+            $table->string('gift')->default('no');
             $table->string('departure_day');
             $table->string('receiving_address');
             $table->set('status', ['Ngừng', 'Hoạt Động'])->default('Hoạt Động');

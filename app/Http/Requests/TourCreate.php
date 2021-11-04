@@ -13,7 +13,7 @@ class TourCreate extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,6 +25,9 @@ class TourCreate extends FormRequest
     {
         return [
             //
+            'name_tour'=>['required', 'string', 'max:255'],
+            'img1'=>['required|mimes:png,jpg,jpeg,gif|max:5048']
+           
         ];
     }
 }

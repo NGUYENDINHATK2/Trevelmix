@@ -1,8 +1,12 @@
 <?php
 
 use App\Http\Controllers\Auth\admincontroller;
+
+use App\Http\Controllers\UploadImgDrive;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,3 +45,15 @@ Route::get('admin/hotel', [admincontroller::class,'hotel'])->middleware('auth');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/upfile', function () {
+    return view('Welcome');
+});
+
+Route::post('/upload', function (Request $request) {
+   
+
+    $upimg=new UploadImgDrive();
+    return   $upimg->save($request->thing);
+
+});

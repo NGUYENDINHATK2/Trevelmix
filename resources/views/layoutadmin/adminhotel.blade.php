@@ -281,7 +281,7 @@
                             <h5 for="" class="">Ảnh  10</h5>
                             <div class="row  p-3 pt-0 ">
                               
-                                <input type="file" class="border-0"  style="width:100%;height: 40px;border-radius:2px;  "  >
+                                <input type="file" name="img10" class="border-0"  style="width:100%;height: 40px;border-radius:2px;  "  >
                             </div>
                                 
                            
@@ -292,7 +292,7 @@
                             <h5 for="" class="">Ảnh  {{$i}}</h5>
                             <div class="row  p-3 pt-0 ">
                               
-                                <input type="file" class="border-0"  style="width:100%;height: 40px;border-radius:2px;  "  >
+                                <input type="file" name="img{{$i}}" class="border-0"  style="width:100%;height: 40px;border-radius:2px;  "  >
                             </div>
                                 
                             @endfor
@@ -309,7 +309,7 @@
                         <h5 for="" class="">Tiêu Đề Giới Thiệu </h5>
                        
                           
-                        <input type="text" class="border-0 ps-3" placeholder="Ví Dụ :Phú Quốc – Thiên đường nghỉ dưỡng lý tưởng" style="width:100%;height: 40px;border-radius:2px; "  >
+                        <input type="text"  class="border-0 ps-3" placeholder="Ví Dụ :Phú Quốc – Thiên đường nghỉ dưỡng lý tưởng" style="width:100%;height: 40px;border-radius:2px; "  >
                         
                        </div>
 
@@ -395,8 +395,8 @@
                       
 
                     </div>
-                    <div class="row mt-3">
-                        <button type="submit" class="btn btn-success">Thêm Tour</button>
+                    <div class="row mt-3 ">
+                        <button type="submit" class="btn btn-success m-3">Thêm Tour</button>
                     </div>
                 
                     </form>
