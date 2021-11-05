@@ -19,4 +19,12 @@ class Tour extends Model
         'departure_day',
         'receiving_address',
     ];
+
+    public function Tour_details(){
+        return $this->hasOne(tour_details::class);
+    }
+
+    public function Img_tour(){
+        return $this->hasOne(imagestours::class);
+    }
 }

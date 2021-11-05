@@ -120,7 +120,7 @@ class TourApi extends Controller
             'img8'=>$dataimg8,
             'img9'=>$dataimg9,
             'img10'=>$dataimg10,
-            'id_img_tour'=>$id_tour
+            'tour_id'=>$id_tour
         ];
         imagestours::create($dataimg);
 
@@ -140,10 +140,10 @@ class TourApi extends Controller
         'tour_id'=>$id_tour,
         ];
 
-        tour_details::create($datatourdetails);
-
-
-
+       $check= tour_details::create($datatourdetails);
+       
+        return redirect('/admin/tour')
+        ->with('message', 'Yes');
     }
 
     /**

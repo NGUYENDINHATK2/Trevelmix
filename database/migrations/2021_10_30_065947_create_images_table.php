@@ -27,10 +27,10 @@ class CreateImagesTable extends Migration
             $table->string('img9');
             $table->string('img10');
 
-            $table->unsignedBigInteger('id_img_tour');
+            $table->unsignedBigInteger('tour_id');
             // $table->unsignedBigInteger('id_img_hotel');
 
-            $table->foreign('id_img_tour')->references('id')->on('tours');
+            $table->foreign('tour_id')->references('id')->on('tours');
             $table->timestamps();
         });
     }

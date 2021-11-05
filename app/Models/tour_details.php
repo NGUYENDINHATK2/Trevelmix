@@ -23,4 +23,7 @@ class tour_details extends Model
         'description_day_back',
         'tour_id',
     ];
+    public function Tourmain_details(){
+        return $this->belongsTo(Tour::class);
+    }
 }

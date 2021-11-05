@@ -29,7 +29,7 @@ class UploadImgDrive extends Controller
 
         } catch (\Throwable $th) {
             //throw $th;
-           return 'upload hinh anh loi';
+           return 'NULL';
         }
     }
 }

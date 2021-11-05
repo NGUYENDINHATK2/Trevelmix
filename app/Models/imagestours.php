@@ -22,7 +22,11 @@ class imagestours extends Model
         'img8',
         'img9',
         'img10',
-        'id_img_tour'
+        'tour_id'
         
     ];
+
+    public function Tourmain_imgs(){
+        return $this->belongsTo(Tour::class);
+    }
 }
