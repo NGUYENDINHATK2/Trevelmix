@@ -182,13 +182,7 @@
                        
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="/admin/hotel" class="text-decoration-none">
-                            <i class="la la-keyboard-o"></i>
-                            <p>Quản Lý Khách Sạn</p>
-                        
-                        </a>
-                    </li>
+                   
                     <li class="nav-item">
                         <a href="tables.html" class="text-decoration-none">
                             <i class="la la-th"></i>
