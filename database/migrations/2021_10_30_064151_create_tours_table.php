@@ -15,6 +15,7 @@ class CreateToursTable extends Migration
     {
         Schema::create('tours', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('tour_code');
             $table->string('name_tour');
             $table->string('time_tour');
             $table->string('price_adults');

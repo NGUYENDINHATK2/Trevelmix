@@ -17,10 +17,10 @@
 
                 <br> <br>
 
-                <form action="/upload" method="post" enctype="multipart/form-data">
+                <form action="admin/searchtour" method="get" enctype="multipart/form-data">
                 
                     @csrf
-                    <input type="file" name="thing" class="form-control">
+                    <input type="text" name="keyword" class="form-control">
 
                     <br> <br>
 

@@ -28,7 +28,7 @@ class CreateTourDetailsTable extends Migration
             $table->longText('title_day_back');
             $table->longText('description_day_back');
             $table->unsignedBigInteger('tour_id');
-            $table->foreign('tour_id')->references('id')->on('tours');
+            $table->foreign('tour_id')->references('id')->on('tours')->onDelete('cascade');
             $table->timestamps();
         });
     }

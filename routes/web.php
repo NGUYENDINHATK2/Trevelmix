@@ -41,6 +41,8 @@ Route::get('admin', [admincontroller::class,'index'])->middleware('auth');
 Route::get('admin/tour', [admincontroller::class,'tour'])->middleware('auth');
 Route::get('admin/listtour', [admincontroller::class,'listtour'])->middleware('auth');
 
+Route::get('admin/searchtour', [admincontroller::class,'search_tour'])->middleware('auth')->name('ajax.search');
+
 //->middleware('auth')
 
 Auth::routes();

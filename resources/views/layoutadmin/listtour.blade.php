@@ -4,16 +4,17 @@
 
 
 
-<link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css')}}">
+{{-- <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css')}}"> --}}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
 <link rel="stylesheet" href="{{ asset('assets/css/ready.css')}}">
 <link rel="stylesheet" href="{{ asset('assets/css/demo.css')}}">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.js"></script>
+
+
+
+
 <div class="wrapper">
 
    
@@ -197,6 +198,12 @@
                 <div class="row">
                     <h3>Tour Hiện Có </h3>
                 </div>
+                <div class="row">
+                  
+                     
+                        <input  type="text" name="keyword" id="keyword"  id="textsearch" class="form-control ps-2" placeholder="Tìm Kiếm">
+                   
+                </div>
 
                 <div class="row">
                     <table class="table  table-hover ">
@@ -206,22 +213,30 @@
                               <th scope="col">Tên Tour</th>
                               <th scope="col">Ảnh Tour</th>
                               <th scope="col">Ngày Khởi Hành</th>
+                              <th>Trạng Thái</th>
                               <th scope="col" class="text-center">Hành Động</th>
                             </tr>
                           </thead>
-                          <tbody>
+                          <tbody id="listtour">
                            @foreach ($datas as $data)
                            <tr>
-                            <th scope="row">TVVNT-6400{{$data->id}}</th>
+                            <td scope="row">{{$data->tour_code}}</td>
                             <td>{{$data->name_tour}}</td>
                             <td>
                                 <img src="{{$data->Img_tour->img1}}" width="250px;" alt="">
                             </td>
                             <td>{{$data->departure_day}}</td>
+                            <td>{{$data->status}}</td>
                             <td class="text-center">
-                                <a href="" class="btn btn-warning">Sửa </a>
-                                <a href="" class="btn btn-danger">Xoá</a>
-                                <a href="" class="btn btn-success">Xem Chi Tiết</a>
+                                <button href="" class="btn btn-warning">Sửa </button>
+                               
+                            </td>
+                            <td>
+                                <button href="" id="delete" onclick="test()" class="btn btn-danger">Xoá</button>
+                            </td>
+                            <td>
+                                <button  class="btn btn-success" id="details" >Xem Chi Tiết</button>
+
                             </td>
                           </tr>
                            @endforeach
@@ -267,14 +282,34 @@
 
 <script>
 
+    function test() {
+        alert("sss");
+        
+    }
+
+$(document).ready(function() {
 
 
    
-        
 
-    }
-    
+    $(document).on('keyup','#keyword',function(){
+        var keyword=$(this).val();
 
+        $.ajax({
+            type: "get",
+            url: "/admin/searchtour",
+            data: {
+                keyword: keyword
+            },
+            dataType: "json",
+            success: function (response) {
+                $('#listtour').html(response);
+            }
+        });
+    });
+
+
+});
 </script>
 <script src="{{asset('assets/js/core/jquery.3.2.1.min.js')}}"></script>
 <script src="{{asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>

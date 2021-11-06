@@ -30,7 +30,7 @@ class CreateImagesTable extends Migration
             $table->unsignedBigInteger('tour_id');
             // $table->unsignedBigInteger('id_img_hotel');
 
-            $table->foreign('tour_id')->references('id')->on('tours');
+            $table->foreign('tour_id')->references('id')->on('tours')->onDelete('cascade');
             $table->timestamps();
         });
     }

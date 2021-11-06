@@ -21,8 +21,11 @@ class TourApi extends Controller
     {
         //
 
+     
+
     }
 
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -81,10 +84,18 @@ class TourApi extends Controller
         $gift='no';
         # code...
     }
-
-      
+    $tour_code=Tour::orderBy('ID', 'desc')->limit(1)->first();
+      if (!isset($tour_code)) {
+          $tour_code=1;
+          # code...
+      }
+      else{$tour_code1=$tour_code->id+1;
+        
+      }
         $datatour = [
+            'tour_code'=>'TVVNT-00'.$tour_code1,
             'name_tour' => $request->name_tour,
+
             'time_tour' => $request->time_tour,
             'price_adults' => $request->price_adults,
             'price_children' => $request->price_children,

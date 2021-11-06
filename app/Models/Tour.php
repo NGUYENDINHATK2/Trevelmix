@@ -10,6 +10,7 @@ class Tour extends Model
     use HasFactory;
 
     protected $fillable = [
+        'tour_code',
         'name_tour',
         'time_tour',
         'price_adults',
