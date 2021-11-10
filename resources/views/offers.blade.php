@@ -65,31 +65,31 @@
 										<input type="text" class="destination search_input" required="required">
 									</div>
 									<div class="search_item">
-										<div>Ngày Khởi Hành</div>
-										<input type="date" class="check_out search_input"  value='<?php echo date('Y-m-d');?>' min="<?php echo date('Y-m-d');?>">
-									</div>
-									<div class="search_item">
 										<div>Giá Tiền</div>
-								<select name="adults" id="adults_2" class="dropdown_item_select search_input">
-									<option>01</option>
-									<option>02</option>
-									<option>03</option>
-								</select>		
+										<select name="adults" id="adults_2" class="dropdown_item_select search_input">
+										<option value="">Từ  1.600.000</option>
+										<option value="">Từ  2.600.000/option>
+										<option value="">Từ  4.000.000/option>
+										
+										<option value="">Giá Khác</option>
+										
+										</select>			
+													
 									</div>
 									<div class="search_item">
 										<div>Người Lớn</div>
 										<select name="adults" id="adults_2" class="dropdown_item_select search_input">
-											<option>01</option>
-											<option>02</option>
-											<option>03</option>
+											@for ($i = 1; $i < 20; $i++)
+											<option value="">{{$i}}</option>
+											@endfor
 										</select>
 									</div>
 									<div class="search_item">
-										<div>Trẻ em < 6 tuổi </div>
+										<div>Trẻ Em </div>
 										<select name="children" id="children_2" class="dropdown_item_select search_input">
-											<option>0</option>
-											<option>02</option>
-											<option>03</option>
+											@for ($i = 1; $i < 20; $i++)
+											<option value="">{{$i}}</option>
+											@endfor
 										</select>
 									</div>
 

@@ -66,11 +66,7 @@ class TourApi extends Controller
             'title_day_1'=>'required',
             'description_day_1'=>'required',
             'title_day_2'=>'required',
-            'description_day_2'=>'required',
-            'title_day_3'=>'required',
-            'description_day_3'=>'required',
-            'title_day_back'=>'required',
-            'description_day_back'=>'required',
+          
             
         ]);
 
@@ -85,8 +81,8 @@ class TourApi extends Controller
         # code...
     }
     $tour_code=Tour::orderBy('ID', 'desc')->limit(1)->first();
-      if (!isset($tour_code)) {
-          $tour_code=1;
+      if (empty($tour_code)) {
+          $tour_code1=1;
           # code...
       }
       else{$tour_code1=$tour_code->id+1;
@@ -166,6 +162,7 @@ class TourApi extends Controller
     public function show($id)
     {
         //
+
     }
 
     /**
@@ -197,8 +194,13 @@ class TourApi extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Tour $tour)
     {
         //
+
+
+         $tour->delete();
+
+         return "alert('Xoá Thành Công')";
     }
 }

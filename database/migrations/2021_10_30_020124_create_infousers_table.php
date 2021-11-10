@@ -17,8 +17,8 @@ class CreateInfousersTable extends Migration
             $table->bigIncrements('id');
             $table->string('date');
             $table->string('address');
-            $table->string('phonenumber');
-            $table->string('avatar');
+            $table->string('phonenumber')->nullable();
+            $table->string('avatar')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

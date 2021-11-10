@@ -14,7 +14,6 @@
 
 
 
-
 <div class="wrapper">
 
    
@@ -220,22 +219,24 @@
                           <tbody id="listtour">
                            @foreach ($datas as $data)
                            <tr>
-                            <td scope="row">{{$data->tour_code}}</td>
-                            <td>{{$data->name_tour}}</td>
+                            <td scope="row"><b>{{$data->tour_code}}</b></td>
+                            <td style="max-width: 250px;">{{$data->name_tour}}</td>
                             <td>
                                 <img src="{{$data->Img_tour->img1}}" width="250px;" alt="">
                             </td>
                             <td>{{$data->departure_day}}</td>
                             <td>{{$data->status}}</td>
                             <td class="text-center">
-                                <button href="" class="btn btn-warning">Sửa </button>
-                               
+                                {{-- <a href=" /tour/{{$data->id}}/edit" class="btn btn-warning">Sửa </a> --}}
+                                <button class="btn btn-warning" onclick="edittour({{$data->id}})">Sửa </button>
+                                {{-- <button class="btn btn-warning" onclick="openNav()">Sửa </button> --}}
+
                             </td>
                             <td>
-                                <button href="" id="delete" onclick="test()" class="btn btn-danger">Xoá</button>
+                                <button href="" id="delete" onclick="deletetour({{$data->id}})" class="btn btn-danger">Xoá</button>
                             </td>
                             <td>
-                                <button  class="btn btn-success" id="details" >Xem Chi Tiết</button>
+                                <a  class="btn btn-success" href="/tour/{{$data->id}}" id="details" > Chi Tiết</a>
 
                             </td>
                           </tr>
@@ -248,7 +249,7 @@
 
 
              </div>
-            </div>
+      
         
         </div>
 
@@ -256,34 +257,53 @@
       
     </div>
  
-</div>
-<!-- Modal -->
-<div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePro" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header bg-primary">
-                <h6 class="modal-title"><i class="la la-frown-o"></i> Under Development</h6>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body text-center">									
-                <p>Currently the pro version of the <b>Ready Dashboard</b> Bootstrap is in progress development</p>
-                <p>
-                    <b>We'll let you know when it's done</b></p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
+   
 
 <script>
+//     function openNav() {
+//   document.getElementById("myNav").style.height = "100%";
+// }
 
-    function test() {
-        alert("sss");
+// function closeNav() {
+//   document.getElementById("myNav").style.height = "0%";
+// }
+    function edittour(id){
+        $.ajax({
+            
+            method: "GET",
+            url: "/tour/"+id+"/edit",
+            data: {
+                id: id,
+            },
+            dataType: "json",
+            success: function (response) {
+             
+
+               
+               console.log(response['name_tour']);
+            }
+        });
+    }
+    function deletetour(id_tour) {
+        var answer=  window.confirm("Bạn Có Muốn Xoá Tour ?");
+        
+        if (answer==true) {
+           
+            $.ajax({
+            
+            method: "DELETE",
+            url: "/api/tour/"+id_tour,
+            data: {},
+            dataType: "script",
+            success: function (response) {
+                
+                location.reload();
+            }
+        });
+        }
+        else {
+            
+        }
         
     }
 

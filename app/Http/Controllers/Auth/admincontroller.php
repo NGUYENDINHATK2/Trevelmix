@@ -81,23 +81,23 @@ class admincontroller extends Controller
       $output .= '
         <tr>
         <td scope="row">' . $data->tour_code . '</td>
-        <td>' . $data->name_tour . '</td>
+        <td style="max-width: 250px;">' . $data->name_tour . '</td>
         <td>
             <img src="' . $data->Img_tour->img1 . '" width="250px;" alt="">
         </td>
         <td>' . $data->departure_day . '</td>
         <td>' . $data->status . '</td>
         <td class="text-center">
-                                <button href="" class="btn btn-warning">Sửa </button>
-                               
-                            </td>
-                            <td>
-                                <button href="" id="delete" onclick="test()" class="btn btn-danger">Xoá</button>
-                            </td>
-                            <td>
-                                <button  class="btn btn-success" id="details" >Xem Chi Tiết</button>
+        <a href=" /tour/'.$data->id.'/edit" class="btn btn-warning">Sửa </a>
+       
+    </td>
+    <td>
+        <button href="" id="delete" onclick="deletetour('.$data->id.')" class="btn btn-danger">Xoá</button>
+    </td>
+    <td>
+        <a  class="btn btn-success" href="/tour/'.$data->id.'" id="details" > Chi Tiết</a>
 
-                            </td>
+    </td>
       </tr>
       ';
     }

@@ -20,13 +20,13 @@ class CreateTourDetailsTable extends Migration
             $table->longText('experience_tour');
             $table->longText('title_day_1');
             $table->longText('description_day_1');
-            $table->longText('title_day_2');
-            $table->longText('description_day_2');
-            $table->longText('title_day_3');
-            $table->longText('description_day_3');
+            $table->longText('title_day_2')->nullable();
+            $table->longText('description_day_2')->nullable();
+            $table->longText('title_day_3')->nullable();
+            $table->longText('description_day_3')->nullable();
 
-            $table->longText('title_day_back');
-            $table->longText('description_day_back');
+            $table->longText('title_day_back')->nullable();
+            $table->longText('description_day_back')->nullable();
             $table->unsignedBigInteger('tour_id');
             $table->foreign('tour_id')->references('id')->on('tours')->onDelete('cascade');
             $table->timestamps();

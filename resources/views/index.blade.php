@@ -161,34 +161,33 @@
 								<div>Địa Điểm Du Lịch</div>
 								<input type="text" class="destination search_input" required="required">
 							</div>
+							
 							<div class="search_item">
-								<div>giá tiền</div>
+								<div>Giá Tiền</div>
 								<select name="adults" id="adults_2" class="dropdown_item_select search_input">
-									<option>01</option>
-									<option>02</option>
-									<option>03</option>
-								</select>							</div>
-							<div class="search_item">
-								<div>Nơi Khởi Hành</div>
-								<select name="adults" id="adults_2" class="dropdown_item_select search_input">
-									<option>01</option>
-									<option>02</option>
-									<option>03</option>
-								</select>							</div>
+								<option value="">Từ  1.600.000</option>
+								<option value="">Từ  2.600.000/option>
+								<option value="">Từ  4.000.000/option>
+								
+								<option value="">Giá Khác</option>
+								
+								</select>			
+											
+							</div>
 							<div class="search_item">
 								<div>Người Lớn</div>
 								<select name="adults" id="adults_2" class="dropdown_item_select search_input">
-									<option>01</option>
-									<option>02</option>
-									<option>03</option>
+									@for ($i = 1; $i < 20; $i++)
+									<option value="">{{$i}}</option>
+									@endfor
 								</select>
 							</div>
 							<div class="search_item">
 								<div>Trẻ Em ( < 6 Tuổi )</div>
 								<select name="children" id="children_2" class="dropdown_item_select search_input">
-									<option>0</option>
-									<option>02</option>
-									<option>03</option>
+									@for ($i = 1; $i < 20; $i++)
+									<option value="">{{$i}}</option>
+									@endfor
 								</select>
 							</div>
 							<button class="button search_button">Tìm Kiếm<span></span><span></span><span></span></button>
@@ -223,18 +222,18 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<h2 class="intro_title text-center">Chúng tôi có những chuyến du lịch tốt nhất</h2>
+					<h3 class="intro_title text-center">Chúng tôi có những chuyến du lịch tốt nhất</h3>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-lg-10 offset-lg-1">
-					<div class="intro_text text-center">
-						<p>Vô vàn trải nghiệm trên toàn thế giới dành cho bạn 
+					<div class="intro_text text-center ">
+						<p class="fs-5">Vô vàn trải nghiệm trên toàn thế giới dành cho bạn 
 							Từ hoà nhạc, xem phim, làm đẹp, công viên giải trí đến tour và các hoạt động du lịch hấp dẫn khác…, bạn có thể dễ dàng tìm được hoạt động phù hợp với mình!  </p>
 					</div>
 				</div>
 			</div>
-			<div class="row intro_items">
+			<div class="row intro_items mt-4">
 
 				<!-- Intro Item -->
 

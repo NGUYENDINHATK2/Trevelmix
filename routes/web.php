@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\admincontroller;
-
+use App\Http\Controllers\TourController;
 use App\Http\Controllers\UploadImgDrive;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Storage;
 |
 */
 
-Route::get('/', function () {
+Route::get('/a', function () {
     return view('index');
 });
 Route::get('/blog', function () {
@@ -35,7 +35,7 @@ Route::get('/offers', function () {
 });
 
 
-
+Route::resource('tour', TourController::class);
 
 Route::get('admin', [admincontroller::class,'index'])->middleware('auth');
 Route::get('admin/tour', [admincontroller::class,'tour'])->middleware('auth');
@@ -43,15 +43,13 @@ Route::get('admin/listtour', [admincontroller::class,'listtour'])->middleware('a
 
 Route::get('admin/searchtour', [admincontroller::class,'search_tour'])->middleware('auth')->name('ajax.search');
 
-//->middleware('auth')
+
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 
-Route::get('/upfile', function () {
-    return view('Welcome');
-});
+
 
 Route::post('/upload', function (Request $request) {
    

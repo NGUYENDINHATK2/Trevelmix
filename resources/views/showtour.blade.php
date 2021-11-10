@@ -81,6 +81,10 @@
 .demo:hover {
   opacity: 1;
 }
+footer{
+
+	display: none;
+}
 </style>
 	
 	<!-- Header -->
@@ -109,7 +113,7 @@
 							<!-- Title -->
 							<div class="hotel_title_container d-flex flex-lg-row flex-column">
 								<div class="hotel_title_content">
-									<h1 class="hotel_title">{{$data->name_tour}}</h1>
+									<h1 class="hotel_title"><b>{{$data->name_tour}}</b></h1>
 									<div class="rating_r rating_r_4 hotel_rating">
 										<i></i>
 										<i></i>
@@ -226,10 +230,10 @@ function showSlides(n) {
 
 						<div class="container mt-5 p-0 text-dark">
 							<div class="row">
-								<h1><b>{{$data->Tour_details->title}}</b></h1>
+							<h2>	<b>{{$data->Tour_details->title}}</b></h2>
 							</div>
 							<div class="row">
-								<h4><p>{{$data->Tour_details->description}}</p></h4>
+								<pre><p>{{$data->Tour_details->description}}</p></pre>
 							</div>
 
 							<div class="row mt-3">
@@ -237,120 +241,76 @@ function showSlides(n) {
 							</div>
 
 							<div class="row">
-								<h4><p>{{$data->Tour_details->experience_tour}}</p></h4>
+								<pre><p>{{$data->Tour_details->experience_tour}}</p></p>
 							</div>
+
+							<div class="row">
+								<h2><b>Chương Trình Tour</b></h1>
+							</div>
+							<div class="row">
+								<h3><b>Ngày Khởi Hành: {{$data->departure_day}}</b></h3>
+							</div>
+							<div class="row">
+								<h3><b>Điểm Đón Khách: {{$data->receiving_address}}</b></h3>
+							</div>
+
+							<div class="row">
+								<h3><b>{{$data->Tour_details->title_day_1}}</b></h3>
+							</div>
+							<div class="row">
+								<pre><p>{{$data->Tour_details->description_day_1 }}</p></pre>
+							</div>
+							<div class="row mt-3 mb-3">
+								<img src="{{$data->Img_tour->img7}}" alt="">
+							</div>
+							<div class="row">
+								<h3><b>{{$data->Tour_details->title_day_2}}</b></h3>
+							</div>
+							<div class="row">
+							<pre>	<p>{{$data->Tour_details->description_day_2 }}</p></pre>
+							</div>
+							<div class="row mt-3 mb-3">
+								<img src="{{$data->Img_tour->img8}}" alt="">
+							</div>
+							<div class="row">
+								<h3><b>{{$data->Tour_details->title_day_3}}</b></h3>
+							</div>
+							<div class="row">
+							<pre>	<p>{{$data->Tour_details->description_day_3 }}</p></pre>
+							</div>
+							<div class="row mt-3 mb-3">
+								<img src="{{$data->Img_tour->img9}}" alt="">
+							</div>
+							<div class="row">
+								<h3><b>{{$data->Tour_details->title_day_back}}</b></h3>
+							</div>
+							<div class="row">
+							<pre>	<p>{{$data->Tour_details->description_day_back }}</p></pre>
+							</div>
+							
+							
+							
+								
+							
+							
 						</div>
 						
-						<!-- Rooms -->
-
-						<div class="rooms">
-
-							<!-- Room -->
-							<div class="room">
-
-								<!-- Room -->
-								<div class="row">
-									<div class="col-lg-2">
-										<div class="room_image"><img src="images/room_1.jpg" alt="https://unsplash.com/@grovemade"></div>
-									</div>
-									<div class="col-lg-7">
-										<div class="room_content">
-											<div class="room_title">Double or Twin Room</div>
-											<div class="room_price">$99/night</div>
-											<div class="room_text">FREE cancellation before 23:59 on 20 December 2017</div>
-											<div class="room_extra">Breakfast $7.50</div>
-										</div>
-									</div>
-									<div class="col-lg-3 text-lg-right">
-										<div class="room_button">
-											<div class="button book_button trans_200"><a href="#">book<span></span><span></span><span></span></a></div>
-										</div>
-									</div>
-								</div>	
-							</div>
-
-							<!-- Room -->
-							<div class="room">
-
-								<!-- Room -->
-								<div class="row">
-									<div class="col-lg-2">
-										<div class="room_image"><img src="images/room_2.jpg" alt="https://unsplash.com/@oowgnuj"></div>
-									</div>
-									<div class="col-lg-7">
-										<div class="room_content">
-											<div class="room_title">Double or Twin Room</div>
-											<div class="room_price">$99/night</div>
-											<div class="room_text">FREE cancellation before 23:59 on 20 December 2017</div>
-											<div class="room_extra">Breakfast $7.50</div>
-										</div>
-									</div>
-									<div class="col-lg-3 text-lg-right">
-										<div class="room_button">
-											<div class="button book_button trans_200"><a href="#">book<span></span><span></span><span></span></a></div>
-										</div>
-									</div>
-								</div>	
-							</div>
-
-						</div>
-
+		 <hr>
 						<!-- Reviews -->
+						<div class="row text-dark">
+							<h2><b>Chính Sách Thu Phí</b></h2>
 
-						<div class="reviews">
-							<div class="reviews_title">reviews</div>
-							<div class="reviews_container">
-
-								<!-- Review -->
-								<div class="review">
-									<div class="row">
-										<div class="col-lg-1">
-											<div class="review_image">
-												<img src="images/review_1.jpg" alt="https://unsplash.com/@saaout">
-											</div>
-										</div>
-										<div class="col-lg-11">
-											<div class="review_content">
-												<div class="review_title_container">
-													<div class="review_title">"We loved the services"</div>
-													<div class="review_rating">9.5</div>
-												</div>
-												<div class="review_text">
-													<p>Tetur adipiscing elit. Nullam eu convallis tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis vulputate eros, iaculis consequat nisl. Nunc et suscipit urna. Integer elementum orci eu vehicula pretium. Donec bibendum tristique condimentum.</p>
-												</div>
-												<div class="review_name">Christinne Smith</div>
-												<div class="review_date">12 November 2017</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<!-- Review -->
-								<div class="review">
-									<div class="row">
-										<div class="col-lg-1">
-											<div class="review_image">
-												<img src="images/review_2.jpg" alt="Image by Andrew Robles">
-											</div>
-										</div>
-										<div class="col-lg-11">
-											<div class="review_content">
-												<div class="review_title_container">
-													<div class="review_title">"Nice staff and great location"</div>
-													<div class="review_rating">9.5</div>
-												</div>
-												<div class="review_text">
-													<p>Tetur adipiscing elit. Nullam eu convallis tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis vulputate eros, iaculis consequat nisl. Nunc et suscipit urna. Integer elementum orci eu vehicula pretium. Donec bibendum tristique condimentum.</p>
-												</div>
-												<div class="review_name">Christinne Smith</div>
-												<div class="review_date">12 November 2017</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-							</div>
+							<p>Ngay khi xe khởi hành nhân viên sẽ thu phí dựa theo danh sách trên hệ thống</p>
+							<h2><b>Dich vụ đi kèm </b></h2>
+							<p>-Phương Tiện Di Chuyển</p>
+							<p>- Đồ ăn</p>
+							<p>-Bảo Hiểm Hành Khách</p>
+							<p>-Tour Đã Bao Gồm Phòng ở Và Dịch Vụ nghỉ chân</p>
+							<p>- Trẻ em dưới 5 tuổi: Miễn phí, ngủ chung bố mẹ (Gia đình tự lo cho Bé các chi phi phí phát sinh)</p>
+							<p>- Từ 6  tuổi: 100% vé tour (ngủ chung bố mẹ, 1 chỗ ngồi trên xe, ăn uống theo chương trình)</p>
+							<p>Mỗi cặp vợ chồng chỉ được kèm 1 bé, bé thứ 2 mua 1 vé người lớn.</p>
 						</div>
+					
 
 					
 					</div>

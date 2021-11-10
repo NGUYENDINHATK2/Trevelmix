@@ -50,10 +50,10 @@
                             <div class="main_nav_container ml-auto">
                                 <ul class="main_nav_list">
                                     <li class="main_nav_item"><a href="/">Home</a></li>
-                                    <li class="main_nav_item"><a href="about">About us</a></li>
-                                    <li class="main_nav_item"><a href="offers">Offers</a></li>
-                                    <li class="main_nav_item"><a href="blog">News</a></li>
-                                    <li class="main_nav_item"><a href="contact">Contact</a></li>
+                                    <li class="main_nav_item"><a href="/about">About us</a></li>
+                                    <li class="main_nav_item"><a href="/offers">Offers</a></li>
+                                    <li class="main_nav_item"><a href="/blog">News</a></li>
+                                    <li class="main_nav_item"><a href="/contact">Contact</a></li>
                                 </ul>
                             </div>
                             <div class=" ml-lg-0 ml-auto" style="cursor: pointer;">
@@ -121,7 +121,7 @@
                                       </div>
 
 									  @if (Auth::user()->is_Admin==0||Auth::user()->is_Admin==1)
-									  <a href="admin" class="dropdown-item">Admin</a>
+									  <a href="/admin" class="dropdown-item">Admin</a>
 										  
 									  @endif
                                     
@@ -158,10 +158,10 @@
               
                 <ul>
                     <li class="menu_item"><a href="/">home</a></li>
-                    <li class="menu_item"><a href="about">about us</a></li>
-                    <li class="menu_item"><a href="offers">offers</a></li>
-                    <li class="menu_item"><a href="blog">news</a></li>
-                    <li class="menu_item"><a href="contact">contact</a></li>
+                    <li class="menu_item"><a href="/about">about us</a></li>
+                    <li class="menu_item"><a href="/offers">offers</a></li>
+                    <li class="menu_item"><a href="/blog">news</a></li>
+                    <li class="menu_item"><a href="/contact">contact</a></li>
                 </ul>
             </div>
         </div>
