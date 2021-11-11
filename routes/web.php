@@ -34,7 +34,9 @@ Route::get('/offers', function () {
     return view('offers');
 });
 
-
+Route::get('/manageruser', function () {
+    return view('layoutadmin.ManagerUser');
+});
 Route::resource('tour', TourController::class);
 
 Route::get('admin', [admincontroller::class,'index'])->middleware('auth');
