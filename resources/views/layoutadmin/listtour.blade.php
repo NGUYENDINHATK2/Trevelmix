@@ -13,11 +13,9 @@
 
 
 
-
 <div class="wrapper">
 
-   
-
+  
 
 
     <div class="main-header">
@@ -203,7 +201,13 @@
                         <input  type="text" name="keyword" id="keyword"  id="textsearch" class="form-control ps-2" placeholder="Tìm Kiếm">
                    
                 </div>
+                <div class="row">
 
+                 
+                        
+                    
+               
+                </div>
                 <div class="row">
                     <table class="table  table-hover ">
                         <thead>
@@ -227,10 +231,11 @@
                             <td>{{$data->departure_day}}</td>
                             <td>{{$data->status}}</td>
                             <td class="text-center">
-                                {{-- <a href=" /tour/{{$data->id}}/edit" class="btn btn-warning">Sửa </a> --}}
-                                <button class="btn btn-warning" onclick="edittour({{$data->id}})">Sửa </button>
-                                {{-- <button class="btn btn-warning" onclick="openNav()">Sửa </button> --}}
-
+                                <a href=" /tour/{{$data->id}}/edit" class="btn btn-warning">Sửa </a>
+                                {{-- <button class="btn btn-warning" onclick="edittour({{$data->id}})">Sửa </button> --}}
+                                {{-- <button type="button" class="btn btn-warning" onclick="edittour({{$data->id}})" data-toggle="modal" data-target=".bd-example-modal-lg">Sửa</button> --}}
+                               
+                                
                             </td>
                             <td>
                                 <button href="" id="delete" onclick="deletetour({{$data->id}})" class="btn btn-danger">Xoá</button>
@@ -247,6 +252,7 @@
                     {{$datas->links()}}
                 </div>
 
+                
 
              </div>
       
@@ -256,34 +262,34 @@
 
       
     </div>
- 
-   
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="container mt-4">
+
+                <div class="row ">
+                 <b>   <h2 class="text-center" id="nameedit"></h2></b>
+                </div>
+               <form action="">
+                <div class="row">
+                    <h3 class="">Tên Tour</h3>
+                </div>
+               <div class="row p-3 pt-0">
+                   
+                   <input type="text" id="nametouredit" name="name_tour" class="form-control " placeholder="">
+               </div>
+
+
+                
+               </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
 <script>
-//     function openNav() {
-//   document.getElementById("myNav").style.height = "100%";
-// }
 
-// function closeNav() {
-//   document.getElementById("myNav").style.height = "0%";
-// }
-    function edittour(id){
-        $.ajax({
-            
-            method: "GET",
-            url: "/tour/"+id+"/edit",
-            data: {
-                id: id,
-            },
-            dataType: "json",
-            success: function (response) {
-             
-
-               
-               console.log(response['name_tour']);
-            }
-        });
-    }
+  
     function deletetour(id_tour) {
         var answer=  window.confirm("Bạn Có Muốn Xoá Tour ?");
         

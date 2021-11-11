@@ -64,8 +64,9 @@ class TourController extends Controller
         //
 
         $data=Tour::where('id',$id)->first();
-        // view('layoutadmin.edittour')->with('data', $data);
-        return  json_encode($data);
+        
+        return  view('layoutadmin.edittour')->with('data', $data);
+    
     }
 
     /**

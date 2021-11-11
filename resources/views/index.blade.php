@@ -183,7 +183,7 @@
 								</select>
 							</div>
 							<div class="search_item">
-								<div>Trẻ Em ( < 6 Tuổi )</div>
+								<div>Trẻ Em ( < 10 Tuổi )</div>
 								<select name="children" id="children_2" class="dropdown_item_select search_input">
 									@for ($i = 1; $i < 20; $i++)
 									<option value="">{{$i}}</option>

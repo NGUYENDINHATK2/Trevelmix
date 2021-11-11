@@ -19,6 +19,7 @@ class Tour extends Model
         'gift',
         'departure_day',
         'receiving_address',
+        'status' ,
     ];
 
     public function Tour_details(){
