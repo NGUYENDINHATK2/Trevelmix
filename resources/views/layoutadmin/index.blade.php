@@ -57,48 +57,7 @@
                             <li>
                                 <div class="dropdown-title">You have 4 new notification</div>
                             </li>
-                            <li>
-                                <div class="notif-center">
-                                    <a href="#">
-                                        <div class="notif-icon notif-primary"> <i class="la la-user-plus"></i> </div>
-                                        <div class="notif-content">
-                                            <span class="block">
-                                                New user registered
-                                            </span>
-                                            <span class="time">5 minutes ago</span> 
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="notif-icon notif-success"> <i class="la la-comment"></i> </div>
-                                        <div class="notif-content">
-                                            <span class="block">
-                                                Rahmad commented on Admin
-                                            </span>
-                                            <span class="time">12 minutes ago</span> 
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="notif-img"> 
-                                            <img src="assets/img/profile2.jpg" alt="Img Profile">
-                                        </div>
-                                        <div class="notif-content">
-                                            <span class="block">
-                                                Reza send messages to you
-                                            </span>
-                                            <span class="time">12 minutes ago</span> 
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="notif-icon notif-danger"> <i class="la la-heart"></i> </div>
-                                        <div class="notif-content">
-                                            <span class="block">
-                                                Farrah liked Admin
-                                            </span>
-                                            <span class="time">17 minutes ago</span> 
-                                        </div>
-                                    </a>
-                                </div>
-                            </li>
+                            
                             <li>
                                 <a class="see-all" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="la la-angle-right"></i> </a>
                             </li>
@@ -112,18 +71,23 @@
                                     <div class="u-img"><img src="assets/img/profile.jpg" alt="user"></div>
                                     <div class="u-text">
                                         <h4> {{Auth::user()->name}}</h4>
-                                        <p class="text-muted">hello@themekita.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
+                                        <p class="text-muted">{{Auth::user()->email}}</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">Xem lý Lịch</a></div>
                                     </div>
                                 </li>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="ti-user"></i> My Profile</a>
-                                <a class="dropdown-item" href="#"></i> My Balance</a>
-                                <a class="dropdown-item" href="#"><i class="ti-email"></i> Inbox</a>
+                                <a class="dropdown-item" href="#"><i class="ti-user"></i> Thông Tin Của Tôi</a>
+                            
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="ti-settings"></i> Account Setting</a>
+                                <a class="dropdown-item" href="#"><i class="ti-settings"></i>Thiết Lập Tài Khoản</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Logout</a>
-                            </ul>
+                                <a class="dropdown-item text-danger" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                              document.getElementById('logout-form').submit();">
+                                Đăng Xuất
+                             </a>
+                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                               @csrf
+                           </form>                            </ul>
                             <!-- /.dropdown-user -->
                         </li>
                     </ul>
@@ -219,7 +183,7 @@
                 <div class="container-fluid">
                     <h4 class="page-title">Trang Quản Lý </h4>
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="card card-stats card-warning">
                                 <div class="card-body ">
                                     <div class="row">
@@ -231,14 +195,14 @@
                                         <div class="col-7 d-flex align-items-center">
                                             <div class="numbers">
                                                 <p class="card-category">Số Người Dùng</p>
-                                                <h4 class="card-title">1,294</h4>
+                                                <h4 class="card-title">{{$numberuser}}</h4>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="card card-stats card-success">
                                 <div class="card-body ">
                                     <div class="row">
@@ -250,33 +214,15 @@
                                         <div class="col-7 d-flex align-items-center">
                                             <div class="numbers">
                                                 <p class="card-category">Số Tour</p>
-                                                <h4 class="card-title">1,345</h4>
+                                                <h4 class="card-title">{{$numbertour}}</h4>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="card card-stats card-danger">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-5">
-                                            <div class="icon-big text-center">
-                                                <i class="la la-newspaper-o"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-7 d-flex align-items-center">
-                                            <div class="numbers">
-                                                <p class="card-category">Số Khách Sạn</p>
-                                                <h4 class="card-title">1303</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
+                        
+                        <div class="col-md-4">
                             <div class="card card-stats card-primary">
                                 <div class="card-body ">
                                     <div class="row">
@@ -288,7 +234,7 @@
                                         <div class="col-7 d-flex align-items-center">
                                             <div class="numbers">
                                                 <p class="card-category">Đã Bán</p>
-                                                <h4 class="card-title">576</h4>
+                                                <h4 class="card-title">{{$numberbuy}}</h4>
                                             </div>
                                         </div>
                                     </div>
