@@ -176,7 +176,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="admin/tour" class="text-decoration-none">
+                        <a href="/admin/tour" class="text-decoration-none">
                             <i class="la la-table"></i>
                             <p>Quản Lý Tour</p>
                        
@@ -260,7 +260,7 @@
                                 <button class="btn btn-warning" >Sửa </button>                              
                             </td>
                             <td>
-                                <button href="" id="delete"  class="btn btn-danger">Xoá</button>
+                            <button href="" id="delete"  class="btn btn-danger">Xoá</button>
                             </td>
                             <td>
                                 <a  class="btn btn-success" href="" id="details" > Chi Tiết</a>
@@ -393,6 +393,30 @@
     </div>
 </div>
 
+<script>
+     function deletetour(id_tour) {
+        var answer=  window.confirm("Bạn Có Muốn Xoá Tour ?");
+        
+        if (answer==true) {
+           
+            $.ajax({
+            
+            method: "DELETE",
+            url: "/api/tour/"+id_tour,
+            data: {},
+            dataType: "script",
+            success: function (response) {
+                
+                location.reload();
+            }
+        });
+        }
+        else {
+            
+        }
+        
+    }
+</script>
 <script src="{{asset('assets/js/core/jquery.3.2.1.min.js')}}"></script>
 <script src="{{asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
 <script src="{{asset('assets/js/core/popper.min.js')}}"></script>
