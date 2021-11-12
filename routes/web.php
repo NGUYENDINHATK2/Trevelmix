@@ -34,9 +34,7 @@ Route::get('/offers', function () {
     return view('offers');
 });
 
-Route::get('/manageruser', function () {
-    return view('layoutadmin.ManagerUser');
-});
+
 Route::resource('tour', TourController::class);
 
 Route::get('admin', [admincontroller::class,'index'])->middleware('auth');
@@ -44,7 +42,7 @@ Route::get('admin/tour', [admincontroller::class,'tour'])->middleware('auth');
 Route::get('admin/listtour', [admincontroller::class,'listtour'])->middleware('auth');
 
 Route::get('admin/searchtour', [admincontroller::class,'search_tour'])->middleware('auth')->name('ajax.search');
-
+Route::get('admin/manageruser', [admincontroller::class,'manageruser'])->middleware('auth');
 
 
 Auth::routes();

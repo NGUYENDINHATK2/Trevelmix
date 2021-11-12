@@ -28,7 +28,17 @@ class admincontroller extends Controller
     } else
       return view('index');
   }
-
+  public function manageruser()
+  {
+    //
+    // $user=User::orderBy('ID', 'desc')->limit(1)->first();
+    // dd( $user->id);
+    if (Auth::user()->is_Admin == 0 || Auth::user()->is_Admin == 1) {
+      return view('layoutadmin.ManagerUser');
+      # code...
+    } else
+      return view('index');
+  }
 
   public function tour()
   {
@@ -49,7 +59,7 @@ class admincontroller extends Controller
       return view('index');
   }
 
-
+  
   public function listtour()
   {
     //
