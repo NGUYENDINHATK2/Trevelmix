@@ -1,371 +1,127 @@
-@extends('layouts.app')
+            <div class="content">
+                <h3><b>Quản lý admin</b></h3>
+        <table class="table  table-hover ">
+                        <thead>
+                            <td>Tên</td>
+                            <td>Tài khoản</td>
+                            <td>Email</td>
+                            <td>Mật khẩu</td>
+                            <th scope="col" class="text-center">Hành Động</th>
+                          </thead>
+                          <tbody id="listtour">
+                           <td>1</td>
+                           <td>2</td>
+                           <td>3</td>
+                           <td>4</td>
+                           <td class="text-center">                            
+                                <button class="btn btn-warning" >Sửa </button>                              
+                            </td>
+                            <td>
+                                <button href="" id="delete"  class="btn btn-danger">Xoá</button>
+                            </td>
+                            <td>
+                                <a  class="btn btn-success" href="" id="details" > Chi Tiết</a>
 
+                            </td>
+                          </tbody>
+            </table>
+            <h3><b>Quản lý nhân viên</b></h3>
+        <table class="table  table-hover ">
+                        <thead>
+                            <td>Tên</td>
+                            <td>Tài khoản</td>
+                            <td>Email</td>
+                            <td>Mật khẩu</td>
+                            <th scope="col" class="text-center">Hành Động</th>
+                          </thead>
+                          <tbody id="listtour">
+                           <td>1</td>
+                           <td>2</td>
+                           <td>3</td>
+                           <td>4</td>
+                           <td class="text-center">                            
+                                <button class="btn btn-warning" >Sửa </button>                              
+                            </td>
+                            <td>
+                                <button href="" id="delete"  class="btn btn-danger">Xoá</button>
+                            </td>
+                            <td>
+                                <a  class="btn btn-success" href="" id="details" > Chi Tiết</a>
 
-@section('content')
+                            </td>
+                          </tbody>
+            </table>
+            <h3><b>Quản lý người dùng</b></h3>
+        <table class="table  table-hover ">
+                        <thead>
+                            <td>Tên</td>
+                            <td>Tài khoản</td>
+                            <td>Email</td>
+                            <td>Mật khẩu</td>
+                            <th scope="col" class="text-center">Hành Động</th>
+                          </thead>
+                          <tbody id="listtour">
+                           <td>1</td>
+                           <td>2</td>
+                           <td>3</td>
+                           <td>4</td>
+                           <td class="text-center">                            
+                               <!-- Button trigger modal -->
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter">
+  Sửa
+</button>
 
-<link rel="stylesheet" type="text/css" href="{{asset('styles/bootstrap4/bootstrap.min.css')}}">
-<link href="{{asset('plugins/font-awesome-4.7.0/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="{{asset('plugins/OwlCarousel2-2.2.1/owl.carousel.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('plugins/OwlCarousel2-2.2.1/owl.theme.default.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('plugins/OwlCarousel2-2.2.1/animate.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('styles/about_styles.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('styles/about_responsive.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('styles/bootstrap4/bootstrap.min.css')}}">
-<link href="{{asset('plugins/font-awesome-4.7.0/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
-<link href="{{asset('plugins/colorbox/colorbox.css')}}" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="{{asset('plugins/OwlCarousel2-2.2.1/owl.carousel.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('plugins/OwlCarousel2-2.2.1/owl.theme.default.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('plugins/OwlCarousel2-2.2.1/animate.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('styles/single_listing_styles.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('styles/single_listing_responsive.css')}}">
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <h5 class="modal-title" id="exampleModalLongTitle">Thông tin</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form>
+      <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Tên</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+    </div>
+    <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Tài khoản</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+    </div>
+    <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+    </div>
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+    </div>
+  </div>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+                            </td>
+                            <td>
+                                <button href="" id="delete"  class="btn btn-danger">Xoá</button>
+                            </td>
+                            <td>
+                                <a  class="btn btn-success" href="" id="details" > Chi Tiết</a>
 
-
-<style>
-	img {
-  vertical-align: middle;
-}
-
-/* Position the image container (needed to position the left and right arrows) */
-.container {
-  position: relative;
-}
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
-}
-
-/* Next & previous buttons */
-
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Six columns side by side */
-.column {
-  float: left;
-  width: 16.66%;
-}
-
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
-}
-
-.active,
-.demo:hover {
-  opacity: 1;
-}
-</style>
-	
-	<!-- Header -->
-
-	<!-- Home -->
-
-
-
-	<!-- Offers -->
-
-	<div class="listing mt-5">
-
-
-
-		<!-- Single Listing -->
-
-		<div class="container">
-			<div class="row p-0" >
-				<div class="col-lg-12">
-					<div class="single_listing">
-						
-						<!-- Hotel Info -->
-
-						<div class="hotel_info">
-
-							<!-- Title -->
-							<div class="hotel_title_container d-flex flex-lg-row flex-column">
-								<div class="hotel_title_content">
-									<h1 class="hotel_title">{{$data->name_tour}}</h1>
-									<div class="rating_r rating_r_4 hotel_rating">
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-									</div>
-								</div>
-								<div class="hotel_title_button ml-lg-auto text-lg-right">
-									<div class="button book_button trans_200"><a href="#">book<span></span><span></span><span></span></a></div>
-								
-								</div>
-							</div>
-
-						
-
-							<div class="container p-0">
-							<div class="mySlides">
-								<div class="numbertext">1 / 6</div>
-								<img src="{{$data->Img_tour->img1}}" style="width:100%">
-							</div>
-
-							<div class="mySlides">
-								<div class="numbertext">2 / 6</div>
-								<img src="{{$data->Img_tour->img2}}" style="width:100%">
-							</div>
-
-							<div class="mySlides">
-								<div class="numbertext">3 / 6</div>
-								<img src="{{$data->Img_tour->img3}}" style="width:100%">
-							</div>
-								
-							<div class="mySlides">
-								<div class="numbertext">4 / 6</div>
-								<img src="{{$data->Img_tour->img4}}" style="width:100%">
-							</div>
-
-							<div class="mySlides">
-								<div class="numbertext">5 / 6</div>
-								<img src="{{$data->Img_tour->img5}}" style="width:100%">
-							</div>
-								
-							<div class="mySlides">
-								<div class="numbertext">6 / 6</div>
-								<img src="{{$data->Img_tour->img6}}" style="width:100%">
-							</div>
-
-
-							<div class="caption-container">
-								<p id="caption"></p>
-							</div>
-
-							<div class="row ps-1 ">
-								<div class="column me-0  pe-0">
-								<img class="demo cursor" src="{{$data->Img_tour->img1}}" style="width:100%;height: 100px;" onclick="currentSlide(1)" alt="Cảnh Đẹp ">
-								</div>
-								<div class="column pe-0 ps-0 ">
-								<img class="demo cursor" src="{{$data->Img_tour->img2}}" style="width:100%;height: 100px;" onclick="currentSlide(2)" alt="Cảnh Đẹp">
-								</div>
-								<div class="column pe-0 ps-0 ">
-								<img class="demo cursor" src="{{$data->Img_tour->img3}}" style="width:100%;height: 100px;" onclick="currentSlide(3)" alt="Cảnh Đẹp">
-								</div>
-								<div class="column pe-0 ps-0 ">
-								<img class="demo cursor" src="{{$data->Img_tour->img4}}" style="width:100%;height: 100px;" onclick="currentSlide(4)" alt="Cảnh Đẹp">
-								</div>
-								<div class="column pe-0 ps-0 ">
-								<img class="demo cursor" src="{{$data->Img_tour->img5}}" style="width:100%;height: 100px;" onclick="currentSlide(5)" alt="Cảnh Đẹp">
-								</div>    
-								<div class="column pe-3 ps-0 ">
-								<img class="demo cursor" src="{{$data->Img_tour->img6}}" style="width:100%;height: 100px;" onclick="currentSlide(6)" alt="Cảnh Đẹp">
-								</div>
-							</div>
-							</div>
-
-<script>
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
-}
-</script>
-
-							<!-- Hotel Info Text -->
-
-
-							<!-- Hotel Info Tags -->
-
-						
-
-						</div>
-
-						<div class="container mt-5 p-0 text-dark">
-							<div class="row">
-								<h1><b>{{$data->Tour_details->title}}</b></h1>
-							</div>
-							<div class="row">
-								<h4><p>{{$data->Tour_details->description}}</p></h4>
-							</div>
-
-							<div class="row mt-3">
-								<h2><b>Những Trải Nghiệm Thú Vị Trong Tour</b></h2>
-							</div>
-
-							<div class="row">
-								<h4><p>{{$data->Tour_details->experience_tour}}</p></h4>
-							</div>
-						</div>
-						
-						<!-- Rooms -->
-
-						<div class="rooms">
-
-							<!-- Room -->
-							<div class="room">
-
-								<!-- Room -->
-								<div class="row">
-									<div class="col-lg-2">
-										<div class="room_image"><img src="images/room_1.jpg" alt="https://unsplash.com/@grovemade"></div>
-									</div>
-									<div class="col-lg-7">
-										<div class="room_content">
-											<div class="room_title">Double or Twin Room</div>
-											<div class="room_price">$99/night</div>
-											<div class="room_text">FREE cancellation before 23:59 on 20 December 2017</div>
-											<div class="room_extra">Breakfast $7.50</div>
-										</div>
-									</div>
-									<div class="col-lg-3 text-lg-right">
-										<div class="room_button">
-											<div class="button book_button trans_200"><a href="#">book<span></span><span></span><span></span></a></div>
-										</div>
-									</div>
-								</div>	
-							</div>
-
-							<!-- Room -->
-							<div class="room">
-
-								<!-- Room -->
-								<div class="row">
-									<div class="col-lg-2">
-										<div class="room_image"><img src="images/room_2.jpg" alt="https://unsplash.com/@oowgnuj"></div>
-									</div>
-									<div class="col-lg-7">
-										<div class="room_content">
-											<div class="room_title">Double or Twin Room</div>
-											<div class="room_price">$99/night</div>
-											<div class="room_text">FREE cancellation before 23:59 on 20 December 2017</div>
-											<div class="room_extra">Breakfast $7.50</div>
-										</div>
-									</div>
-									<div class="col-lg-3 text-lg-right">
-										<div class="room_button">
-											<div class="button book_button trans_200"><a href="#">book<span></span><span></span><span></span></a></div>
-										</div>
-									</div>
-								</div>	
-							</div>
-
-						</div>
-
-						<!-- Reviews -->
-
-						<div class="reviews">
-							<div class="reviews_title">reviews</div>
-							<div class="reviews_container">
-
-								<!-- Review -->
-								<div class="review">
-									<div class="row">
-										<div class="col-lg-1">
-											<div class="review_image">
-												<img src="images/review_1.jpg" alt="https://unsplash.com/@saaout">
-											</div>
-										</div>
-										<div class="col-lg-11">
-											<div class="review_content">
-												<div class="review_title_container">
-													<div class="review_title">"We loved the services"</div>
-													<div class="review_rating">9.5</div>
-												</div>
-												<div class="review_text">
-													<p>Tetur adipiscing elit. Nullam eu convallis tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis vulputate eros, iaculis consequat nisl. Nunc et suscipit urna. Integer elementum orci eu vehicula pretium. Donec bibendum tristique condimentum.</p>
-												</div>
-												<div class="review_name">Christinne Smith</div>
-												<div class="review_date">12 November 2017</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<!-- Review -->
-								<div class="review">
-									<div class="row">
-										<div class="col-lg-1">
-											<div class="review_image">
-												<img src="images/review_2.jpg" alt="Image by Andrew Robles">
-											</div>
-										</div>
-										<div class="col-lg-11">
-											<div class="review_content">
-												<div class="review_title_container">
-													<div class="review_title">"Nice staff and great location"</div>
-													<div class="review_rating">9.5</div>
-												</div>
-												<div class="review_text">
-													<p>Tetur adipiscing elit. Nullam eu convallis tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis vulputate eros, iaculis consequat nisl. Nunc et suscipit urna. Integer elementum orci eu vehicula pretium. Donec bibendum tristique condimentum.</p>
-												</div>
-												<div class="review_name">Christinne Smith</div>
-												<div class="review_date">12 November 2017</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-							</div>
-						</div>
-
-					
-					</div>
-				</div>
-			</div>
-		</div>		
-	</div>
-	<script src="{{asset('js1/jquery-3.2.1.min.js')}}"></script>
-	<script src="{{asset('styles/bootstrap4/popper.js')}}"></script>
-	<script src="{{asset('styles/bootstrap4/bootstrap.min.js')}}"></script>
-	<script src="{{asset('plugins/OwlCarousel2-2.2.1/owl.carousel.js')}}"></script>
-	<script src="{{asset('plugins/easing/easing.js')}}"></script>
-	<script src="{{asset('js1/custom.js')}}"></script>
-
-
-
-	
-@endsection
+                            </td>
+                          </tbody>
+            </table>
+            
+            </div>
