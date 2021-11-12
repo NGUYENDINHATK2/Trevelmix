@@ -169,7 +169,7 @@
                 </div>
                 <ul class="nav">
                     <li class="nav-item active">
-                        <a href="#" class="text-decoration-none">
+                        <a href="admin" class="text-decoration-none">
                             <i class="la la-dashboard"></i>
                             <p>Trang Chính</p>
                          
@@ -191,7 +191,7 @@
                         </a>
                     </li>
                     <li class="nav-item" >
-                        <a href="notifications.html" class="text-decoration-none">
+                        <a href="/manageruser" class="text-decoration-none">
                             <i class="la la-bell"></i>
                             <p>Quản Lý Tài Khoản</p>
                       
