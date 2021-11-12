@@ -20,6 +20,7 @@ class Tour extends Model
         'departure_day',
         'receiving_address',
         'status' ,
+        'amountofpeople',
     ];
 
     public function Tour_details(){

@@ -99,6 +99,7 @@ class TourApi extends Controller
             'gift' => $gift,
             'departure_day' => $request->departure_day,
             'receiving_address' => $request->receiving_address,
+            'amountofpeople'=>$request->amountofpeople,
         ];
        // dd($request->img1->extension());
         Tour::create($datatour);
@@ -212,6 +213,7 @@ class TourApi extends Controller
         'departure_day' => $request->departure_day,
         'receiving_address' => $request->receiving_address,
         'status' => $request->status,
+        'amountofpeople'=>$request->amountofpeople,
     ];
     $tour->update($datatour);
     $dataimg=array();
@@ -299,7 +301,7 @@ class TourApi extends Controller
     imagestours::where('tour_id',$tour->id)->update($dataimg);
    
     return redirect('/admin/listtour')
-    ->with('message', 'Your post has been added');
+    ->with('messages', 'Your Tour has been added');
     }
 
     /**

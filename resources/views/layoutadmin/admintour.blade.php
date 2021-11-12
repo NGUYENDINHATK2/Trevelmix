@@ -251,7 +251,7 @@
                               
                                 <input type="text" name="receiving_address" class="border-0" placeholder="Ví Dụ :Chợ bến thành  .TP HCM" style="width:100%;height: 40px;border-radius:2px; "  >
                             </div>
-
+                            
                             <h5 for="" class="">Ảnh  10</h5>
                             <div class="row  p-3 pt-0 ">
                               
@@ -371,7 +371,13 @@
                         
                        </div>
                        
-                      
+                       <div class="mt-3">
+                        <h5 for="" class="">Số Người Trong Tour</h5>
+                       
+                          
+                        <input type="number" class="border-0 ps-3" name="amountofpeople"  style="width:100%;height: 40px;border-radius:2px; "  >
+                        
+                       </div>
 
                     </div>
                     <div class="row mt-3">

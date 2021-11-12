@@ -204,7 +204,6 @@
                 <div class="row">
 
                  
-                        
                     
                
                 </div>
@@ -226,6 +225,7 @@
                             <td scope="row"><b>{{$data->tour_code}}</b></td>
                             <td style="max-width: 250px;">{{$data->name_tour}}</td>
                             <td>
+                                {{-- <img src="{{$data->Img_tour->img1}}" width="250px;" alt=""> --}}
                                 <img src="{{$data->Img_tour->img1}}" width="250px;" alt="">
                             </td>
                             <td>{{$data->departure_day}}</td>

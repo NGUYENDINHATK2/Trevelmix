@@ -25,6 +25,7 @@ class CreateToursTable extends Migration
             $table->string('departure_day');
             $table->string('receiving_address');
             $table->set('status', ['Ngừng', 'Hoạt Động'])->default('Hoạt Động');
+            $table->string('amountofpeople')->nullable();
             $table->timestamps();
         });
     }

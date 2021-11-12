@@ -463,7 +463,13 @@
                         </textarea>
                         
                        </div>
+                       <div class="mt-3">
+                        <h5 for="" class="">Số Người Trong Tour</h5>
                        
+                          
+                        <input type="number" class="border-0 ps-3" value="{{$data->amountofpeople}}" name="amountofpeople"  style="width:100%;height: 40px;border-radius:2px; "  >
+                        
+                       </div>
                       
 
                     </div>
