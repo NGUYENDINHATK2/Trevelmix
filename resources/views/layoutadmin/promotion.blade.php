@@ -137,20 +137,24 @@
                 </div>
                 <ul class="nav">
                     <li class="nav-item ">
-                        <a href="/admin" class="text-decoration-none">
+                        <a href="admin" class="text-decoration-none">
                             <i class="la la-dashboard"></i>
                             <p>Trang Chính</p>
                          
                         </a>
                     </li>
-                    <li class="nav-item ">
-                        <a href="/admin/tour" class="text-decoration-none">
+                    <li class="nav-item active">
+                        <a href="#" class="text-decoration-none">
                             <i class="la la-table"></i>
                             <p>Quản Lý Tour</p>
                        
                         </a>
 
-                        
+                        <ul class="text-dark ms-4" style="list-style: none;">
+                            <li class=""><b><a class="/admin/tour"  href="">Thêm Tour</a></b></li>
+                            <li><b><a href="/admin/listtour" class="text-decoration-none">Xem Tour Hiện Có</a></b></li>
+                            
+                        </ul>
                     </li>
                    
                     <li class="nav-item">
@@ -160,7 +164,7 @@
                      
                         </a>
                     </li>
-                    <li class="nav-item active" >
+                    <li class="nav-item" >
                         <a href="/manageruser" class="text-decoration-none">
                             <i class="la la-bell"></i>
                             <p>Quản Lý Tài Khoản</p>
@@ -168,7 +172,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/admin/managerorder" class="text-decoration-none">
+                        <a href="typography.html" class="text-decoration-none">
                             <i class="la la-font"></i>
                             <p>Quản Lý Đơn Đặt</p>
                         
@@ -187,220 +191,78 @@
 
         
         <div class="main-panel">
-        <div class="content">
-                <h3><b>Quản lý admin</b></h3>
-        <table class="table  table-hover ">
-                        <thead>
-                            <td>Tên</td>
-                            <td>Tài khoản</td>
-                            <td>Email</td>
-                            <td>Mật khẩu</td>
-                            <th scope="col" class="text-center">Hành Động</th>
-                          </thead>
-                          <tbody id="listtour">
-                           <td>1</td>
-                           <td>2</td>
-                           <td>3</td>
-                           <td>4</td>
-                           <td class="text-center">                            
-                                <button class="btn btn-warning" >Sửa </button>                              
-                            </td>
-                            <td>
-                                <button href="" id="delete"  class="btn btn-danger">Xoá</button>
-                            </td>
-                            <td>
-                                <a  class="btn btn-success" href="" id="details" > Chi Tiết</a>
+            <div class="content">
+                <div class="container-fuild">
+                     <div class="row promotion ">
+                        <h3><b>Thông tin khuyến mãi</b></h3>
+                            <div class="col-sm-12 col-md-12 col-lg-12 shadow">
+                        
+                                <form action="" method="POST" enctype="multipart/form-data">
+                                    <input type="text" name="" class="form-control p-3" placeholder="Nội dung khuyến mãi" style="width:100%;height: 40px;border-radius:2px; ">
+                                    <h3>Chọn ảnh</h3>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <input  name="" type="file" class="file form-control" data-show-preview="false"> <br><br>
 
-                            </td>
-                          </tbody>
-            </table>
-            <h3><b>Quản lý nhân viên</b></h3>
-        <table class="table  table-hover ">
-                        <thead>
-                            <td>Tên</td>
-                            <td>Tài khoản</td>
-                            <td>Email</td>
-                            <td>Mật khẩu</td>
-                            <th scope="col" class="text-center">Hành Động</th>
-                          </thead>
-                          <tbody id="listtour">
-                           <td>1</td>
-                           <td>2</td>
-                           <td>3</td>
-                           <td>4</td>
-                           <td class="text-center">                            
-                                <button class="btn btn-warning" >Sửa </button>                              
-                            </td>
-                            <td>
-                            <button href="" id="delete"  class="btn btn-danger">Xoá</button>
-                            </td>
-                            <td>
-                                <a  class="btn btn-success" href="" id="details" > Chi Tiết</a>
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="text" name="" class="form-control p-3" placeholder="Id khuyến mãi" style="width:100%;height: 40px;border-radius:2px; ">
 
-                            </td>
-                          </tbody>
-            </table>
-            <h3><b>Quản lý người dùng</b></h3>
-        <table class="table  table-hover ">
-                        <thead>
-                            <td>Tên</td>
-                            <td>Tài khoản</td>
-                            <td>Email</td>
-                            <td>Mật khẩu</td>
-                            <th scope="col" class="text-center">Hành Động</th>
-                          </thead>
-                          <tbody id="listtour">
-                           <td>1</td>
-                           <td>2</td>
-                           <td>3</td>
-                           <td>4</td>
-                           <td class="text-center">                            
-                               <!-- Button trigger modal -->
-<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter">
-  Sửa
-</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button class="btn btn-success " type="submit"><b>Thêm banner</b></button>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header ">
-        <h5 class="modal-title" id="exampleModalLongTitle">Thông tin</h5>
-        <button type="button" class="close border-0" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <form>
-  <div class="form-group row">
-    <label for="" class="col-sm-2 ">Tên</label>
-    <div class="col-sm-10">
-      <input type="text"  class="form-control" id="" value="" name = "name">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="" class="col-sm-2 ">Tài khoản</label>
-    <div class="col-sm-10">
-      <input type="text"  class="form-control" id="" value="" name="email">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="" class="col-sm-2 ">Email</label>
-    <div class="col-sm-10">
-      <input type="text"  class="form-control" id="" value="" name ="email">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="" class="col-sm-2 ">Mật khẩu</label>
-    <div class="col-sm-10">
-      <input type="password"  class="form-control" id="" value="" name="password">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="" class="col-sm-2 ">Quyền</label>
-    <div class="col-sm-10">
-      <select name="" id="" class="form-control" name="is_Admin">
-          <option value="0">Super Admin</option>
-          <option value="1">Admin</option>
-          <option value="2">Nhân viên</option>
-          <option value="3">Khách hàng</option>
-      </select>
-    </div>
-  </div>
-</form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-                            </td>
-                            <td>
-                                <button href="" id="delete"  class="btn btn-danger">Xoá</button>
-                            </td>
-                            <td>
-                                <a  class="btn btn-success" href="" id="details" > Chi Tiết</a>
+                                        </div>
 
-                            </td>
-                          </tbody>
-            </table>
-</div>
- 
-</div>
-<!-- Modal -->
-<div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePro" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header bg-primary">
-                <h6 class="modal-title"><i class="la la-frown-o"></i> Under Development</h6>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body text-center">									
-                <p>Currently the pro version of the <b>Ready Dashboard</b> Bootstrap is in progress development</p>
-                <p>
-                    <b>We'll let you know when it's done</b></p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
+                                    </div>
 
+                                    
+                                </form>
+                                <br>
+                                
+                            </div>
+                                                    
+                     </div>
 
-<script>
+                     <div class="row mt-3">
+                        <table class="table  banner ">
+                            <thead>
+                                <td class="text-center">Id</td>
+                                <td class="text-center">Title</td>
+                                <td class="text-center">Img</td>
+                                <td class="text-center">Id tour</td>
+                                <td class="text-center">Date</td>
 
+                                <th scope="col" class="text-center">Hành Động</th>
+                              </thead>
+                              <tbody id="listbanner">
+                               <td>1</td>
+                               <td  style="min-width: 200px;">2</td>
+                               <td><img src="https://docs.google.com/uc?id=1rJQfHpfqSN_VTel829NzbZR3_yH4idxn" alt="a" width="250px;">
+                               </td>
+                               <td style="min-width: 200px;">4</td>
+                               <td style="min-width: 200px;">5</td>
 
-
-    function validateForm() {
-      let x = document.forms["myForm"]["name_tour"].value;
-
-   
-      if (x == "") {
-        alert("Tên Tour Không Để Trống");
-        return false;
-      }
-      let x1 = document.forms["myForm"]["time_tour"].value;
-
-   
-        if (x1== "") {
-        alert("Thời Gian Tour Không Để Trống");
-        return false;
-        }
-
-        let x2 = document.forms["myForm"]["price_adults"].value;
-
-   
-        if (x2== "") {
-        alert("Hãy Điền Vào Giá Người Lớn");
-        return false;
-        }
-
-        let x3 = document.forms["myForm"]["price_children"].value;
-
-        
-        if (x3== "") {
-        alert("Hãy Điền Vào Giá Trẻ Nhỏ");
-        return false;
-        }
-
-        let x7 = document.forms["myForm"]["receiving_address"].value;
-
-        
-        if (x7== "") {
-        alert("Nhập địa chỉ nhận khách" );
-        return false;
-        }
-
-        
-
-    }
+                               <td class="text-center">                            
+                                    <button class="btn btn-warning" >Sửa </button>                              
+                                </td>
+                                <td>
+                                    <button href="" id="delete"  class="btn btn-danger">Xoá</button>
+                                </td>
+                                <td>
+                                    <a  class="btn btn-success" href="" id="details" > Thêm</a>
     
+                                </td>
+                              </tbody>
+                        </table>
+                     </div>
+                </div>
+            </div>
 
-</script>
+          
+</div>
+
+
 <script src="{{asset('assets/js/core/jquery.3.2.1.min.js')}}"></script>
 <script src="{{asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
 <script src="{{asset('assets/js/core/popper.min.js')}}"></script>

@@ -67,29 +67,36 @@
 									<div class="search_item">
 										<div>Giá Tiền</div>
 										<select name="adults" id="adults_2" class="dropdown_item_select search_input">
-										<option value="">Từ  1.600.000</option>
-										<option value="">Từ  2.600.000/option>
-										<option value="">Từ  4.000.000/option>
+										<option value="">Từ  1.600.000 </option>
+										<option value="">Từ  2.600.000 </option>
+										<option value="">Từ  4.000.000</option>
 										
 										<option value="">Giá Khác</option>
 										
 										</select>			
 													
+													
 									</div>
 									<div class="search_item">
-										<div>Người Lớn</div>
-										<select name="adults" id="adults_2" class="dropdown_item_select search_input">
-											@for ($i = 1; $i < 20; $i++)
-											<option value="">{{$i}}</option>
-											@endfor
+										<div>Nơi Khởi Hành</div>
+										<select name="children" id="children_2" class="dropdown_item_select search_input">
+											<option value="">Hà Nội</option>
+											<option value="">Đà Nẵng</option>
+											<option value="">HCM</option>
 										</select>
 									</div>
 									<div class="search_item">
-										<div>Trẻ Em </div>
-										<select name="children" id="children_2" class="dropdown_item_select search_input">
-											@for ($i = 1; $i < 20; $i++)
-											<option value="">{{$i}}</option>
-											@endfor
+									
+										<div>Số Ngày </div>
+										<select name="numberday" id="adults_2" class="dropdown_item_select search_input">
+										<option value="">1 N 1 D</option>
+										<option value="">2 N 1 D</option>
+										<option value="">3 N 2 D</option>
+										<option value="">4 N 3 D</option>
+										<option value="">5 N 4 D</option>
+										<option value="">6 N 5 D</option>
+										<option value="">Số Khác</option>
+									
 										</select>
 									</div>
 
@@ -111,30 +118,7 @@
 										<div>Nơi Bạn Muốn Xem Thông Tin</div>
 										<input type="text" class="destination search_input" required="required">
 									</div>
-									{{-- <div class="search_item">
-										<div>check in</div>
-										<input type="date" class="check_out search_input"  value='<?php echo date('Y-m-d');?>' min="<?php echo date('Y-m-d');?>">
-									</div>
-									<div class="search_item">
-										<div>check out</div>
-										<input type="date" class="check_out search_input"  value='<?php echo date('Y-m-d');?>' min="<?php echo date('Y-m-d');?>">
-									</div>
-									<div class="search_item">
-										<div>adults</div>
-										<select name="adults" id="adults_3" class="dropdown_item_select search_input">
-											<option>01</option>
-											<option>02</option>
-											<option>03</option>
-										</select>
-									</div>
-									<div class="search_item">
-										<div>children</div>
-										<select name="children" id="children_3" class="dropdown_item_select search_input">
-											<option>0</option>
-											<option>02</option>
-											<option>03</option>
-										</select>
-									</div> --}}
+								
 									<button class="button search_button">search<span></span><span></span><span></span></button>
 								</form>
 							</div>

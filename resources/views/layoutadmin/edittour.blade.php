@@ -172,14 +172,14 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="typography.html" class="text-decoration-none">
+                        <a href="/admin/managerorder" class="text-decoration-none">
                             <i class="la la-font"></i>
                             <p>Quản Lý Đơn Đặt</p>
                         
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="icons.html" class="text-decoration-none">
+                        <a href="/admin/promotion" class="text-decoration-none">
                             <i class="la la-fonticons"></i>
                             <p> Khuyến Mãi</p>
                         </a>
@@ -463,7 +463,31 @@
                         </textarea>
                         
                        </div>
+                       <div class="mt-3">
+                        <h5 for="" class="">Số Người Trong Tour</h5>
                        
+                          
+                        <input type="number" class="border-0 ps-3" value="{{$data->amountofpeople}}" name="amountofpeople"  style="width:100%;height: 40px;border-radius:2px; "  >
+                        
+                       </div>
+                       <div class="mt-3">
+                        <h5 for="" class="">Mã Đội Quản Lý Tour</h5>
+                       
+                          
+                        <input type="text" value="{{$data->guide_team_code_manager}}" class="border-0 ps-3" name="guide_team_code_manager"  style="width:100%;height: 40px;border-radius:2px; "  >
+                        
+                       </div>
+
+                       <div class="mt-3">
+                        <h5 for="" class="">Thạng Thái Hoạt Động</h5>
+                       
+                            <select name="status_tour" id="" class="form-control">
+                                <option value="Chưa Khởi Hành">Chưa Khởi Hành</option>
+                                <option value="Đang Trải Nghiệm">Đang Trải Nghiệm</option>
+                                <option value="Hoàn Thành">Hoàn Thành</option>
+                            </select>
+
+                       </div>
                       
 
                     </div>

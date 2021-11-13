@@ -16,8 +16,8 @@ Circles.create({
 
 $.notify({
 	icon: 'la la-bell',
-	title: 'Bootstrap notify',
-	message: 'Turning standard Bootstrap alerts into "notify" like notifications',
+	title: 'Travelvn.com',
+	message: 'Chào Mừng Đến Với Trang Quản Trị Travelvn',
 },{
 	type: 'success',
 	placement: {

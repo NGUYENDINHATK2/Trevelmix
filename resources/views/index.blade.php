@@ -156,18 +156,20 @@
 					<!-- 2Search Panel -->
 
 					<div class="search_panel active">
-						<form action="#" id="search_form_2" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+						<form action="/tour" id="search_form_2" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+						
+							
 							<div class="search_item">
 								<div>Địa Điểm Du Lịch</div>
-								<input type="text" class="destination search_input" required="required">
+								<input name="text_search" type="text" class="destination search_input" required="required">
 							</div>
 							
 							<div class="search_item">
 								<div>Giá Tiền</div>
-								<select name="adults" id="adults_2" class="dropdown_item_select search_input">
-								<option value="">Từ  1.600.000</option>
-								<option value="">Từ  2.600.000/option>
-								<option value="">Từ  4.000.000/option>
+								<select name="money" id="adults_2" class="dropdown_item_select search_input">
+								<option value="1.600.000 ">Từ  1.600.000 </option>
+								<option value="2.600.000 ">Từ  2.600.000 </option>
+								<option value="4.000.000">Từ  4.000.000</option>
 								
 								<option value="">Giá Khác</option>
 								
@@ -175,19 +177,26 @@
 											
 							</div>
 							<div class="search_item">
-								<div>Người Lớn</div>
-								<select name="adults" id="adults_2" class="dropdown_item_select search_input">
-									@for ($i = 1; $i < 20; $i++)
-									<option value="">{{$i}}</option>
-									@endfor
+								<div>Nơi Khởi Hành</div>
+								<select name="address_start" id="children_2" class="dropdown_item_select search_input">
+									<option value="Hà Nội">Hà Nội</option>
+									<option value="Đà Nẵng">Đà Nẵng</option>
+									<option value="HCM">HCM</option>
 								</select>
 							</div>
 							<div class="search_item">
-								<div>Trẻ Em ( < 10 Tuổi )</div>
-								<select name="children" id="children_2" class="dropdown_item_select search_input">
-									@for ($i = 1; $i < 20; $i++)
-									<option value="">{{$i}}</option>
-									@endfor
+							
+
+								<div>Số Ngày Du Lịch</div>
+								<select name="numberday" id="adults_2" class="dropdown_item_select search_input">
+								<option value="1 N 1 D">1 N 1 D</option>
+								<option value="2 N 1 D">2 N 1 D</option>
+								<option value="3 N 2 D">3 N 2 D</option>
+								<option value="4 N 3 D">4 N 3 D</option>
+								<option value="5 N 4 D">5 N 4 D</option>
+								<option value="6 N 5 D">6 N 5 D</option>
+								<option value="Số Khác">Số Khác</option>
+							
 								</select>
 							</div>
 							<button class="button search_button">Tìm Kiếm<span></span><span></span><span></span></button>
@@ -233,82 +242,38 @@
 					</div>
 				</div>
 			</div>
+
+		
 			<div class="row intro_items mt-4">
 
 				<!-- Intro Item -->
 
-				<div class="col-lg-4 intro_col">
-					<div class="intro_item">
-						<div class="intro_item_overlay"></div>
-						<!-- Image by https://unsplash.com/@dnevozhai -->
-						<div class="intro_item_background" style="background-image:url(images/intro_1.jpg)"></div>
-						<div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
-							<div class="intro_date">May 25th - June 01st</div>
-							<div class="button intro_button"><div class="button_bcg"></div><a href="#">Xem Thêm<span></span><span></span><span></span></a></div>
-							<div class="intro_center text-center">
-								<h1>Mauritius</h1>
-								<div class="intro_price">From $1450</div>
-								<div class="rating rating_4">
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-								</div>
+			@foreach ($tournew as $tour)
+
+			<div class="col-lg-4 intro_col">
+				<div class="intro_item">
+					<div class="intro_item_overlay"></div>
+					<!-- Image by https://unsplash.com/@dnevozhai -->
+					<div class="intro_item_background" style="background-image:url({{$tour->Img_tour->img1}})"></div>
+					<div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
+						<div class="intro_date"><b>Ngày Khởi Hành {{$tour->departure_day}}</b></div>
+						<div class="button intro_button"><div class="button_bcg"></div><a href="#">Xem Thêm<span></span><span></span><span></span></a></div>
+						<div class="intro_center text-center">
+							<h2 class="text-light"><b>{{$tour->name_tour}}</b></h2>
+							<div class="intro_price">Từ :{{$tour->price_adults}} VND </div>
+							<div class="rating rating_4">
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
 							</div>
 						</div>
 					</div>
 				</div>
-
-				<!-- Intro Item -->
-
-				<div class="col-lg-4 intro_col">
-					<div class="intro_item">
-						<div class="intro_item_overlay"></div>
-						<!-- Image by https://unsplash.com/@hellolightbulb -->
-						<div class="intro_item_background" style="background-image:url(images/intro_2.jpg)"></div>
-						<div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
-							<div class="intro_date">May 25th - June 01st</div>
-							<div class="button intro_button"><div class="button_bcg"></div><a href="#">Xem Thêm<span></span><span></span><span></span></a></div>
-							<div class="intro_center text-center">
-								<h1>Greece</h1>
-								<div class="intro_price">From $1450</div>
-								<div class="rating rating_4">
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Intro Item -->
-
-				<div class="col-lg-4 intro_col">
-					<div class="intro_item">
-						<div class="intro_item_overlay"></div>
-						<!-- Image by https://unsplash.com/@willianjusten -->
-						<div class="intro_item_background" style="background-image:url(images/intro_3.jpg)"></div>
-						<div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
-							<div class="intro_date">May 25th - June 01st</div>
-							<div class="button intro_button"><div class="button_bcg"></div><a href="#">Xem Thêm<span></span><span></span><span></span></a></div>
-							<div class="intro_center text-center">
-								<h1>Scotland</h1>
-								<div class="intro_price">From $1450</div>
-								<div class="rating rating_4">
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+			</div>
+				
+			@endforeach
 
 			</div>
 		</div>
@@ -318,7 +283,7 @@
 
 	<div class="cta">
 		<!-- Image by https://unsplash.com/@thanni -->
-		<div class="cta_background" style="background-image:url(images/cta.jpg)"></div>
+		<div class="cta_background" style="background-image:url(https://docs.google.com/uc?id=1d5nbXFvu9axOg2JS0vAIposQF6rsRxmI)"></div>
 		
 		<div class="container">
 			<div class="row">
@@ -330,7 +295,7 @@
 						<div class="owl-carousel owl-theme cta_slider">
 
 							<!-- CTA Slider Item -->
-							<div class="owl-item cta_item text-center">
+							<div class="owl-item cta_item text-center bg-info">
 								<div class="cta_title">maldives deluxe package</div>
 								<div class="rating_r rating_r_4">
 									<i></i>
@@ -423,7 +388,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col text-center">
-					<h2 class="section_title">NHỮNG ƯU ĐÃI TỐT NHẤT VỚI PHÒNG</h2>
+					<h2 class="section_title">Tour Đặt Nhiều Nhất</h2>
 				</div>
 			</div>
 			<div class="row offers_items">
@@ -435,7 +400,7 @@
 							<div class="col-lg-6">
 								<div class="offers_image_container">
 									<!-- Image by https://unsplash.com/@kensuarez -->
-									<div class="offers_image_background" style="background-image:url(images/offer_1.jpg)"></div>
+									<div class="offers_image_background" style="background-image:url(https://docs.google.com/uc?id=1d5nbXFvu9axOg2JS0vAIposQF6rsRxmI)"></div>
 									<div class="offer_name"><a href="#">grand castle</a></div>
 								</div>
 							</div>
