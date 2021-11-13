@@ -20,6 +20,9 @@ class Tour extends Model
         'departure_day',
         'receiving_address',
         'status' ,
+        'amountofpeople',
+        'guide_team_code_manager',
+        'status_tour',
     ];
 
     public function Tour_details(){
@@ -28,5 +31,8 @@ class Tour extends Model
 
     public function Img_tour(){
         return $this->hasOne(imagestours::class);
+    }
+    public function Book_tour(){
+        return $this->hasOne(Book_tour::class);
     }
 }

@@ -4,18 +4,20 @@
 
 
 
-{{-- <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css')}}"> --}}
+<link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css')}}">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
 <link rel="stylesheet" href="{{ asset('assets/css/ready.css')}}">
 <link rel="stylesheet" href="{{ asset('assets/css/demo.css')}}">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.js"></script>
 <div class="wrapper">
 
-  
+   
+
 
 
     <div class="main-header">
@@ -96,7 +98,7 @@
                                @csrf
                            </form>                            
                         
-                        </ul>
+                            </ul>
                             <!-- /.dropdown-user -->
                         </li>
                     </ul>
@@ -148,22 +150,18 @@
                          
                         </a>
                     </li>
-                    <li class="nav-item active">
-                        <a href="#" class="text-decoration-none">
+                    <li class="nav-item ">
+                        <a href="/admin/tour" class="text-decoration-none">
                             <i class="la la-table"></i>
                             <p>Quản Lý Tour</p>
                        
                         </a>
 
-                        <ul class="text-info ms-4" style="list-style: none;">
-                            <li class=""><b><a class="text-decoration-none" href="/admin/tour">Thêm Tour</a></b></li>
-                            <li><b><a href="" >Xem Tour Hiện Có</a></b></li>
-                            
-                        </ul>
+                     
                     </li>
                    
                     <li class="nav-item">
-                        <a href="tables.html" class="text-decoration-none">
+                        <a href="#" class="text-decoration-none">
                             <i class="la la-th"></i>
                             <p>Quản Lý Trang Khám Phá</p>
                      
@@ -176,15 +174,15 @@
                       
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="/admin/managerorder" class="text-decoration-none">
+                    <li class="nav-item active">
+                        <a href="#" class="text-decoration-none">
                             <i class="la la-font"></i>
                             <p>Quản Lý Đơn Đặt</p>
                         
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/admin/promotion" class="text-decoration-none">
+                        <a href="icons.html" class="text-decoration-none">
                             <i class="la la-fonticons"></i>
                             <p> Khuyến Mãi</p>
                         </a>
@@ -197,153 +195,83 @@
         
         <div class="main-panel">
             <div class="content">
-             <div class="container  ">
-                
-                <div class="row">
-                    <h3>Tour Hiện Có </h3>
-                </div>
-                <div class="row">
-                  
-                     
-                        <input  type="text" name="keyword" id="keyword"  id="textsearch" class="form-control ps-2" placeholder="Tìm Kiếm">
-                   
-                </div>
-                <div class="row">
+               <div class="container">
+                  <div class="row">
+                        <h3>Tour Đã Đặt</h3>
+                        <div class="row">
+                            <input type="text" class="form-control" placeholder="Tìm Kiếm">
+                        </div>
+                        <div class="row p-0">
 
-                 
-                    
-               
-                </div>
-                <div class="row">
-                    <table class="table  table-hover ">
-                        <thead>
-                            <tr>
-                              <th scope="col">Mã Tour</th>
-                              <th scope="col">Tên Tour</th>
-                              <th scope="col">Ảnh Tour</th>
-                              <th scope="col">Ngày Khởi Hành</th>
-                              <th>Trạng Thái</th>
-                              <th scope="col" class="text-center">Hành Động</th>
-                            </tr>
-                          </thead>
-                          <tbody id="listtour">
-                           @foreach ($datas as $data)
-                           <tr>
-                            <td scope="row"><b>{{$data->tour_code}}</b></td>
-                            <td style="max-width: 250px;">{{$data->name_tour}}</td>
-                            <td>
-                                {{-- <img src="{{$data->Img_tour->img1}}" width="250px;" alt=""> --}}
-                                <img src="{{$data->Img_tour->img1}}" width="250px;" alt="">
-                            </td>
-                            <td>{{$data->departure_day}}</td>
-                            <td>{{$data->status}}</td>
-                            <td class="text-center">
-                                <a href=" /tour/{{$data->id}}/edit" class="btn btn-warning">Sửa </a>
-                                {{-- <button class="btn btn-warning" onclick="edittour({{$data->id}})">Sửa </button> --}}
-                                {{-- <button type="button" class="btn btn-warning" onclick="edittour({{$data->id}})" data-toggle="modal" data-target=".bd-example-modal-lg">Sửa</button> --}}
-                               
-                                
-                            </td>
-                            <td>
-                                <button href="" id="delete" onclick="deletetour({{$data->id}})" class="btn btn-danger">Xoá</button>
-                            </td>
-                            <td>
-                                <a  class="btn btn-success" href="/tour/{{$data->id}}" id="details" > Chi Tiết</a>
+                            <table class="table  table-hover ">
 
-                            </td>
-                          </tr>
-                           @endforeach
-                           
-                          </tbody>
-                    </table>
-                    {{$datas->links()}}
-                </div>
+                                <thead>
+                                    <tr>
+                                      <th scope="col">Mã Đặt Tour</th>
+                                      <th scope="col">Mã Người Đặt</th>
+                                      <th scope="col">Tổng Tiền</th>
+                                      <th scope="col">Thanh Toán </th>
+                                      <th>Trạng Thái</th>
+                                      <th scope="col" class="text-center"></th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                      @foreach ($booktours as  $booktour)
+                                            <tr>
+                                                <td>{{$booktour->id_book_tour}}</td>
+                                                <td>TVVNUS: {{$booktour->user_id}}</td>
+                                                <td>{{$booktour->sum_money}}</td>
+                                                <td>{{$booktour->thanhtoan}}</td>
+                                                <td>{{$booktour->Tour->status_tour}}</td>
+                                                <td ><a href=""class="btn btn-warning">Sửa</a></td>
+                                                <td ><a href=""class="btn btn-danger">Xoá</a></td>
+                                                <td ><a href=""class="btn btn-success">Xem</a></td>
+                                            </tr>                                          
+                                      @endforeach
+                                  </tbody>
 
-                
 
-             </div>
-      
+                            </table>
+
+                        </div>
+                        <div class="row">{{$booktours->links()}}</div>
+                  </div>
+                  <hr>
+            
+              
+               </div>
+            </div>
         
         </div>
 
 
       
     </div>
-    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="container mt-4">
-
-                <div class="row ">
-                 <b>   <h2 class="text-center" id="nameedit"></h2></b>
-                </div>
-               <form action="">
-                <div class="row">
-                    <h3 class="">Tên Tour</h3>
-                </div>
-               <div class="row p-3 pt-0">
-                   
-                   <input type="text" id="nametouredit" name="name_tour" class="form-control " placeholder="">
-               </div>
-
-
-                
-               </form>
+ 
+</div>
+<!-- Modal -->
+<div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePro" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <h6 class="modal-title"><i class="la la-frown-o"></i> Under Development</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-          </div>
+            <div class="modal-body text-center">									
+                <p>Currently the pro version of the <b>Ready Dashboard</b> Bootstrap is in progress development</p>
+                <p>
+                    <b>We'll let you know when it's done</b></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
         </div>
-      </div>
-
-<script>
-
-  
-    function deletetour(id_tour) {
-        var answer=  window.confirm("Bạn Có Muốn Xoá Tour ?");
-        
-        if (answer==true) {
-           
-            $.ajax({
-            
-            method: "DELETE",
-            url: "/api/tour/"+id_tour,
-            data: {},
-            dataType: "script",
-            success: function (response) {
-                
-                location.reload();
-            }
-        });
-        }
-        else {
-            
-        }
-        
-    }
-
-$(document).ready(function() {
+    </div>
+</div>
 
 
-   
-
-    $(document).on('keyup','#keyword',function(){
-        var keyword=$(this).val();
-
-        $.ajax({
-            type: "get",
-            url: "/admin/searchtour",
-            data: {
-                keyword: keyword
-            },
-            dataType: "json",
-            success: function (response) {
-                $('#listtour').html(response);
-            }
-        });
-    });
-
-
-});
-</script>
 <script src="{{asset('assets/js/core/jquery.3.2.1.min.js')}}"></script>
 <script src="{{asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
 <script src="{{asset('assets/js/core/popper.min.js')}}"></script>

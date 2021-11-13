@@ -113,7 +113,7 @@ footer{
 							<!-- Title -->
 							<div class="hotel_title_container d-flex flex-lg-row flex-column">
 								<div class="hotel_title_content">
-									<h1 class="hotel_title"><b>{{$data->name_tour}}</b></h1>
+									<h1 class="hotel_title"><b>{{$data->name_tour}} </b></h1>
 									<div class="rating_r rating_r_4 hotel_rating">
 										<i></i>
 										<i></i>
@@ -230,6 +230,9 @@ function showSlides(n) {
 
 						<div class="container mt-5 p-0 text-dark">
 							<div class="row">
+								<h4><b>Số Người Tối Đa : {{$data->amountofpeople}}</b></h4>
+							</div>
+							<div class="row">
 							<h2>	<b>{{$data->Tour_details->title}}</b></h2>
 							</div>
 							<div class="row">
@@ -306,8 +309,8 @@ function showSlides(n) {
 							<p>- Đồ ăn</p>
 							<p>-Bảo Hiểm Hành Khách</p>
 							<p>-Tour Đã Bao Gồm Phòng ở Và Dịch Vụ nghỉ chân</p>
-							<p>- Trẻ em dưới 5 tuổi: Miễn phí, ngủ chung bố mẹ (Gia đình tự lo cho Bé các chi phi phí phát sinh)</p>
-							<p>- Từ 6  tuổi: 100% vé tour (ngủ chung bố mẹ, 1 chỗ ngồi trên xe, ăn uống theo chương trình)</p>
+							<p>- Trẻ em dưới 10 tuổi: Miễn phí, ngủ chung bố mẹ (Gia đình tự lo cho Bé các chi phi phí phát sinh)</p>
+							<p>- Từ 10  tuổi: 100% vé tour (ngủ chung bố mẹ, 1 chỗ ngồi trên xe, ăn uống theo chương trình)</p>
 							<p>Mỗi cặp vợ chồng chỉ được kèm 1 bé, bé thứ 2 mua 1 vé người lớn.</p>
 						</div>
 					
