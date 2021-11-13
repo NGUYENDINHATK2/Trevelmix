@@ -137,7 +137,7 @@
                 </div>
                 <ul class="nav">
                     <li class="nav-item ">
-                        <a href="/admin" class="text-decoration-none">
+                        <a href="admin" class="text-decoration-none">
                             <i class="la la-dashboard"></i>
                             <p>Trang Chính</p>
                          
@@ -179,7 +179,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="icons.html" class="text-decoration-none">
+                        <a href="/admin/promotion" class="text-decoration-none">
                             <i class="la la-fonticons"></i>
                             <p> Khuyến Mãi</p>
                         </a>

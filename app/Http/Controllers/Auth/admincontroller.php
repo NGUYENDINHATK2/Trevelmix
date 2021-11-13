@@ -59,7 +59,14 @@ class admincontroller extends Controller
       return view('index');
   }
 
-  
+  public function promotion(){
+    if (Auth::user()->is_Admin == 0 || Auth::user()->is_Admin == 1) {
+      return view('layoutadmin.promotion');
+      # code...
+    } else
+      return view('index');
+  }
+
   public function listtour()
   {
     //

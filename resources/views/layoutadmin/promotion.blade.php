@@ -4,18 +4,20 @@
 
 
 
-{{-- <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css')}}"> --}}
+<link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css')}}">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
 <link rel="stylesheet" href="{{ asset('assets/css/ready.css')}}">
 <link rel="stylesheet" href="{{ asset('assets/css/demo.css')}}">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.js"></script>
 <div class="wrapper">
 
-  
+   
+
 
 
     <div class="main-header">
@@ -135,7 +137,7 @@
                 </div>
                 <ul class="nav">
                     <li class="nav-item ">
-                        <a href="/admin" class="text-decoration-none">
+                        <a href="admin" class="text-decoration-none">
                             <i class="la la-dashboard"></i>
                             <p>Trang Chính</p>
                          
@@ -148,9 +150,9 @@
                        
                         </a>
 
-                        <ul class="text-info ms-4" style="list-style: none;">
-                            <li class=""><b><a class="text-decoration-none" href="/admin/tour">Thêm Tour</a></b></li>
-                            <li><b><a href="" >Xem Tour Hiện Có</a></b></li>
+                        <ul class="text-dark ms-4" style="list-style: none;">
+                            <li class=""><b><a class="/admin/tour"  href="">Thêm Tour</a></b></li>
+                            <li><b><a href="/admin/listtour" class="text-decoration-none">Xem Tour Hiện Có</a></b></li>
                             
                         </ul>
                     </li>
@@ -163,7 +165,7 @@
                         </a>
                     </li>
                     <li class="nav-item" >
-                        <a href="/admin/manageruser" class="text-decoration-none">
+                        <a href="/manageruser" class="text-decoration-none">
                             <i class="la la-bell"></i>
                             <p>Quản Lý Tài Khoản</p>
                       
@@ -190,153 +192,77 @@
         
         <div class="main-panel">
             <div class="content">
-             <div class="container  ">
-                
-                <div class="row">
-                    <h3>Tour Hiện Có </h3>
-                </div>
-                <div class="row">
-                  
-                     
-                        <input  type="text" name="keyword" id="keyword"  id="textsearch" class="form-control ps-2" placeholder="Tìm Kiếm">
-                   
-                </div>
-                <div class="row">
-
-                 
+                <div class="container-fuild">
+                     <div class="row promotion ">
+                        <h3><b>Thông tin khuyến mãi</b></h3>
+                            <div class="col-sm-12 col-md-12 col-lg-12 shadow">
                         
-                    
-               
-                </div>
-                <div class="row">
-                    <table class="table  table-hover ">
-                        <thead>
-                            <tr>
-                              <th scope="col">Mã Tour</th>
-                              <th scope="col">Tên Tour</th>
-                              <th scope="col">Ảnh Tour</th>
-                              <th scope="col">Ngày Khởi Hành</th>
-                              <th>Trạng Thái</th>
-                              <th scope="col" class="text-center">Hành Động</th>
-                            </tr>
-                          </thead>
-                          <tbody id="listtour">
-                           @foreach ($datas as $data)
-                           <tr>
-                            <td scope="row"><b>{{$data->tour_code}}</b></td>
-                            <td style="max-width: 250px;">{{$data->name_tour}}</td>
-                            <td>
-                                <img src="{{$data->Img_tour->img1}}" width="250px;" alt="">
-                            </td>
-                            <td>{{$data->departure_day}}</td>
-                            <td>{{$data->status}}</td>
-                            <td class="text-center">
-                                <a href=" /tour/{{$data->id}}/edit" class="btn btn-warning">Sửa </a>
-                                {{-- <button class="btn btn-warning" onclick="edittour({{$data->id}})">Sửa </button> --}}
-                                {{-- <button type="button" class="btn btn-warning" onclick="edittour({{$data->id}})" data-toggle="modal" data-target=".bd-example-modal-lg">Sửa</button> --}}
-                               
+                                <form action="" method="POST" enctype="multipart/form-data">
+                                    <input type="text" name="" class="form-control p-3" placeholder="Nội dung khuyến mãi" style="width:100%;height: 40px;border-radius:2px; ">
+                                    <h3>Chọn ảnh</h3>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <input  name="" type="file" class="file form-control" data-show-preview="false"> <br><br>
+
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="text" name="" class="form-control p-3" placeholder="Id khuyến mãi" style="width:100%;height: 40px;border-radius:2px; ">
+
+                                        </div>
+                                        <div class="col-4">
+                                            <button class="btn btn-success " type="submit"><b>Thêm banner</b></button>
+
+                                        </div>
+
+                                    </div>
+
+                                    
+                                </form>
+                                <br>
                                 
-                            </td>
-                            <td>
-                                <button href="" id="delete" onclick="deletetour({{$data->id}})" class="btn btn-danger">Xoá</button>
-                            </td>
-                            <td>
-                                <a  class="btn btn-success" href="/tour/{{$data->id}}" id="details" > Chi Tiết</a>
+                            </div>
+                                                    
+                     </div>
 
-                            </td>
-                          </tr>
-                           @endforeach
-                           
-                          </tbody>
-                    </table>
-                    {{$datas->links()}}
+                     <div class="row mt-3">
+                        <table class="table  banner ">
+                            <thead>
+                                <td class="text-center">Id</td>
+                                <td class="text-center">Title</td>
+                                <td class="text-center">Img</td>
+                                <td class="text-center">Id tour</td>
+                                <td class="text-center">Date</td>
+
+                                <th scope="col" class="text-center">Hành Động</th>
+                              </thead>
+                              <tbody id="listbanner">
+                               <td>1</td>
+                               <td  style="min-width: 200px;">2</td>
+                               <td><img src="https://docs.google.com/uc?id=1rJQfHpfqSN_VTel829NzbZR3_yH4idxn" alt="a" width="250px;">
+                               </td>
+                               <td style="min-width: 200px;">4</td>
+                               <td style="min-width: 200px;">5</td>
+
+                               <td class="text-center">                            
+                                    <button class="btn btn-warning" >Sửa </button>                              
+                                </td>
+                                <td>
+                                    <button href="" id="delete"  class="btn btn-danger">Xoá</button>
+                                </td>
+                                <td>
+                                    <a  class="btn btn-success" href="" id="details" > Thêm</a>
+    
+                                </td>
+                              </tbody>
+                        </table>
+                     </div>
                 </div>
-
-                
-
-             </div>
-      
-        
-        </div>
-
-
-      
-    </div>
-    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="container mt-4">
-
-                <div class="row ">
-                 <b>   <h2 class="text-center" id="nameedit"></h2></b>
-                </div>
-               <form action="">
-                <div class="row">
-                    <h3 class="">Tên Tour</h3>
-                </div>
-               <div class="row p-3 pt-0">
-                   
-                   <input type="text" id="nametouredit" name="name_tour" class="form-control " placeholder="">
-               </div>
-
-
-                
-               </form>
             </div>
-          </div>
-        </div>
-      </div>
 
-<script>
-
-  
-    function deletetour(id_tour) {
-        var answer=  window.confirm("Bạn Có Muốn Xoá Tour ?");
-        
-        if (answer==true) {
-           
-            $.ajax({
-            
-            method: "DELETE",
-            url: "/api/tour/"+id_tour,
-            data: {},
-            dataType: "script",
-            success: function (response) {
-                
-                location.reload();
-            }
-        });
-        }
-        else {
-            
-        }
-        
-    }
-
-$(document).ready(function() {
+          
+</div>
 
 
-   
-
-    $(document).on('keyup','#keyword',function(){
-        var keyword=$(this).val();
-
-        $.ajax({
-            type: "get",
-            url: "/admin/searchtour",
-            data: {
-                keyword: keyword
-            },
-            dataType: "json",
-            success: function (response) {
-                $('#listtour').html(response);
-            }
-        });
-    });
-
-
-});
-</script>
 <script src="{{asset('assets/js/core/jquery.3.2.1.min.js')}}"></script>
 <script src="{{asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
 <script src="{{asset('assets/js/core/popper.min.js')}}"></script>
