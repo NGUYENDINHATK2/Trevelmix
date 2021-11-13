@@ -9,11 +9,20 @@
 <link rel="stylesheet" href="{{ asset('assets/css/ready.css')}}">
 <link rel="stylesheet" href="{{ asset('assets/css/demo.css')}}">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.js"></script>
 <div class="wrapper">
+
+   
+
+
+
     <div class="main-header">
         <div class="logo-header">
-            <a href="index.html" class="text-decoration-none logo">
+            <a href="admin" class="text-decoration-none logo">
                 Trang Chính 
 
               
@@ -57,59 +66,18 @@
                             <li>
                                 <div class="dropdown-title">You have 4 new notification</div>
                             </li>
+                        
                             <li>
-                                <div class="notif-center">
-                                    <a href="#">
-                                        <div class="notif-icon notif-primary"> <i class="la la-user-plus"></i> </div>
-                                        <div class="notif-content">
-                                            <span class="block">
-                                                New user registered
-                                            </span>
-                                            <span class="time">5 minutes ago</span> 
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="notif-icon notif-success"> <i class="la la-comment"></i> </div>
-                                        <div class="notif-content">
-                                            <span class="block">
-                                                Rahmad commented on Admin
-                                            </span>
-                                            <span class="time">12 minutes ago</span> 
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="notif-img"> 
-                                            <img src="assets/img/profile2.jpg" alt="Img Profile">
-                                        </div>
-                                        <div class="notif-content">
-                                            <span class="block">
-                                                Reza send messages to you
-                                            </span>
-                                            <span class="time">12 minutes ago</span> 
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="notif-icon notif-danger"> <i class="la la-heart"></i> </div>
-                                        <div class="notif-content">
-                                            <span class="block">
-                                                Farrah liked Admin
-                                            </span>
-                                            <span class="time">17 minutes ago</span> 
-                                        </div>
-                                    </a>
-                                </div>
-                            </li>
-                            <li>
-                                <a class="see-all" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="la la-angle-right"></i> </a>
+                                <a  class="see-all" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="la la-angle-right"></i> </a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="dropdown-toggle profile-pic text-decoration-none" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="assets/img/profile.jpg" alt="user-img" width="36" class="img-circle"><span > {{Auth::user()->name}}</span></span> </a>
+                        <a class="dropdown-toggle profile-pic text-decoration-none" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="https://webcongnghe247.com/wp-content/uploads/2021/07/nh-dai-dien-FB-mac-dinh-nu-800x800.jpg" alt="user-img" width="36" class="img-circle"><span > {{Auth::user()->name}}</span></span> </a>
                         <ul class="dropdown-menu dropdown-user">
                             <li>
                                 <div class="user-box">
-                                    <div class="u-img"><img src="assets/img/profile.jpg" alt="user"></div>
+                                    <div class="u-img"><img src="https://webcongnghe247.com/wp-content/uploads/2021/07/nh-dai-dien-FB-mac-dinh-nu-800x800.jpg" alt="user"></div>
                                     <div class="u-text">
                                         <h4> {{Auth::user()->name}}</h4>
                                         <p class="text-muted">hello@themekita.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
@@ -134,7 +102,7 @@
             <div class="scrollbar-inner sidebar-wrapper">
                 <div class="user">
                     <div class="photo">
-                        <img src="assets/img/profile.jpg">
+                        <img src="https://webcongnghe247.com/wp-content/uploads/2021/07/nh-dai-dien-FB-mac-dinh-nu-800x800.jpg">
                     </div>
                     <div class="info">
                         <a class="text-decoration-none" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
@@ -175,12 +143,14 @@
                          
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item ">
                         <a href="/admin/tour" class="text-decoration-none">
                             <i class="la la-table"></i>
                             <p>Quản Lý Tour</p>
                        
                         </a>
+
+                        
                     </li>
                    
                     <li class="nav-item">
@@ -191,7 +161,7 @@
                         </a>
                     </li>
                     <li class="nav-item active" >
-                        <a href="notifications.html" class="text-decoration-none">
+                        <a href="/manageruser" class="text-decoration-none">
                             <i class="la la-bell"></i>
                             <p>Quản Lý Tài Khoản</p>
                       
@@ -214,6 +184,8 @@
                 </ul>
             </div>
         </div>
+
+        
         <div class="main-panel">
         <div class="content">
                 <h3><b>Quản lý admin</b></h3>
@@ -294,31 +266,45 @@
     <div class="modal-content">
       <div class="modal-header ">
         <h5 class="modal-title" id="exampleModalLongTitle">Thông tin</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close border-0" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
       <form>
-      <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Tên</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-    </div>
-    <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Tài khoản</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-    </div>
-    <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-    </div>
   <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+    <label for="" class="col-sm-2 ">Tên</label>
     <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+      <input type="text"  class="form-control" id="" value="" name = "name">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="" class="col-sm-2 ">Tài khoản</label>
+    <div class="col-sm-10">
+      <input type="text"  class="form-control" id="" value="" name="email">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="" class="col-sm-2 ">Email</label>
+    <div class="col-sm-10">
+      <input type="text"  class="form-control" id="" value="" name ="email">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="" class="col-sm-2 ">Mật khẩu</label>
+    <div class="col-sm-10">
+      <input type="password"  class="form-control" id="" value="" name="password">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="" class="col-sm-2 ">Quyền</label>
+    <div class="col-sm-10">
+      <select name="" id="" class="form-control" name="is_Admin">
+          <option value="0">Super Admin</option>
+          <option value="1">Admin</option>
+          <option value="2">Nhân viên</option>
+          <option value="3">Khách hàng</option>
+      </select>
     </div>
   </div>
 </form>
@@ -329,7 +315,6 @@
       </div>
     </div>
   </div>
-</div>
                             </td>
                             <td>
                                 <button href="" id="delete"  class="btn btn-danger">Xoá</button>
@@ -340,36 +325,8 @@
                             </td>
                           </tbody>
             </table>
-            
-            </div>
-            <footer class="footer">
-                <div class="container-fluid">
-                    <nav class="pull-left">
-                        <ul class="nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="http://www.themekita.com">
-                                    ThemeKita
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    Help
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://themewagon.com/license/#free-item">
-                                    Licenses
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="copyright ml-auto">
-                        2018, made with <i class="la la-heart heart text-danger"></i> by <a href="http://www.themekita.com">ThemeKita</a>
-                    </div>				
-                </div>
-            </footer>
-        </div>
-    </div>
+</div>
+ 
 </div>
 <!-- Modal -->
 <div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePro" aria-hidden="true">
@@ -393,29 +350,56 @@
     </div>
 </div>
 
+
 <script>
-     function deletetour(id_tour) {
-        var answer=  window.confirm("Bạn Có Muốn Xoá Tour ?");
-        
-        if (answer==true) {
-           
-            $.ajax({
-            
-            method: "DELETE",
-            url: "/api/tour/"+id_tour,
-            data: {},
-            dataType: "script",
-            success: function (response) {
-                
-                location.reload();
-            }
-        });
+
+
+
+    function validateForm() {
+      let x = document.forms["myForm"]["name_tour"].value;
+
+   
+      if (x == "") {
+        alert("Tên Tour Không Để Trống");
+        return false;
+      }
+      let x1 = document.forms["myForm"]["time_tour"].value;
+
+   
+        if (x1== "") {
+        alert("Thời Gian Tour Không Để Trống");
+        return false;
         }
-        else {
-            
+
+        let x2 = document.forms["myForm"]["price_adults"].value;
+
+   
+        if (x2== "") {
+        alert("Hãy Điền Vào Giá Người Lớn");
+        return false;
         }
+
+        let x3 = document.forms["myForm"]["price_children"].value;
+
         
+        if (x3== "") {
+        alert("Hãy Điền Vào Giá Trẻ Nhỏ");
+        return false;
+        }
+
+        let x7 = document.forms["myForm"]["receiving_address"].value;
+
+        
+        if (x7== "") {
+        alert("Nhập địa chỉ nhận khách" );
+        return false;
+        }
+
+        
+
     }
+    
+
 </script>
 <script src="{{asset('assets/js/core/jquery.3.2.1.min.js')}}"></script>
 <script src="{{asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
@@ -433,4 +417,4 @@
 <script src="{{asset('assets/js/demo.js')}}"></script>
 
     
-@endsection
+@endsection 

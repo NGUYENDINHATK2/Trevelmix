@@ -1,4 +1,4 @@
-            <div class="content">
+        <div class="content">
                 <h3><b>Quản lý admin</b></h3>
         <table class="table  table-hover ">
                         <thead>
@@ -43,7 +43,7 @@
                                 <button class="btn btn-warning" >Sửa </button>                              
                             </td>
                             <td>
-                                <button href="" id="delete"  class="btn btn-danger">Xoá</button>
+                            <button href="" id="delete"  class="btn btn-danger">Xoá</button>
                             </td>
                             <td>
                                 <a  class="btn btn-success" href="" id="details" > Chi Tiết</a>
@@ -112,7 +112,6 @@
       </div>
     </div>
   </div>
-</div>
                             </td>
                             <td>
                                 <button href="" id="delete"  class="btn btn-danger">Xoá</button>
@@ -123,5 +122,4 @@
                             </td>
                           </tbody>
             </table>
-            
-            </div>
+</div>
