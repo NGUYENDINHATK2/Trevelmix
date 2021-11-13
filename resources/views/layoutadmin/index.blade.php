@@ -162,7 +162,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="typography.html" class="text-decoration-none">
+                        <a href="/admin/managerorder" class="text-decoration-none">
                             <i class="la la-font"></i>
                             <p>Quản Lý Đơn Đặt</p>
                         

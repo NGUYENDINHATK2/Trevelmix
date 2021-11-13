@@ -47,4 +47,7 @@ class User extends Authenticatable
     public function Infouser(){
         return $this->hasOne(infouser::class);
     }
+    public function InfoTourUser(){
+        return $this->hasOne(Booktour::class);
+    }
 }

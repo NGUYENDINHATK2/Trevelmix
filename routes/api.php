@@ -21,4 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::resource('admin', Userapi::class)->middleware('auth');;
 
-Route::resource('tour', TourApi::class)->middleware('auth');;
+Route::resource('tour', TourApi::class);

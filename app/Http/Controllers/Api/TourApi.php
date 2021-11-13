@@ -73,11 +73,11 @@ class TourApi extends Controller
         $sale=$request->sale;
         $gift= $request->gift;
       if (  $request->sale=='') {
-          $sale='0%';
+          $sale='';
           # code...
       }
       if (  $request->gift=='') {
-        $gift='no';
+        $gift='';
         # code...
     }
     $tour_code=Tour::orderBy('ID', 'desc')->limit(1)->first();
@@ -100,6 +100,8 @@ class TourApi extends Controller
             'departure_day' => $request->departure_day,
             'receiving_address' => $request->receiving_address,
             'amountofpeople'=>$request->amountofpeople,
+            'guide_team_code_manager'=>$request->guide_team_code_manager,
+            'status_tour'=>'Chưa Khởi Hành',
         ];
        // dd($request->img1->extension());
         Tour::create($datatour);
@@ -214,6 +216,8 @@ class TourApi extends Controller
         'receiving_address' => $request->receiving_address,
         'status' => $request->status,
         'amountofpeople'=>$request->amountofpeople,
+        'guide_team_code_manager'=>$request->guide_team_code_manager,
+        'status_tour'=>$request->status_tour,
     ];
     $tour->update($datatour);
     $dataimg=array();

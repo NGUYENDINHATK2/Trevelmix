@@ -20,12 +20,16 @@ class CreateToursTable extends Migration
             $table->string('time_tour');
             $table->string('price_adults');
             $table->string('price_children');
-            $table->string('sale')->default('0%')->nullable();
-            $table->string('gift')->default('no')->nullable();
+            $table->string('sale')->nullable();
+            $table->string('gift')->nullable();
             $table->string('departure_day');
             $table->string('receiving_address');
             $table->set('status', ['Ngừng', 'Hoạt Động'])->default('Hoạt Động');
+            
             $table->string('amountofpeople')->nullable();
+            $table->string('guide_team_code_manager');
+            $table->set('status_tour', ['Chưa Khởi Hành', 'Đang Trải Nghiệm','Hoàn Thành']);
+            
             $table->timestamps();
         });
     }

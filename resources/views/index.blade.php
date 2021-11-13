@@ -156,18 +156,20 @@
 					<!-- 2Search Panel -->
 
 					<div class="search_panel active">
-						<form action="#" id="search_form_2" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+						<form action="/tour" id="search_form_2" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+						
+							
 							<div class="search_item">
 								<div>Địa Điểm Du Lịch</div>
-								<input type="text" class="destination search_input" required="required">
+								<input name="text_search" type="text" class="destination search_input" required="required">
 							</div>
 							
 							<div class="search_item">
 								<div>Giá Tiền</div>
-								<select name="adults" id="adults_2" class="dropdown_item_select search_input">
-								<option value="">Từ  1.600.000 </option>
-								<option value="">Từ  2.600.000 </option>
-								<option value="">Từ  4.000.000</option>
+								<select name="money" id="adults_2" class="dropdown_item_select search_input">
+								<option value="1.600.000 ">Từ  1.600.000 </option>
+								<option value="2.600.000 ">Từ  2.600.000 </option>
+								<option value="4.000.000">Từ  4.000.000</option>
 								
 								<option value="">Giá Khác</option>
 								
@@ -176,24 +178,24 @@
 							</div>
 							<div class="search_item">
 								<div>Nơi Khởi Hành</div>
-								<select name="children" id="children_2" class="dropdown_item_select search_input">
-									<option value="">Hà Nội</option>
-									<option value="">Đà Nẵng</option>
-									<option value="">HCM</option>
+								<select name="address_start" id="children_2" class="dropdown_item_select search_input">
+									<option value="Hà Nội">Hà Nội</option>
+									<option value="Đà Nẵng">Đà Nẵng</option>
+									<option value="HCM">HCM</option>
 								</select>
 							</div>
 							<div class="search_item">
 							
 
-								<div>Số Ngày DU Lịch</div>
+								<div>Số Ngày Du Lịch</div>
 								<select name="numberday" id="adults_2" class="dropdown_item_select search_input">
-								<option value="">1 N 1 D</option>
-								<option value="">2 N 1 D</option>
-								<option value="">3 N 2 D</option>
-								<option value="">4 N 3 D</option>
-								<option value="">5 N 4 D</option>
-								<option value="">6 N 5 D</option>
-								<option value="">Số Khác</option>
+								<option value="1 N 1 D">1 N 1 D</option>
+								<option value="2 N 1 D">2 N 1 D</option>
+								<option value="3 N 2 D">3 N 2 D</option>
+								<option value="4 N 3 D">4 N 3 D</option>
+								<option value="5 N 4 D">5 N 4 D</option>
+								<option value="6 N 5 D">6 N 5 D</option>
+								<option value="Số Khác">Số Khác</option>
 							
 								</select>
 							</div>

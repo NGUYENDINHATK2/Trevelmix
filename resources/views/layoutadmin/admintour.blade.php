@@ -80,17 +80,24 @@
                                     <div class="u-img"><img src="https://webcongnghe247.com/wp-content/uploads/2021/07/nh-dai-dien-FB-mac-dinh-nu-800x800.jpg" alt="user"></div>
                                     <div class="u-text">
                                         <h4> {{Auth::user()->name}}</h4>
-                                        <p class="text-muted">hello@themekita.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
-                                    </div>
+                                        <p class="text-muted">{{Auth::user()->email}}</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">Xem lý Lịch </a></div>
+                                </div>
                                 </li>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="ti-user"></i> My Profile</a>
-                                <a class="dropdown-item" href="#"></i> My Balance</a>
-                                <a class="dropdown-item" href="#"><i class="ti-email"></i> Inbox</a>
+                                <a class="dropdown-item" href="#"><i class="ti-user"></i> Thông Tin Của Tôi</a>
+                            
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="ti-settings"></i> Account Setting</a>
+                                <a class="dropdown-item" href="#"><i class="ti-settings"></i>Thiết Lập Tài Khoản</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Logout</a>
+                                <a class="dropdown-item text-danger" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                              document.getElementById('logout-form').submit();">
+                                Đăng Xuất
+                             </a>
+                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                               @csrf
+                           </form>                            
+                        
                             </ul>
                             <!-- /.dropdown-user -->
                         </li>
@@ -172,7 +179,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="typography.html" class="text-decoration-none">
+                        <a href="/admin/managerorder" class="text-decoration-none">
                             <i class="la la-font"></i>
                             <p>Quản Lý Đơn Đặt</p>
                         
@@ -378,6 +385,15 @@
                         <input type="number" class="border-0 ps-3" name="amountofpeople"  style="width:100%;height: 40px;border-radius:2px; "  >
                         
                        </div>
+                       <div class="mt-3">
+                        <h5 for="" class="">Mã Đội Quản Lý Tour</h5>
+                       
+                          
+                        <input type="text" class="border-0 ps-3" name="guide_team_code_manager"  style="width:100%;height: 40px;border-radius:2px; "  >
+                        
+                       </div>
+
+                     
 
                     </div>
                     <div class="row mt-3">

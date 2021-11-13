@@ -20,7 +20,7 @@ class CreateBooktoursTable extends Migration
             $table->integer('number_of_adults');
             $table->integer('number_of_children');
             $table->string('sum_money');
-            $table->set('status_tour', ['Chưa Khởi Hành', 'Đang Trải Nghiệm','Hoàn Thành']);
+     
             $table->string('date_book');
             $table->set('thanhtoan',['yes','no']);
             $table->unsignedBigInteger('user_id');

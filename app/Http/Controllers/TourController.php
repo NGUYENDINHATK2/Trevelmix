@@ -11,9 +11,23 @@ class TourController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
+       
+    
+        // dd($request->numberday);
+
+        $tours = Tour::where('name_tour', 'LIKE', '%' . $request->text_search . '%')
+        ->Where('price_adults', '<=', $request->money  )
+        ->Where('receiving_address','LIKE', '%' . $request->address_start . '%')
+        ->where('time_tour',$request->numberday)
+        ->where('status','Hoạt Động')
+       
+        ->Paginate(15);
+        
+        return view('toursearchresults')->with('tours',$tours);
+      
     }
 
     /**
@@ -91,4 +105,5 @@ class TourController extends Controller
     {
         //
     }
+
 }

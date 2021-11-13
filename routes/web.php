@@ -43,6 +43,7 @@ Route::get('admin/listtour', [admincontroller::class,'listtour'])->middleware('a
 
 Route::get('admin/searchtour', [admincontroller::class,'search_tour'])->middleware('auth')->name('ajax.search');
 Route::get('admin/manageruser', [admincontroller::class,'manageruser'])->middleware('auth');
+Route::get('admin/managerorder', [admincontroller::class,'managerorder'])->middleware('auth');
 
 
 Auth::routes();

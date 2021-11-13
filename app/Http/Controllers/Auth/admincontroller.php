@@ -55,6 +55,30 @@ class admincontroller extends Controller
       return view('index');
   }
 
+
+  public function managerorder()
+  {
+    //
+    // $user=User::orderBy('ID', 'desc')->limit(1)->first();
+    // dd( $user->id);
+    if (Auth::user()->is_Admin == 0 || Auth::user()->is_Admin == 1) {
+
+      $booktours=Booktour::Paginate(4);
+
+
+     
+      
+     
+
+      return view('layoutadmin.Managerorder')
+      ->with('booktours',$booktours);
+  
+      
+      # code...
+    } else
+      return view('index');
+  }
+
   public function tour()
   {
     //
