@@ -80,17 +80,23 @@
                                     <div class="u-img"><img src="https://webcongnghe247.com/wp-content/uploads/2021/07/nh-dai-dien-FB-mac-dinh-nu-800x800.jpg" alt="user"></div>
                                     <div class="u-text">
                                         <h4> {{Auth::user()->name}}</h4>
-                                        <p class="text-muted">hello@themekita.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
-                                    </div>
+                                        <p class="text-muted">{{Auth::user()->email}}</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">Xem lý Lịch </a></div>
+                                </div>
                                 </li>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="ti-user"></i> My Profile</a>
-                                <a class="dropdown-item" href="#"></i> My Balance</a>
-                                <a class="dropdown-item" href="#"><i class="ti-email"></i> Inbox</a>
+                                <a class="dropdown-item" href="#"><i class="ti-user"></i> Thông Tin Của Tôi</a>
+                            
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="ti-settings"></i> Account Setting</a>
+                                <a class="dropdown-item" href="#"><i class="ti-settings"></i>Thiết Lập Tài Khoản</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Logout</a>
+                                <a class="dropdown-item text-danger" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                              document.getElementById('logout-form').submit();">
+                                Đăng Xuất
+                             </a>
+                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                               @csrf
+                           </form>       
                             </ul>
                             <!-- /.dropdown-user -->
                         </li>
@@ -137,48 +143,44 @@
                 </div>
                 <ul class="nav">
                     <li class="nav-item ">
-                        <a href="admin" class="text-decoration-none">
+                        <a href="/admin" class="text-decoration-none">
                             <i class="la la-dashboard"></i>
                             <p>Trang Chính</p>
                          
                         </a>
                     </li>
-                    <li class="nav-item active">
-                        <a href="#" class="text-decoration-none">
+                    <li class="nav-item ">
+                        <a href="/admin/tour"" class="text-decoration-none">
                             <i class="la la-table"></i>
                             <p>Quản Lý Tour</p>
                        
                         </a>
 
-                        <ul class="text-dark ms-4" style="list-style: none;">
-                            <li class=""><b><a class="/admin/tour"  href="">Thêm Tour</a></b></li>
-                            <li><b><a href="/admin/listtour" class="text-decoration-none">Xem Tour Hiện Có</a></b></li>
-                            
-                        </ul>
+                     
                     </li>
                    
                     <li class="nav-item">
-                        <a href="tables.html" class="text-decoration-none">
+                        <a href="#" class="text-decoration-none">
                             <i class="la la-th"></i>
                             <p>Quản Lý Trang Khám Phá</p>
                      
                         </a>
                     </li>
                     <li class="nav-item" >
-                        <a href="/manageruser" class="text-decoration-none">
+                        <a href="/admin/manageruser" class="text-decoration-none">
                             <i class="la la-bell"></i>
                             <p>Quản Lý Tài Khoản</p>
                       
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="typography.html" class="text-decoration-none">
+                        <a href="/admin/managerorder" class="text-decoration-none">
                             <i class="la la-font"></i>
                             <p>Quản Lý Đơn Đặt</p>
                         
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a href="/admin/promotion" class="text-decoration-none">
                             <i class="la la-fonticons"></i>
                             <p> Khuyến Mãi</p>
@@ -193,68 +195,111 @@
         <div class="main-panel">
             <div class="content">
                 <div class="container-fuild">
-                     <div class="row promotion ">
-                        <h3><b>Thông tin khuyến mãi</b></h3>
-                            <div class="col-sm-12 col-md-12 col-lg-12 shadow">
-                        
-                                <form action="" method="POST" enctype="multipart/form-data">
-                                    <input type="text" name="" class="form-control p-3" placeholder="Nội dung khuyến mãi" style="width:100%;height: 40px;border-radius:2px; ">
-                                    <h3>Chọn ảnh</h3>
-                                    <div class="row">
-                                        <div class="col-4">
-                                            <input  name="" type="file" class="file form-control" data-show-preview="false"> <br><br>
+                  @if (!empty($data))
+                  <div class="row promotion mb-5 ">
+                    <h3><b>Thông tin khuyến mãi</b></h3>
+                        <div class="col-sm-12 col-md-12 col-lg-12 shadow">
+                    
+                            <form action="/banner " method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <input required type="text" name="title" class="form-control p-3" placeholder="Nội dung khuyến mãi" style="width:100%;height: 40px;border-radius:2px; ">
+                                <h3>Chọn ảnh banner</h3>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <input  name="img" type="file" class="file form-control" data-show-preview="false"> <br><br>
 
-                                        </div>
-                                        <div class="col-4">
-                                            <input type="text" name="" class="form-control p-3" placeholder="Id khuyến mãi" style="width:100%;height: 40px;border-radius:2px; ">
-
-                                        </div>
-                                        <div class="col-4">
-                                            <button class="btn btn-success " type="submit"><b>Thêm banner</b></button>
-
-                                        </div>
+                                    </div>
+                                  
+                                  <div class="col-4">
+                                     
+                                    <input type="hidden" required name="id_tour" readonly class="form-control p-3" value="{{$data->id}}"placeholder="Mã Tour khuyến mãi" style="width:100%;height: 40px;border-radius:2px; ">
+                                        <input type="text" value="{{$data->tour_code}}"readonly class="form-control" placeholder>
+                                     </div>
+                                  
+                                    <div class="col-4">
+                                        <button class="btn btn-success " type="submit"><b>Thêm banner</b></button>
 
                                     </div>
 
-                                    
-                                </form>
-                                <br>
+                                </div>
+
                                 
-                            </div>
-                                                    
-                     </div>
-
+                            </form>
+                            <br>
+                            
+                        </div>
+                                                
+                 </div>
+                      
+                  @endif
+                  
+                      <a href="/admin/listtour" class="btn btn-success"><b>Tạo Banner</b></a>
+                  
                      <div class="row mt-3">
-                        <table class="table  banner ">
-                            <thead>
-                                <td class="text-center">Id</td>
-                                <td class="text-center">Title</td>
-                                <td class="text-center">Img</td>
-                                <td class="text-center">Id tour</td>
-                                <td class="text-center">Date</td>
+                         <h3>Danh Sách Banner Hiện Có</h3>
+                     </div>
+                     <div class="row mt-4">
+                     
+                     @foreach ($baners as $banner)
 
-                                <th scope="col" class="text-center">Hành Động</th>
-                              </thead>
-                              <tbody id="listbanner">
-                               <td>1</td>
-                               <td  style="min-width: 200px;">2</td>
-                               <td><img src="https://docs.google.com/uc?id=1rJQfHpfqSN_VTel829NzbZR3_yH4idxn" alt="a" width="250px;">
-                               </td>
-                               <td style="min-width: 200px;">4</td>
-                               <td style="min-width: 200px;">5</td>
+                     <div class="row border mt-3" >
 
-                               <td class="text-center">                            
-                                    <button class="btn btn-warning" >Sửa </button>                              
-                                </td>
-                                <td>
-                                    <button href="" id="delete"  class="btn btn-danger">Xoá</button>
-                                </td>
-                                <td>
-                                    <a  class="btn btn-success" href="" id="details" > Thêm</a>
-    
-                                </td>
-                              </tbody>
-                        </table>
+                        <div class="col-lg-7">  
+                                <img width="100%" height="270px"src="{{$banner->img}}" alt="">
+                        </div>
+                        <div class="col-lg-5 p-1  ps-3 pe-3">  
+                               <form action="">
+
+                                <div class="row">
+                                    <h6>Mô tả banner</h6>
+                                        
+                                    <input type="text" value="{{$banner->title}}" class="form-control">
+                                </div>
+                                <div class="row mt-1">
+                                    <h6>Ảnh banner</h6>
+                                        
+                                    <input type="file" class="form-control">
+                                </div>
+                                <div class="row mt-1">
+                                   <div class="col-lg-6">
+                                    <h6>Hiển Thị Banner</h6>
+                                    <select name="" id="" class="form-control">
+                                        <option value="Yes">Bật </option>
+                                        <option value="No">Tắt </option>
+                                    </select>
+
+                                   </div>
+
+                                   <div class="col-lg-6">
+                                    <h6>Ngày Tạo</h6>
+                                    <input type="text"   readonly  value="{{$banner->created_at}}" class="form-control">
+
+                                   </div>
+                                  
+                                </div>
+
+                                <div class="row mt-1">
+                                   <div class="col-lg-5" style="display: flex">
+                                       <label for="">Mã Tour</label>
+                                    <input type="text"   readonly  value="{{$banner->Tour->tour_code}}" class="form-control">
+                                   </div>
+                                <div class="col-lg-3">
+                                    <a class="btn btn-primary"href=""><i class="fas fa-edit"></i></a>
+
+                                </div>
+                                <div class="col-lg-4">
+                                        <a class="btn btn-danger"href=""><i class="fas fa-trash-alt"></i></a>
+                                </div>
+                                  
+                                </div>
+
+                               </form>
+                        </div>
+                           
+                       </div>
+                         
+                     @endforeach
+
                      </div>
                 </div>
             </div>

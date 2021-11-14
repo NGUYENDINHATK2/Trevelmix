@@ -233,23 +233,26 @@
                             <td style="max-width: 250px;">{{$data->name_tour}}</td>
                             <td>
                                 {{-- <img src="{{$data->Img_tour->img1}}" width="250px;" alt=""> --}}
-                                <img src="{{$data->Img_tour->img1}}" width="250px;" alt="">
+                                <img src="{{$data->Img_tour->img1}}" width="200px;" alt="">
                             </td>
                             <td>{{$data->departure_day}}</td>
                             <td>{{$data->status}}</td>
                             <td class="text-center">
-                                <a href=" /tour/{{$data->id}}/edit" class="btn btn-warning">Sửa </a>
+                                <a href=" /tour/{{$data->id}}/edit" class="btn btn-warning"><i class="fas fa-edit"></i> </a>
                                 {{-- <button class="btn btn-warning" onclick="edittour({{$data->id}})">Sửa </button> --}}
                                 {{-- <button type="button" class="btn btn-warning" onclick="edittour({{$data->id}})" data-toggle="modal" data-target=".bd-example-modal-lg">Sửa</button> --}}
                                
                                 
                             </td>
                             <td>
-                                <button href="" id="delete" onclick="deletetour({{$data->id}})" class="btn btn-danger">Xoá</button>
+                                <button href="" id="delete" onclick="deletetour({{$data->id}})" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                             </td>
                             <td>
-                                <a  class="btn btn-success" href="/tour/{{$data->id}}" id="details" > Chi Tiết</a>
+                                <a  class="btn btn-success" href="/tour/{{$data->id}}" id="details" > <i class="fas fa-eye"></i></a>
 
+                            </td>
+                            <td>
+                                <a href="/admin/promotion-createbaner?idtour={{$data->id}}" class="btn btn-info text-light" >Tạo Banner</a>
                             </td>
                           </tr>
                            @endforeach

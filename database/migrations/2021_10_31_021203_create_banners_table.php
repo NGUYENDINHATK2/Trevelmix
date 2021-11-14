@@ -15,10 +15,11 @@ class CreateBannersTable extends Migration
     {
         Schema::create('banners', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
+            $table->string('title')->nullable();
             $table->string('img');
-            $table->unsignedBigInteger('id_tour');
-            $table->foreign('id_tour')->references('id')->on('tours')->onDelete('cascade');
+            $table->unsignedBigInteger('tour_id');
+            $table->set('show',['Yes','No'])->default('Yes');
+            $table->foreign('tour_id')->references('id')->on('tours')->onDelete('cascade');
        
             $table->timestamps();
         });

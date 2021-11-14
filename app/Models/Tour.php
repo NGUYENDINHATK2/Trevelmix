@@ -35,4 +35,7 @@ class Tour extends Model
     public function Book_tour(){
         return $this->hasOne(Book_tour::class);
     }
+    public function Banner_tour(){
+        return $this->hasOne(Banner::class);
+    }
 }

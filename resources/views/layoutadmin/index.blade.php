@@ -104,7 +104,7 @@
                         <a class="text-decoration-none" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                             <span>
                                {{Auth::user()->name}}
-                                <span class="user-level">Administrator</span>
+                                <span class="user-level">Quản Trị Hệ Thống</span>
                                 <span class="caret"></span>
                             </span>
                         </a>
@@ -133,14 +133,14 @@
                 </div>
                 <ul class="nav">
                     <li class="nav-item active">
-                        <a href="admin" class="text-decoration-none">
+                        <a href="#" class="text-decoration-none">
                             <i class="la la-dashboard"></i>
                             <p>Trang Chính</p>
                          
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="admin/tour" class="text-decoration-none">
+                        <a href="/admin/tour" class="text-decoration-none">
                             <i class="la la-table"></i>
                             <p>Quản Lý Tour</p>
                        
@@ -148,7 +148,7 @@
                     </li>
                    
                     <li class="nav-item">
-                        <a href="tables.html" class="text-decoration-none">
+                        <a href="#" class="text-decoration-none">
                             <i class="la la-th"></i>
                             <p>Quản Lý Trang Khám Phá</p>
                      

@@ -80,17 +80,23 @@
                                     <div class="u-img"><img src="https://webcongnghe247.com/wp-content/uploads/2021/07/nh-dai-dien-FB-mac-dinh-nu-800x800.jpg" alt="user"></div>
                                     <div class="u-text">
                                         <h4> {{Auth::user()->name}}</h4>
-                                        <p class="text-muted">hello@themekita.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
-                                    </div>
+                                        <p class="text-muted">{{Auth::user()->email}}</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">Xem lý Lịch </a></div>
+                                </div>
                                 </li>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="ti-user"></i> My Profile</a>
-                                <a class="dropdown-item" href="#"></i> My Balance</a>
-                                <a class="dropdown-item" href="#"><i class="ti-email"></i> Inbox</a>
+                                <a class="dropdown-item" href="#"><i class="ti-user"></i> Thông Tin Của Tôi</a>
+                            
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="ti-settings"></i> Account Setting</a>
+                                <a class="dropdown-item" href="#"><i class="ti-settings"></i>Thiết Lập Tài Khoản</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Logout</a>
+                                <a class="dropdown-item text-danger" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                              document.getElementById('logout-form').submit();">
+                                Đăng Xuất
+                             </a>
+                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                               @csrf
+                           </form>       
                             </ul>
                             <!-- /.dropdown-user -->
                         </li>
@@ -144,7 +150,7 @@
                         </a>
                     </li>
                     <li class="nav-item active">
-                        <a href="#" class="text-decoration-none">
+                        <a href="/admin/tour" class="text-decoration-none">
                             <i class="la la-table"></i>
                             <p>Quản Lý Tour</p>
                        
@@ -158,7 +164,7 @@
                     </li>
                    
                     <li class="nav-item">
-                        <a href="tables.html" class="text-decoration-none">
+                        <a href="#" class="text-decoration-none">
                             <i class="la la-th"></i>
                             <p>Quản Lý Trang Khám Phá</p>
                      
@@ -222,24 +228,24 @@
                             <h5 for="" class="">Giá Cho Người Lớn</h5>
                             <div class="row  p-3 pt-0 ">
                               
-                                <input required type="text" value="{{$data->price_adults}}" name="price_adults" class="border-0" placeholder="Ví Dụ :1.600.000" style="width:100%;height: 40px;border-radius:2px; "  >
+                                <input required type="number" value="{{$data->price_adults}}" name="price_adults" class="border-0" placeholder="Ví Dụ :1.600.000" style="width:100%;height: 40px;border-radius:2px; "  >
                             </div>
                             <h5 for="" class="">Giá Cho Trẻ Em Dưới 10 Tuổi</h5>
                             <div class="row  p-3 pt-0 ">
                               
-                                <input required type="text" value="{{$data->price_children}}" name="price_children" class="border-0" placeholder="Ví Dụ :1.600.000" style="width:100%;height: 40px;border-radius:2px; "  >
+                                <input required type="number" value="{{$data->price_children}}" name="price_children" class="border-0" placeholder="Ví Dụ :1.600.000" style="width:100%;height: 40px;border-radius:2px; "  >
                             </div>
 
                             <h5 for="" class="">Sale</h5>
                             <div class="row  p-3 pt-0 ">
                               
-                                <input required type="text" value="{{$data->sale}}" name="sale" class="border-0" placeholder="Ví Dụ :30% " style="width:100%;height: 40px;border-radius:2px; "  >
+                                <input  type="text" value="{{$data->sale}}" name="sale" class="border-0" placeholder="Ví Dụ :30% " style="width:100%;height: 40px;border-radius:2px; "  >
                             </div>
 
                             <h5 for="" class="">Gói Quà Tặng Có Trong Tour</h5>
                             <div class="row  p-3 pt-0 ">
                               
-                                <input required type="text" value="{{$data->gift}}" name="gift" class="border-0" placeholder="Ví Dụ :2 vé cáp treo free,..." style="width:100%;height: 40px;border-radius:2px; "  >
+                                <input type="text" value="{{$data->gift}}" name="gift" class="border-0" placeholder="Ví Dụ :2 vé cáp treo free,..." style="width:100%;height: 40px;border-radius:2px; "  >
                             </div>
 
                             <h5 for="" class="">Ngày Khởi Hành Tour</h5>

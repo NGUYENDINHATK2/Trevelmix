@@ -59,58 +59,72 @@
 							<!-- 2Search Panel -->
 
 							<div class="search_panel active">
-								<form action="#" id="search_form_2" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+								<form action="/tour" id="search_form_2" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
+						
+							
 									<div class="search_item">
-										<div>Nơi Bạn Muốn Đến</div>
-										<input type="text" class="destination search_input" required="required">
+										<div>Địa Điểm Du Lịch</div>
+										<input name="text_search" value="{{$infosearch['text_search']}}" type="text" class="destination search_input" required="required">
 									</div>
+									
 									<div class="search_item">
-                                        <div>Giá Tiền</div>
-                                        <select name="money" id="adults_2" class="dropdown_item_select search_input">
-                                        <option value="1.600.000 ">Từ  1.600.000 </option>
-                                        <option value="2.600.000 ">Từ  2.600.000 </option>
-                                        <option value="4.000.000">Từ  4.000.000</option>
-                                        
-                                        <option value="">Giá Khác</option>
-                                        
-                                        </select>			
-													
+										<div>Giá Tiền</div>
+										<select name="money" id="adults_2" class="dropdown_item_select search_input">
+										<option value="{{$infosearch['money']}}">Từ {{$infosearch['money']}}</option>
+										<option value="1600000 ">Từ  1.600.000 </option>
+										<option value="2600000 ">Từ  2.600.000 </option>
+										<option value="4000000">Từ  4.000.000</option>
+										<option value="8000000">Từ  8.000.000</option>
+										<option value="10000000">Từ  10.000.000</option>
+										<option value="15000000">Từ  15.000.000</option>
+										
+										<option value="50000000">Giá Khác</option>
+										
+										</select>			
 													
 									</div>
 									<div class="search_item">
 										<div>Nơi Khởi Hành</div>
-								<select name="address_start" id="children_2" class="dropdown_item_select search_input">
-									<option value="Hà Nội">Hà Nội</option>
-									<option value="Đà Nẵng">Đà Nẵng</option>
-									<option value="HCM">HCM</option>
-								</select>
+										<select name="address_start" id="children_2" class="dropdown_item_select search_input">
+											<option value="{{$infosearch['address']}}">{{$infosearch['address']}}</option>
+											<option value="Hà Nội">Hà Nội</option>
+											<option value="Đà Nẵng">Đà Nẵng</option>
+											<option value="HCM">HCM</option>
+										</select>
 									</div>
 									<div class="search_item">
 									
+		
 										<div>Số Ngày </div>
 										<select name="numberday" id="adults_2" class="dropdown_item_select search_input">
-										<option value="">1 N 1 D</option>
-										<option value="">2 N 1 D</option>
-										<option value="">3 N 2 D</option>
-										<option value="">4 N 3 D</option>
-										<option value="">5 N 4 D</option>
-										<option value="">6 N 5 D</option>
-										<option value="">Số Khác</option>
+										<option value="{{$infosearch['date']}}">{{$infosearch['date']}}</option>
+										<option value="1 N 1 D">1 N 1 D</option>
+										<option value="2 N 1 D">2 N 1 D</option>
+										<option value="3 N 2 D">3 N 2 D</option>
+										<option value="4 N 3 D">4 N 3 D</option>
+										<option value="5 N 4 D">5 N 4 D</option>
+										<option value="6 N 5 D">6 N 5 D</option>
+										<option value="Số Khác">Số Khác</option>
 									
 										</select>
 									</div>
-
 									<div class="more_options">
 										<div class="more_options_trigger">
-											<a href="#">Đặt Tour Riêng</a>
+												<a href="#">Đặt Tour Riêng</a>
 										</div>
 									
 									</div>
-									<button class="button search_button">Tìm Tour<span></span><span></span><span></span></button>
+									<button class="button search_button">Tìm Kiếm<span></span><span></span><span></span></button>
 								</form>
 							</div>
 
 							<!--3 Search Panel -->
+							{{-- <div class="more_options">
+								<div class="more_options_trigger">
+										<a href="#">Đặt Tour Riêng</a>
+								</div>
+							
+							</div> --}}
 
 							<div class="search_panel">
 								<form action="#" id="search_form_3" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
@@ -119,7 +133,7 @@
 										<input type="text" class="destination search_input" required="required">
 									</div>
 								
-									<button class="button search_button">search<span></span><span></span><span></span></button>
+									<button class="button search_button">Tìm Kiếm<span></span><span></span><span></span></button>
 								</form>
 							</div>
 
@@ -194,6 +208,18 @@
 					<div class="offers_grid">
 
 						<!-- Offers Item -->
+{{-- 					
+						<div class="offers_item rating_4 ">
+							<h2><b>Không Có Tour Phù Hợp Bạn Xem Thêm 1 Vài Tour Khác Nhé !</b></h3>
+						</div> --}}
+							
+						@if (empty($tours[0]))
+						<div class="offers_item rating_4 ">
+							<h2><b>Không Có Tour Phù Hợp Bạn Xem Thêm 1 Vài Tour Khác Nhé !</b></h3>
+						</div>
+							
+						@endif
+			
 
 						@foreach ($tours as $tour)
                         <div class="offers_item rating_4 ">
@@ -203,12 +229,12 @@
 									<div class="offers_image_container">
 										<!-- Image by https://unsplash.com/@kensuarez -->
 										<div class="offers_image_background" style="background-image:url({{$tour->Img_tour->img1}})"></div>
-										<div class="offer_name"><a href="single_listing.html">{{$tour->name_tour}}</a></div>
+										<div class="offer_name" ><a href="">{{$tour->name_tour}}</a></div>
 									</div>
 								</div>
-								<div class="col-lg-8">
-									<div class="offers_content">
-										<div class="offers_price">{{$tour->name_tour}} - {{$tour->time_tour}}</div>
+								<div class="col-lg-8" >
+									<div class="offers_content " style="position: relative;">
+										<div class="offers_price" style="font-size: 27px;">{{$tour->name_tour}}</div>
 									
                                         <div class="mt-2">
                                             <h3>{{$tour->price_adults}} VND \ 1 Người </h3>
@@ -224,7 +250,7 @@
 											</ul>
 										</div>
 										<div class="button book_button"><a href="#">Đặt Ngay<span></span><span></span><span></span></a></div>
-										<div class="offer_reviews">
+										<div class="" style="position:absolute; right:0; bottom:5px;;">
 											<div class="offer_reviews_content">
 												<div class="offer_reviews_title">Rất Tốt</div>
 												<div class="offer_reviews_subtitle">100 reviews</div>
@@ -240,8 +266,61 @@
 
 						<!-- Offers Item -->
 
+					
+
+
 
 					</div>
+					<div class="row">
+						{{$tours->links()}}
+					</div>
+				</div>
+				<hr class="mt-3">
+				<div class="col-lg-12">
+					<h3 class="mb-4"><b>Tour Mới Trải Nghiệm Mới</b> </h3>
+
+					@foreach ($toursuggestions as $tour)
+                        <div class="offers_item rating_4 ">
+							<div class="row">
+								<div class="col-lg-1 temp_col"></div>
+								<div class="col-lg-3 col-1680-4">
+									<div class="offers_image_container">
+										<!-- Image by https://unsplash.com/@kensuarez -->
+										<div class="offers_image_background" style="background-image:url({{$tour->Img_tour->img1}})"></div>
+										<div class="offer_name"><a href="single_listing.html">{{$tour->name_tour}}</a></div>
+									</div>
+								</div>
+								<div class="col-lg-8">
+									<div class="offers_content" style="position: relative;">
+										<div class="offers_price" style="font-size: 27px;">{{$tour->name_tour}}</div>
+									
+                                        <div class="mt-2">
+                                            <h3>{{$tour->price_adults}} VND \ 1 Người </h3>
+                                        </div>
+										<p class="offers_text">{{$tour->Tour_details->title}} </p>
+										<div class="offers_icons">
+                                          
+											<ul class="offers_icons_list">
+												<li class="offers_icons_item"><img src="images/post.png" alt=""></li>
+												<li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
+												<li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
+												<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
+											</ul>
+										</div>
+										<div class="button book_button"><a href="#">Đặt Ngay<span></span><span></span><span></span></a></div>
+										<div style="position:absolute; right:0; bottom:5px;;">
+											<div class="offer_reviews_content">
+												<div class="offer_reviews_title">Rất Tốt</div>
+												<div class="offer_reviews_subtitle"></div>
+											</div>
+											<div class="offer_reviews_rating text-center">8.1</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+                            
+                        @endforeach
 				</div>
 
 			</div>

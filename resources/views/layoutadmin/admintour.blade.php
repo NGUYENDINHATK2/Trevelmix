@@ -115,7 +115,7 @@
                         <a class="text-decoration-none" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                             <span>
                                {{Auth::user()->name}}
-                                <span class="user-level">Administrator</span>
+                                <span class="user-level">Quản Trị Hệ Thống</span>
                                 <span class="caret"></span>
                             </span>
                         </a>
@@ -144,7 +144,7 @@
                 </div>
                 <ul class="nav">
                     <li class="nav-item ">
-                        <a href="admin" class="text-decoration-none">
+                        <a href="/admin" class="text-decoration-none">
                             <i class="la la-dashboard"></i>
                             <p>Trang Chính</p>
                          
@@ -165,7 +165,7 @@
                     </li>
                    
                     <li class="nav-item">
-                        <a href="tables.html" class="text-decoration-none">
+                        <a href="#" class="text-decoration-none">
                             <i class="la la-th"></i>
                             <p>Quản Lý Trang Khám Phá</p>
                      
@@ -227,12 +227,12 @@
                             <h5 for="" class="">Giá Cho Người Lớn</h5>
                             <div class="row  p-3 pt-0 ">
                               
-                                <input type="text" name="price_adults" class="border-0" placeholder="Ví Dụ :1.600.000" style="width:100%;height: 40px;border-radius:2px; "  >
+                                <input type="number" name="price_adults" class="border-0" placeholder="Ví Dụ :1.600.000" style="width:100%;height: 40px;border-radius:2px; "  >
                             </div>
                             <h5 for="" class="">Giá Cho Trẻ Em Dưới 10 Tuổi</h5>
                             <div class="row  p-3 pt-0 ">
                               
-                                <input type="text" name="price_children" class="border-0" placeholder="Ví Dụ :1.600.000" style="width:100%;height: 40px;border-radius:2px; "  >
+                                <input type="number" name="price_children" class="border-0" placeholder="Ví Dụ :1.600.000" style="width:100%;height: 40px;border-radius:2px; "  >
                             </div>
 
                             <h5 for="" class="">Sale</h5>

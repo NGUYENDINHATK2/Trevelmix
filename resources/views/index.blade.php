@@ -167,11 +167,14 @@
 							<div class="search_item">
 								<div>Giá Tiền</div>
 								<select name="money" id="adults_2" class="dropdown_item_select search_input">
-								<option value="1.600.000 ">Từ  1.600.000 </option>
-								<option value="2.600.000 ">Từ  2.600.000 </option>
-								<option value="4.000.000">Từ  4.000.000</option>
-								
-								<option value="">Giá Khác</option>
+									<option value="1600000 ">Từ  1.600.000 </option>
+									<option value="2600000 ">Từ  2.600.000 </option>
+									<option value="4000000">Từ  4.000.000</option>
+									<option value="8000000">Từ  8.000.000</option>
+									<option value="10000000">Từ  10.000.000</option>
+									<option value="15000000">Từ  15.000.000</option>
+									
+									<option value="50000000">Giá Khác</option>
 								
 								</select>			
 											
@@ -283,7 +286,7 @@
 
 	<div class="cta">
 		<!-- Image by https://unsplash.com/@thanni -->
-		<div class="cta_background" style="background-image:url(https://docs.google.com/uc?id=1d5nbXFvu9axOg2JS0vAIposQF6rsRxmI)"></div>
+		<div class="cta_background" style="background-image:url(https://wallpaperaccess.com/full/119714.jpg)"></div>
 		
 		<div class="container">
 			<div class="row">
@@ -294,47 +297,27 @@
 					<div class="cta_slider_container">
 						<div class="owl-carousel owl-theme cta_slider">
 
-							<!-- CTA Slider Item -->
-							<div class="owl-item cta_item text-center bg-info">
-								<div class="cta_title">maldives deluxe package</div>
-								<div class="rating_r rating_r_4">
-									<i></i>
-									<i></i>
-									<i></i>
-									<i></i>
-									<i></i>
-								</div>
-								<p class="cta_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec. Proin bibendum, augue faucibus tincidunt ultrices, tortor augue gravida lectus, et efficitur enim justo vel ligula.</p>
-								<div class="button cta_button"><div class="button_bcg"></div><a href="#">Đặt Ngay<span></span><span></span><span></span></a></div>
-							</div>
+						
+							
 
 							<!-- CTA Slider Item -->
-							<div class="owl-item cta_item text-center">
-								<div class="cta_title">maldives deluxe package</div>
-								<div class="rating_r rating_r_4">
-									<i></i>
-									<i></i>
-									<i></i>
-									<i></i>
-									<i></i>
-								</div>
-								<p class="cta_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec. Proin bibendum, augue faucibus tincidunt ultrices, tortor augue gravida lectus, et efficitur enim justo vel ligula.</p>
-								<div class="button cta_button"><div class="button_bcg"></div><a href="#">Đặt Ngay<span></span><span></span><span></span></a></div>
+						@foreach ($banners as $banner)
+						<div class="owl-item cta_item text-center">
+							<div class="cta_title">{{$banner->title}}</div>
+							<div class="rating_r rating_r_4">
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
 							</div>
+							<p class="cta_text">{{$banner->Tour->Tour_details->title}}</p>
+							<div class="button cta_button"><div class="button_bcg"></div><a href="#">Xem Thêm<span></span><span></span><span></span></a></div>
+						</div>
+							
+						@endforeach
 
-							<!-- CTA Slider Item -->
-							<div class="owl-item cta_item text-center">
-								<div class="cta_title">maldives deluxe package</div>
-								<div class="rating_r rating_r_4">
-									<i></i>
-									<i></i>
-									<i></i>
-									<i></i>
-									<i></i>
-								</div>
-								<p class="cta_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec. Proin bibendum, augue faucibus tincidunt ultrices, tortor augue gravida lectus, et efficitur enim justo vel ligula.</p>
-								<div class="button cta_button"><div class="button_bcg"></div><a href="#">Đặt Ngay<span></span><span></span><span></span></a></div>
-							</div>
+						
 							
 						</div>
 
@@ -386,7 +369,7 @@
 
 	<div class="offers">
 		<div class="container">
-			<div class="row">
+			<div class="row mb-3">
 				<div class="col text-center">
 					<h2 class="section_title">Tour Đặt Nhiều Nhất</h2>
 				</div>
@@ -467,79 +450,6 @@
 					</div>
 				</div>
 
-				<!-- Offers Item -->
-				<div class="col-lg-6 offers_col">
-					<div class="offers_item">
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="offers_image_container">
-									<!-- Image by https://unsplash.com/@nevenkrcmarek -->
-									<div class="offers_image_background" style="background-image:url(images/offer_3.jpg)"></div>
-									<div class="offer_name"><a href="#">island dream</a></div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="offers_content">
-									<div class="offers_price">$90<span>per night</span></div>
-									<div class="rating_r rating_r_4 offers_rating">
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-									</div>
-									<p class="offers_text">Suspendisse potenti. In faucibus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor.</p>
-									<div class="offers_icons">
-										<ul class="offers_icons_list">
-											<li class="offers_icons_item"><img src="images/post.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
-										</ul>
-									</div>
-									<div class="offers_link"><a href="offers.html">Đọc Thêm</a></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Offers Item -->
-				<div class="col-lg-6 offers_col">
-					<div class="offers_item">
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="offers_image_container">
-									<!-- Image by https://unsplash.com/@mantashesthaven -->
-									<div class="offers_image_background" style="background-image:url(images/offer_4.jpg)"></div>
-									<div class="offer_name"><a href="#">travel light</a></div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="offers_content">
-									<div class="offers_price">$30<span>per night</span></div>
-									<div class="rating_r rating_r_4 offers_rating">
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-									</div>
-									<p class="offers_text">Suspendisse potenti. In faucibus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor.</p>
-									<div class="offers_icons">
-										<ul class="offers_icons_list">
-											<li class="offers_icons_item"><img src="images/post.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
-										</ul>
-									</div>
-									<div class="offers_link"><a href="offers.html">Đọc Thêm</a></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
 
 			</div>
 		</div>

@@ -18,8 +18,8 @@ class CreateToursTable extends Migration
             $table->string('tour_code');
             $table->string('name_tour');
             $table->string('time_tour');
-            $table->string('price_adults');
-            $table->string('price_children');
+            $table->float('price_adults');
+            $table->float('price_children');
             $table->string('sale')->nullable();
             $table->string('gift')->nullable();
             $table->string('departure_day');

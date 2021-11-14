@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Tour;
+use App\Models\Banner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -27,11 +28,12 @@ class HomeController extends Controller
         $datas=Tour::all();
         $tournew=Tour::orderBy('created_at','desc')->limit(3)->get();
     
-        
+        $banners=Banner::orderBy('created_at','desc')->limit(4)->get();
        
        return view('index')
        ->with('datas', $datas)
        ->with('tournew', $tournew)
-       ;
+       ->with('banners',$banners);
+       
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\admincontroller;
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\TourController;
 use App\Http\Controllers\UploadImgDrive;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,7 @@ Route::get('/offers', function () {
 
 
 Route::resource('tour', TourController::class);
+Route::resource('banner', BannerController::class);
 
 Route::get('admin', [admincontroller::class,'index'])->middleware('auth');
 Route::get('admin/tour', [admincontroller::class,'tour'])->middleware('auth');
@@ -46,6 +48,7 @@ Route::get('admin/manageruser', [admincontroller::class,'manageruser'])->middlew
 Route::get('admin/managerorder', [admincontroller::class,'managerorder'])->middleware('auth');
 
 Route::get('admin/promotion', [admincontroller::class,'promotion'])->middleware('auth');
+Route::get('admin/promotion-createbaner', [admincontroller::class,'promotiont'])->middleware('auth');
 
 
 

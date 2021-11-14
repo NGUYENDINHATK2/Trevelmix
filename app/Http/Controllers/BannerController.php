@@ -2,43 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
 use Illuminate\Http\Request;
-use App\Models\Tour;
-class TourController extends Controller
+
+class BannerController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
         //
-       
-    
-        // dd($request->numberday);
-
-        $tours = Tour::where('name_tour', 'LIKE', '%' . $request->text_search . '%')
-        ->Where('price_adults', '<=', $request->money  )
-        ->Where('receiving_address','LIKE', '%' . $request->address_start . '%')
-        ->where('time_tour',$request->numberday)
-        ->where('status','Hoạt Động')
-       
-        ->Paginate(15);
-       
-        $infosearch=[
-            'text_search'=>$request->text_search,
-            'money'=>$request->money,
-            'address'=>$request->address_start,
-            'date'=>$request->numberday,
-        ];
-
-        $toursuggestions=Tour::orderBy('created_at','desc')->Paginate(4);
-        
-        return view('toursearchresults')->with('tours',$tours)
-        ->with('toursuggestions',$toursuggestions)
-        ->with('infosearch',$infosearch);
-      
     }
 
     /**
@@ -60,6 +36,18 @@ class TourController extends Controller
     public function store(Request $request)
     {
         //
+        $upimg=new UploadImgDrive();
+
+       $linkimg=$upimg->save($request->img);
+
+        return Banner::create([
+            'title'=>$request->title,
+            'img'=>$linkimg,
+            'tour_id'=>$request->id_tour,
+        ]);
+        return redirect('admin/promotion');
+        
+       
     }
 
     /**
@@ -71,11 +59,6 @@ class TourController extends Controller
     public function show($id)
     {
         //
-
-        
-        $data=Tour::where('id',$id)->first();
-       
-        return view('showtour')->with('data',$data);
     }
 
     /**
@@ -87,11 +70,6 @@ class TourController extends Controller
     public function edit($id)
     {
         //
-
-        $data=Tour::where('id',$id)->first();
-        
-        return  view('layoutadmin.edittour')->with('data', $data);
-    
     }
 
     /**
@@ -116,5 +94,4 @@ class TourController extends Controller
     {
         //
     }
-
 }

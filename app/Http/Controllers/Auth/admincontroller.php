@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Tour;
 use App\Models\Booktour;
+use App\Models\Banner;
 
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
@@ -100,7 +101,18 @@ class admincontroller extends Controller
 
   public function promotion(){
     if (Auth::user()->is_Admin == 0 || Auth::user()->is_Admin == 1) {
-      return view('layoutadmin.promotion');
+      $baners=Banner::all();
+      // dd(Tour::find(1)->Banner_tour);
+      return view('layoutadmin.promotion')->with('baners',$baners);
+      # code...
+    } else
+      return view('index');
+  }
+  public function promotiont(Request $request){
+    if (Auth::user()->is_Admin == 0 || Auth::user()->is_Admin == 1) {
+      $baners=Banner::all();
+      return view('layoutadmin.promotion')->with('data',Tour::find($request->idtour))
+      ->with('baners',$baners);
       # code...
     } else
       return view('index');
@@ -139,21 +151,24 @@ class admincontroller extends Controller
         <td scope="row">' . $data->tour_code . '</td>
         <td style="max-width: 250px;">' . $data->name_tour . '</td>
         <td>
-            <img src="' . $data->Img_tour->img1 . '" width="250px;" alt="">
+            <img src="' . $data->Img_tour->img1 . '" width="200px;" alt="">
         </td>
         <td>' . $data->departure_day . '</td>
         <td>' . $data->status . '</td>
         <td class="text-center">
-        <a href=" /tour/'.$data->id.'/edit" class="btn btn-warning">Sửa </a>
+        <a href=" /tour/'.$data->id.'/edit" class="btn btn-warning"><i class="fas fa-edit"></i> </a>
        
     </td>
     <td>
-        <button href="" id="delete" onclick="deletetour('.$data->id.')" class="btn btn-danger">Xoá</button>
+        <button href="" id="delete" onclick="deletetour('.$data->id.')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
     </td>
     <td>
-        <a  class="btn btn-success" href="/tour/'.$data->id.'" id="details" > Chi Tiết</a>
+        <a  class="btn btn-success" href="/tour/'.$data->id.'" id="details" > <i class="fas fa-eye"></i></a>
 
     </td>
+    <td>
+                                <a href="/admin/promotion-createbaner?idtour='.$data->id.'" class="btn btn-info text-light" >Tạo Banner</a>
+        </td>
       </tr>
       ';
     }
