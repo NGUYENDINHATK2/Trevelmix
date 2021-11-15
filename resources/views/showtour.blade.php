@@ -124,10 +124,10 @@ footer{
 								</div>
 								<div class="hotel_title_button ml-lg-auto text-lg-right">
 									<div class="button book_button trans_200">
-										{{-- <a href="#">Xác Nhận Đặt<span></span><span></span><span></span></a> --}}
-										<button type="button" class="" data-toggle="modal" data-target="#exampleModal">
-											Xác Nhận Đặt<span></span><span></span><span></span>
-										  </button>
+										<a href="#"  data-toggle="modal" data-target="#exampleModal">Xác Nhận Đặt<span></span><span></span><span></span></a>
+										{{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+											Launch demo modal
+										  </button> --}}
 									</div>
 								
 								</div>
@@ -332,23 +332,111 @@ function showSlides(n) {
 		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 			  <div class="modal-content">
-				<div class="modal-header">
-				  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-				  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				  </button>
-				</div>
-				<div class="modal-body">
-				  ...
-				</div>
-				<div class="modal-footer">
-				  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				  <button type="button" class="btn btn-primary">Save changes</button>
-				</div>
+				<form action="/book" method="POST">
+					@csrf
+
+					<div class="modal-header">
+						<h3 class="modal-title text-dark" id="exampleModalLabel"><b>Xác Nhận Đặt Tour</b></h3>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						  <span aria-hidden="true">&times;</span>
+						</button>
+					  </div>
+					  <div class="modal-body p-3">
+						<input type="hidden" name="name_tour"value="{{$data->name_tour}}">
+
+						  	<input type="hidden" name="tour_id"value="{{$data->id}}">
+						  <div class="row">
+							  <h3 class="text-dark"><b>Tên Người Đặt : {{Auth::user()->name}}</b></h3>
+							  <h3 class="text-dark">Đặt Tour Số : {{$data->tour_code}}</h3>
+						  </div>
+						<div class="row">
+							<h3>Ngày Khởi Hành</h3>
+						</div>
+						<div class="row p-3 ">
+							
+							<input type="text" readonly class="form-control" value="{{$data->departure_day}}">
+						</div>
+						<div class="row">
+							<h3>Số Người Lớn - Giá : 	<font>{{number_format($data->price_adults)}}</font> VND </h3>
+						</div>
+
+						<div class="row p-3 ">
+							
+							<input type="number" name="adults" id="adults" min="1" max="20"class="form-control" value="1" placeholder="Số Người Lớn">
+						</div>
+						
+						<div class="row">
+							<h3>Số Trẻ Dưới 10 tuổi - Giá : 	<font>{{number_format($data->price_children)}}</font> VND </h3>
+						</div>
+						<div class="row p-3 ">
+							
+							<input type="number" name="children" id="children"  id="children" min="0" class="form-control" value="1" placeholder="Số Người Dưới Hoặc Bằng 10 Tuổi">
+						</div>
+
+						<div class="row">
+							<h3>Tổng Tiền</h3>
+						</div>
+						<div class="row p-3">
+							<input type="text" id="summoney" name="summoney" value="6200000" readonly class="form-control" placeholder="">
+						</div>
+						
+					  </div>
+					  <div class="row">
+						  <p class="text-center">Mọi Thắc Mắc Liên Hệ 19001811</p>
+					  </div>
+					  <div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+						<button type="submit" class="btn btn-primary">Xác Nhận</button>
+					  </div>
+
+				</form>
 			  </div>
 			</div>
 		  </div>
 	</div>
+
+	<script>
+$(document).ready(function() {
+
+
+   
+
+$(document).on('keyup','#adults',function(){
+	
+	
+	var number=$(this).val();
+
+var money1 =number*{{$data->price_adults}};
+var money2 =$('#children').val()*{{$data->price_children}};
+
+money1=Number(money1);
+money2=Number(money2);
+
+$('#summoney').val(money1+money2);
+	console.log(Date('Y-m-d'));
+	
+
+	
+});
+
+
+$(document).on('keyup','#children',function(){
+
+	var number=$(this).val();
+
+var money1 =number*{{$data->price_children}};
+var money2 =$('#adults').val()*{{$data->price_adults}};
+
+money1=Number(money1);
+money2=Number(money2);
+
+$('#summoney').val(money1+money2 );
+	
+});
+
+
+});
+	</script>
 	<script src="{{asset('js1/jquery-3.2.1.min.js')}}"></script>
 	<script src="{{asset('styles/bootstrap4/popper.js')}}"></script>
 	<script src="{{asset('styles/bootstrap4/bootstrap.min.js')}}"></script>

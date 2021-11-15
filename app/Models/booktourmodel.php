@@ -5,17 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Booktour extends Model
+class booktourmodel extends Model
 {
     use HasFactory;
 
+    protected $table='booktours';
 
     protected $fillable = [
         'id_book_tour',
         'number_of_adults',
         'number_of_children',
         'sum_money' ,
-        'status_tour',
+    
         'date_book',
         'thanhtoan',
         'user_id',

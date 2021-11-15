@@ -3,45 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Tour;
-use App\Models\Booktour;
+use Illuminate\Support\Facades\Auth;
 use App\Models\booktourmodel;
-
-class TourController extends Controller
+class BookTour extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
         //
-       
-    
-        // dd($request->numberday);
-
-        $tours = Tour::where('name_tour', 'LIKE', '%' . $request->text_search . '%')
-        ->Where('price_adults', '<=', $request->money  )
-        ->Where('receiving_address','LIKE', '%' . $request->address_start . '%')
-        ->where('time_tour',$request->numberday)
-        ->where('status','Hoạt Động')
-       
-        ->Paginate(15);
-       
-        $infosearch=[
-            'text_search'=>$request->text_search,
-            'money'=>$request->money,
-            'address'=>$request->address_start,
-            'date'=>$request->numberday,
-        ];
-
-        $toursuggestions=Tour::orderBy('created_at','desc')->Paginate(4);
-        
-        return view('toursearchresults')->with('tours',$tours)
-        ->with('toursuggestions',$toursuggestions)
-        ->with('infosearch',$infosearch);
-      
     }
 
     /**
@@ -63,6 +36,23 @@ class TourController extends Controller
     public function store(Request $request)
     {
         //
+        $data=[
+            'id_book_tour'=>'TVVN-'.date('Y-m-d').'-'.Auth::user()->id,
+            'number_of_adults'=>$request->adults,
+            'number_of_children'=>$request->children,
+            'sum_money'=>$request->summoney,
+            'date_book'=>date('Y-m-d'),
+            'thanhtoan'=>'no',
+            'user_id'=>Auth::user()->id,
+            'tour_id'=>$request->tour_id,
+        ];
+      
+      booktourmodel::create($data);
+
+      $mail=new MailController();
+    $mail->Booktourmail(Auth::user()->email,'TVVN-'.date('Y-m-d').'-'.Auth::user()->id,$request->name_tour);
+    return view('Thankyou');
+
     }
 
     /**
@@ -74,12 +64,6 @@ class TourController extends Controller
     public function show($id)
     {
         //
-
-        
-        $data=Tour::where('id',$id)->first();
-        $slot=booktourmodel::where('id',$id)->get()->count();
-      
-        return view('showtour')->with('data',$data)->with('slot',$slot);
     }
 
     /**
@@ -91,11 +75,6 @@ class TourController extends Controller
     public function edit($id)
     {
         //
-
-        $data=Tour::where('id',$id)->first();
-        
-        return  view('layoutadmin.edittour')->with('data', $data);
-    
     }
 
     /**
@@ -120,5 +99,4 @@ class TourController extends Controller
     {
         //
     }
-
 }

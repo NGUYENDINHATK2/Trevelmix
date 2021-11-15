@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\admincontroller;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\TourController;
 use App\Http\Controllers\UploadImgDrive;
+use App\Http\Controllers\Booktour;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -50,7 +51,7 @@ Route::get('admin/managerorder', [admincontroller::class,'managerorder'])->middl
 Route::get('admin/promotion', [admincontroller::class,'promotion'])->middleware('auth');
 Route::get('admin/promotion-createbaner', [admincontroller::class,'promotiont'])->middleware('auth');
 
-
+Route::resource('book', Booktour::class);
 
 Auth::routes();
 
