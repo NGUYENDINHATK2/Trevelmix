@@ -377,78 +377,47 @@
 			<div class="row offers_items">
 
 				<!-- Offers Item -->
-				<div class="col-lg-6 offers_col">
-					<div class="offers_item">
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="offers_image_container">
-									<!-- Image by https://unsplash.com/@kensuarez -->
-									<div class="offers_image_background" style="background-image:url(https://docs.google.com/uc?id=1d5nbXFvu9axOg2JS0vAIposQF6rsRxmI)"></div>
-									<div class="offer_name"><a href="#">grand castle</a></div>
-								</div>
+			@foreach ($datas as $tour)
+
+			<div class="col-lg-6 offers_col">
+				<div class="offers_item">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="offers_image_container">
+								<!-- Image by https://unsplash.com/@kensuarez -->
+								<div class="offers_image_background" style="background-image:url({{$tour->Img_tour->img1}})"></div>
+								<div class="offer_name"><a href="#">{{$tour->name_tour}}</a></div>
 							</div>
-							<div class="col-lg-6">
-								<div class="offers_content">
-									<div class="offers_price">$70<span>per night</span></div>
-									<div class="rating_r rating_r_4 offers_rating">
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-									</div>
-									<p class="offers_text">Suspendisse potenti. In faucibus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor.</p>
-									<div class="offers_icons">
-										<ul class="offers_icons_list">
-											<li class="offers_icons_item"><img src="images/post.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
-										</ul>
-									</div>
-									<div class="offers_link"><a href="offers.html">Đọc Thêm</a></div>
+						</div>
+						<div class="col-lg-6">
+							<div class="offers_content">
+								<div class="offers_price">{{number_format($tour->price_adults)}}<span>VND</span></div>
+								<div class="rating_r rating_r_4 offers_rating">
+									<i></i>
+									<i></i>
+									<i></i>
+									<i></i>
+									<i></i>
 								</div>
+								<p class="offers_text">{{$tour->Tour_details->title}}</p>
+								<div class="offers_icons">
+									<ul class="offers_icons_list">
+										<li class="offers_icons_item"><img src="images/post.png" alt=""></li>
+										<li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
+										<li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
+										<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
+									</ul>
+								</div>
+								<div class="offers_link"><a href="offers.html">Đọc Thêm</a></div>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
 				
-				<!-- Offers Item -->
-				<div class="col-lg-6 offers_col">
-					<div class="offers_item">
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="offers_image_container">
-									<!-- Image by Egzon Bytyqi -->
-									<div class="offers_image_background" style="background-image:url(images/offer_2.jpg)"></div>
-									<div class="offer_name"><a href="#">turkey hills</a></div>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="offers_content">
-									<div class="offers_price">$50<span>per night</span></div>
-									<div class="rating_r rating_r_4 offers_rating">
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-										<i></i>
-									</div>
-									<p class="offers_text">Suspendisse potenti. In faucibus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor.</p>
-									<div class="offers_icons">
-										<ul class="offers_icons_list">
-											<li class="offers_icons_item"><img src="images/post.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
-											<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
-										</ul>
-									</div>
-									<div class="offers_link"><a href="offers.html">Đọc Thêm</a></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+			@endforeach
+				
+			
 
 
 			</div>
@@ -476,16 +445,16 @@
 							<!-- Testimonial Item -->
 							<div class="owl-item">
 								<div class="test_item">
-									<div class="test_image"><img src="images/test_1.jpg" alt="https://unsplash.com/@anniegray"></div>
+									<div class="test_image"><img height="550px" src="https://kenh14cdn.com/2019/11/27/lindsayvoitton734204737840035986868932342025015904305551n-15748339172002114792366.jpg" alt="https://unsplash.com/@anniegray"></div>
 									<div class="test_icon"><img src="images/backpack.png" alt=""></div>
 									<div class="test_content_container">
 										<div class="test_content">
 											<div class="test_item_info">
-												<div class="test_name">carla smith</div>
-												<div class="test_date">May 24, 2017</div>
+												<div class="test_name">Maily</div>
+												
 											</div>
-											<div class="test_quote_title">" Best holliday ever "</div>
-											<p class="test_quote_text">Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec.</p>
+											<div class="test_quote_title">" Thật Tuyệt Vời "</div>
+											<p class="test_quote_text">Dịch vụ chăm sóc chu đáo tận tình</p>
 										</div>
 									</div>
 								</div>
@@ -494,13 +463,12 @@
 							<!-- Testimonial Item -->
 							<div class="owl-item">
 								<div class="test_item">
-									<div class="test_image"><img src="images/test_2.jpg" alt="https://unsplash.com/@tschax"></div>
+									<div class="test_image"><img height="550px"  src="images/test_2.jpg" alt="https://unsplash.com/@tschax"></div>
 									<div class="test_icon"><img src="images/island_t.png" alt=""></div>
 									<div class="test_content_container">
 										<div class="test_content">
 											<div class="test_item_info">
 												<div class="test_name">carla smith</div>
-												<div class="test_date">May 24, 2017</div>
 											</div>
 											<div class="test_quote_title">" Best holliday ever "</div>
 											<p class="test_quote_text">Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec.</p>
@@ -512,13 +480,12 @@
 							<!-- Testimonial Item -->
 							<div class="owl-item">
 								<div class="test_item">
-									<div class="test_image"><img src="images/test_3.jpg" alt="https://unsplash.com/@seefromthesky"></div>
+									<div class="test_image"><img height="550px"  src="images/test_3.jpg" alt="https://unsplash.com/@seefromthesky"></div>
 									<div class="test_icon"><img src="images/kayak.png" alt=""></div>
 									<div class="test_content_container">
 										<div class="test_content">
 											<div class="test_item_info">
 												<div class="test_name">carla smith</div>
-												<div class="test_date">May 24, 2017</div>
 											</div>
 											<div class="test_quote_title">" Best holliday ever "</div>
 											<p class="test_quote_text">Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec.</p>
@@ -527,59 +494,10 @@
 								</div>
 							</div>
 
-							<!-- Testimonial Item -->
-							<div class="owl-item">
-								<div class="test_item">
-									<div class="test_image"><img src="images/test_2.jpg" alt=""></div>
-									<div class="test_icon"><img src="images/island_t.png" alt=""></div>
-									<div class="test_content_container">
-										<div class="test_content">
-											<div class="test_item_info">
-												<div class="test_name">carla smith</div>
-												<div class="test_date">May 24, 2017</div>
-											</div>
-											<div class="test_quote_title">" Best holliday ever "</div>
-											<p class="test_quote_text">Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec.</p>
-										</div>
-									</div>
-								</div>
-							</div>
+						
 
-							<!-- Testimonial Item -->
-							<div class="owl-item">
-								<div class="test_item">
-									<div class="test_image"><img src="images/test_1.jpg" alt=""></div>
-									<div class="test_icon"><img src="images/backpack.png" alt=""></div>
-									<div class="test_content_container">
-										<div class="test_content">
-											<div class="test_item_info">
-												<div class="test_name">carla smith</div>
-												<div class="test_date">May 24, 2017</div>
-											</div>
-											<div class="test_quote_title">" Best holliday ever "</div>
-											<p class="test_quote_text">Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec.</p>
-										</div>
-									</div>
-								</div>
-							</div>
 
-							<!-- Testimonial Item -->
-							<div class="owl-item">
-								<div class="test_item">
-									<div class="test_image"><img src="images/test_3.jpg" alt=""></div>
-									<div class="test_icon"><img src="images/kayak.png" alt=""></div>
-									<div class="test_content_container">
-										<div class="test_content">
-											<div class="test_item_info">
-												<div class="test_name">carla smith</div>
-												<div class="test_date">May 24, 2017</div>
-											</div>
-											<div class="test_quote_title">" Best holliday ever "</div>
-											<p class="test_quote_text">Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec.</p>
-										</div>
-									</div>
-								</div>
-							</div>
+							
 
 						</div>
 
@@ -626,7 +544,7 @@
 
 		</div>
 	</div>
-
+{{-- 
 	<div class="trending">
 		<div class="container">
 			<div class="row">
@@ -634,7 +552,7 @@
 					<h2 class="section_title">ĐANG LÀ XU HƯỚNG</h2>
 				</div>
 			</div>
-			<div class="row trending_container">
+			<div class="row trending_container mt-5">
 
 				<!-- Trending Item -->
 				<div class="col-lg-3 col-sm-6">
@@ -734,7 +652,7 @@
 
 			</div>
 		</div>
-	</div>
+	</div> --}}
 
 	<div class="contact">
 		<div class="contact_background" style="background-image:url(images/contact.png)"></div>

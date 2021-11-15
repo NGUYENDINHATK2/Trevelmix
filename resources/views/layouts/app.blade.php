@@ -181,7 +181,7 @@
 			<div class="row">
 
 				<!-- Footer Column -->
-				<div class="col-lg-3 footer_column">
+				<div class="col-lg-4 footer_column">
 					<div class="footer_col">
 						<div class="footer_content footer_about">
 							<div class="logo_container footer_logo">
@@ -200,7 +200,7 @@
 				</div>
 
 				<!-- Footer Column -->
-				<div class="col-lg-3 footer_column">
+				{{-- <div class="col-lg-3 footer_column">
 					<div class="footer_col">
 						<div class="footer_title">blog posts</div>
 						<div class="footer_content footer_blog">
@@ -234,36 +234,33 @@
 
 						</div>
 					</div>
-				</div>
+				</div> --}}
 
 				<!-- Footer Column -->
-				<div class="col-lg-3 footer_column">
+				<div class="col-lg-4 footer_column">
 					<div class="footer_col">
-						<div class="footer_title">tags</div>
+						<div class="footer_title">Các Gợi Ý</div>
 						<div class="footer_content footer_tags">
 							<ul class="tags_list clearfix">
-								<li class="tag_item"><a href="#">design</a></li>
-								<li class="tag_item"><a href="#">fashion</a></li>
-								<li class="tag_item"><a href="#">music</a></li>
-								<li class="tag_item"><a href="#">video</a></li>
-								<li class="tag_item"><a href="#">party</a></li>
-								<li class="tag_item"><a href="#">photography</a></li>
-								<li class="tag_item"><a href="#">adventure</a></li>
-								<li class="tag_item"><a href="#">travel</a></li>
+								
+								<li class="tag_item"><a href="#">Du Lịch</a></li>
+								<li class="tag_item"><a href="#">Xu Hướng Du Lịch</a></li>
+								<li class="tag_item"><a href="#">Ưu Đãi</a></li>
+							
 							</ul>
 						</div>
 					</div>
 				</div>
 
 				<!-- Footer Column -->
-				<div class="col-lg-3 footer_column">
+				<div class="col-lg-4 footer_column">
 					<div class="footer_col">
-						<div class="footer_title">contact info</div>
+						<div class="footer_title">Về Chúng Tôi</div>
 						<div class="footer_content footer_contact">
 							<ul class="contact_info_list">
 								<li class="contact_info_item d-flex flex-row">
 									<div><div class="contact_info_icon"><img src="images/placeholder.svg" alt=""></div></div>
-									<div class="contact_info_text">4127 Raoul Wallenber 45b-c Gibraltar</div>
+									<div class="contact_info_text">*************************</div>
 								</li>
 								<li class="contact_info_item d-flex flex-row">
 									<div><div class="contact_info_icon"><img src="images/phone-call.svg" alt=""></div></div>
@@ -275,7 +272,7 @@
 								</li>
 								<li class="contact_info_item d-flex flex-row">
 									<div><div class="contact_info_icon"><img src="images/planet-earth.svg" alt=""></div></div>
-									<div class="contact_info_text"><a href="https://colorlib.com">www.colorlib.com</a></div>
+									<div class="contact_info_text"><a href="https://colorlib.com">www.Travelvn.com</a></div>
 								</li>
 							</ul>
 						</div>
@@ -294,7 +291,7 @@
 				<div class="col-lg-3 order-lg-1 order-2  ">
 					<div class="copyright_content d-flex flex-row align-items-center">
 						<div><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Travelvn &copy;<script>document.write(new Date().getFullYear());</script> Theo Bạn Mọi Chặng Đường <i class="fa fa-heart-o" aria-hidden="true"></i>  <a href="https://colorlib.com" target="_blank"></a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
 					</div>
 				</div>

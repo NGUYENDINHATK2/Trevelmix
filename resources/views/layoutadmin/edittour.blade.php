@@ -223,8 +223,18 @@
                             <h5 for="" class="">Thời Gian Tour</h5>
                             <div class="row  p-3 pt-0 ">
                               
-                                <input required type="text" value="{{$data->time_tour}}" name="time_tour" class="border-0" placeholder="Ví dụ : 3 Ngày 2 Đêm" style="width:100%;height: 40px;border-radius:2px; "  >
-                            </div>
+                                <select name="time_tour" id="adults_2" class="form-control">
+                                    <option value="{{$data->time_tour}}">{{$data->time_tour}}</option>
+                                    <option value="1 N 1 D">1 N 1 D</option>
+                                    <option value="2 N 1 D">2 N 1 D</option>
+                                    <option value="3 N 2 D">3 N 2 D</option>
+                                    <option value="4 N 3 D">4 N 3 D</option>
+                                    <option value="5 N 4 D">5 N 4 D</option>
+                                    <option value="6 N 5 D">6 N 5 D</option>
+                                      
+                                    </select>                           
+                                
+                                </div>
                             <h5 for="" class="">Giá Cho Người Lớn</h5>
                             <div class="row  p-3 pt-0 ">
                               

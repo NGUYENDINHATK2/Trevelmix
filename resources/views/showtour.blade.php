@@ -101,7 +101,7 @@ footer{
 
 		<!-- Single Listing -->
 
-		<div class="container">
+		<div class="container mt-5">
 			<div class="row p-0" >
 				<div class="col-lg-12">
 					<div class="single_listing">
@@ -113,8 +113,8 @@ footer{
 							<!-- Title -->
 							<div class="hotel_title_container d-flex flex-lg-row flex-column">
 								<div class="hotel_title_content">
-									<h1 class="hotel_title"><b>{{$data->name_tour}} </b></h1>
-									<div class="rating_r rating_r_4 hotel_rating">
+									<h1 class="hotel_title fs-1"><b>{{$data->name_tour}} </b></h1>
+									<div class="rating_r rating_r_4 hotel_rating mt-4 mb-4">
 										<i></i>
 										<i></i>
 										<i></i>
@@ -123,7 +123,12 @@ footer{
 									</div>
 								</div>
 								<div class="hotel_title_button ml-lg-auto text-lg-right">
-									<div class="button book_button trans_200"><a href="#">book<span></span><span></span><span></span></a></div>
+									<div class="button book_button trans_200">
+										{{-- <a href="#">Xác Nhận Đặt<span></span><span></span><span></span></a> --}}
+										<button type="button" class="" data-toggle="modal" data-target="#exampleModal">
+											Xác Nhận Đặt<span></span><span></span><span></span>
+										  </button>
+									</div>
 								
 								</div>
 							</div>
@@ -231,6 +236,8 @@ function showSlides(n) {
 						<div class="container mt-5 p-0 text-dark">
 							<div class="row">
 								<h4><b>Số Người Tối Đa : {{$data->amountofpeople}}</b></h4>
+
+								<h4><b>Số Chỗ Còn Lại : {{$data->amountofpeople-$slot}}</b></h4>
 							</div>
 							<div class="row">
 							<h2>	<b>{{$data->Tour_details->title}}</b></h2>
@@ -319,7 +326,28 @@ function showSlides(n) {
 					</div>
 				</div>
 			</div>
-		</div>		
+		</div>	
+		
+		
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				  </button>
+				</div>
+				<div class="modal-body">
+				  ...
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				  <button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
 	</div>
 	<script src="{{asset('js1/jquery-3.2.1.min.js')}}"></script>
 	<script src="{{asset('styles/bootstrap4/popper.js')}}"></script>

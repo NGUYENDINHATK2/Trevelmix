@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {   
-        $datas=Tour::all();
+        $datas=Tour::orderBy('created_at','asc')->limit(6)->get();
         $tournew=Tour::orderBy('created_at','desc')->limit(3)->get();
     
         $banners=Banner::orderBy('created_at','desc')->limit(4)->get();

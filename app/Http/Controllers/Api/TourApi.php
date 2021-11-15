@@ -150,7 +150,7 @@ class TourApi extends Controller
         'tour_id'=>$id_tour,
         ];
 
-       $check= tour_details::create($datatourdetails);
+      tour_details::create($datatourdetails);
        
         return redirect('/admin/tour')
         ->with('message', 'Yes');

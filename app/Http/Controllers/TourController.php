@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tour;
+use App\Models\Booktour;
 class TourController extends Controller
 {
     /**
@@ -74,8 +75,9 @@ class TourController extends Controller
 
         
         $data=Tour::where('id',$id)->first();
-       
-        return view('showtour')->with('data',$data);
+        $slot=Booktour::where('id',$id)->get()->count();
+      
+        return view('showtour')->with('data',$data)->with('slot',$slot);
     }
 
     /**

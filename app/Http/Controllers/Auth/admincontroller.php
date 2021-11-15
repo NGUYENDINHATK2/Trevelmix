@@ -101,7 +101,7 @@ class admincontroller extends Controller
 
   public function promotion(){
     if (Auth::user()->is_Admin == 0 || Auth::user()->is_Admin == 1) {
-      $baners=Banner::all();
+      $baners=Banner::orderBy('created_at','desc')->get();
       // dd(Tour::find(1)->Banner_tour);
       return view('layoutadmin.promotion')->with('baners',$baners);
       # code...
@@ -110,7 +110,7 @@ class admincontroller extends Controller
   }
   public function promotiont(Request $request){
     if (Auth::user()->is_Admin == 0 || Auth::user()->is_Admin == 1) {
-      $baners=Banner::all();
+      $baners=Banner::orderBy('created_at','desc')->get();
       return view('layoutadmin.promotion')->with('data',Tour::find($request->idtour))
       ->with('baners',$baners);
       # code...

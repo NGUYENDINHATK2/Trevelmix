@@ -237,7 +237,7 @@
 										<div class="offers_price" style="font-size: 27px;">{{$tour->name_tour}}</div>
 									
                                         <div class="mt-2">
-                                            <h3>{{$tour->price_adults}} VND \ 1 Người </h3>
+                                            <h3>{{number_format($tour->price_adults)}} VND \ 1 Người </h3>
                                         </div>
 										<p class="offers_text">{{$tour->Tour_details->title}} </p>
 										<div class="offers_icons">
@@ -249,7 +249,7 @@
 												<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
 											</ul>
 										</div>
-										<div class="button book_button"><a href="#">Đặt Ngay<span></span><span></span><span></span></a></div>
+										<div class="button book_button"><a href="/tour/{{$tour->id}}">Đặt Ngay<span></span><span></span><span></span></a></div>
 										<div class="" style="position:absolute; right:0; bottom:5px;;">
 											<div class="offer_reviews_content">
 												<div class="offer_reviews_title">Rất Tốt</div>
@@ -295,7 +295,7 @@
 										<div class="offers_price" style="font-size: 27px;">{{$tour->name_tour}}</div>
 									
                                         <div class="mt-2">
-                                            <h3>{{$tour->price_adults}} VND \ 1 Người </h3>
+                                            <h3>{{number_format($tour->price_adults)}} VND \ 1 Người </h3>
                                         </div>
 										<p class="offers_text">{{$tour->Tour_details->title}} </p>
 										<div class="offers_icons">
@@ -307,7 +307,7 @@
 												<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
 											</ul>
 										</div>
-										<div class="button book_button"><a href="#">Đặt Ngay<span></span><span></span><span></span></a></div>
+										<div class="button book_button"><a href="/tour/{{$tour->id}}">Đặt Ngay<span></span><span></span><span></span></a></div>
 										<div style="position:absolute; right:0; bottom:5px;;">
 											<div class="offer_reviews_content">
 												<div class="offer_reviews_title">Rất Tốt</div>

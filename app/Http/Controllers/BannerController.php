@@ -40,12 +40,12 @@ class BannerController extends Controller
 
        $linkimg=$upimg->save($request->img);
 
-        return Banner::create([
+        Banner::create([
             'title'=>$request->title,
             'img'=>$linkimg,
             'tour_id'=>$request->id_tour,
         ]);
-        return redirect('admin/promotion');
+        return redirect('/admin/promotion');
         
        
     }

@@ -38,4 +38,6 @@ class Tour extends Model
     public function Banner_tour(){
         return $this->hasOne(Banner::class);
     }
+
+   
 }
