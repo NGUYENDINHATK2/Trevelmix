@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Tour;
 use App\Models\Booktour;
 use App\Models\booktourmodel;
+use Illuminate\Support\Facades\Auth;
 
 class TourController extends Controller
 {
@@ -75,11 +76,22 @@ class TourController extends Controller
     {
         //
 
-        
         $data=Tour::where('id',$id)->first();
-        $slot=booktourmodel::where('id',$id)->get()->count();
-      
+        $slot=booktourmodel::where('tour_id',$id)->get()->count();
+    
         return view('showtour')->with('data',$data)->with('slot',$slot);
+
+    //   if (isset(Auth::user()->id)) {
+    //       # code...
+
+    //       $data=Tour::where('id',$id)->first();
+    //       $slot=booktourmodel::where('id',$id)->get()->count();
+        
+    //       return view('showtour')->with('data',$data)->with('slot',$slot);
+    //   }
+    //   else{
+    //       return redirect('/login');
+    //   }
     }
 
     /**

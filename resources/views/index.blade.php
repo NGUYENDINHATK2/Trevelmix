@@ -260,7 +260,7 @@
 					<div class="intro_item_background" style="background-image:url({{$tour->Img_tour->img1}})"></div>
 					<div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
 						<div class="intro_date"><b>Ngày Khởi Hành {{$tour->departure_day}}</b></div>
-						<div class="button intro_button"><div class="button_bcg"></div><a href="#">Xem Thêm<span></span><span></span><span></span></a></div>
+						<div class="button intro_button"><div class="button_bcg"></div><a href="/tour/{{$tour->id}}">Xem Thêm<span></span><span></span><span></span></a></div>
 						<div class="intro_center text-center">
 							<h2 class="text-light"><b>{{$tour->name_tour}}</b></h2>
 							<div class="intro_price">Từ :{{$tour->price_adults}} VND </div>
@@ -312,7 +312,7 @@
 								<i></i>
 							</div>
 							<p class="cta_text">{{$banner->Tour->Tour_details->title}}</p>
-							<div class="button cta_button"><div class="button_bcg"></div><a href="#">Xem Thêm<span></span><span></span><span></span></a></div>
+							<div class="button cta_button"><div class="button_bcg"></div><a href="/tour/{{$tour->id}}">Xem Thêm<span></span><span></span><span></span></a></div>
 						</div>
 							
 						@endforeach
@@ -386,7 +386,7 @@
 							<div class="offers_image_container">
 								<!-- Image by https://unsplash.com/@kensuarez -->
 								<div class="offers_image_background" style="background-image:url({{$tour->Img_tour->img1}})"></div>
-								<div class="offer_name"><a href="#">{{$tour->name_tour}}</a></div>
+								<div class="offer_name"><a href="/tour/{{$tour->id}}">{{$tour->name_tour}}</a></div>
 							</div>
 						</div>
 						<div class="col-lg-6">
@@ -408,7 +408,7 @@
 										<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
 									</ul>
 								</div>
-								<div class="offers_link"><a href="offers.html">Đọc Thêm</a></div>
+								<div class="offers_link"><a href="/tour/{{$tour->id}}">Đọc Thêm</a></div>
 							</div>
 						</div>
 					</div>

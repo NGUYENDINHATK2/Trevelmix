@@ -345,8 +345,11 @@ function showSlides(n) {
 						<input type="hidden" name="name_tour"value="{{$data->name_tour}}">
 
 						  	<input type="hidden" name="tour_id"value="{{$data->id}}">
+							<input type="hidden" name="tour_code" value="{{$data->tour_code}}">
+							<input type="hidden" name="date_start" value="{{$data->departure_day}}">
 						  <div class="row">
-							  <h3 class="text-dark"><b>Tên Người Đặt : {{Auth::user()->name}}</b></h3>
+
+							
 							  <h3 class="text-dark">Đặt Tour Số : {{$data->tour_code}}</h3>
 						  </div>
 						<div class="row">

@@ -248,22 +248,24 @@
                                 <img width="100%" height="270px"src="{{$banner->img}}" alt="">
                         </div>
                         <div class="col-lg-5 p-1  ps-3 pe-3">  
-                               <form action="">
+                               <form action="/banner/{{$banner->id}}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                @method('PUT')
 
                                 <div class="row">
                                     <h6>Mô tả banner</h6>
                                         
-                                    <input type="text" value="{{$banner->title}}" class="form-control">
+                                    <input type="text" required name="title" value="{{$banner->title}}" class="form-control">
                                 </div>
                                 <div class="row mt-1">
                                     <h6>Ảnh banner</h6>
                                         
-                                    <input type="file" class="form-control">
+                                    <input type="file" name="img" class="form-control">
                                 </div>
                                 <div class="row mt-1">
                                    <div class="col-lg-6">
                                     <h6>Hiển Thị Banner</h6>
-                                    <select name="" id="" class="form-control">
+                                    <select name="show" id="" class="form-control">
                                         <option value="Yes">Bật </option>
                                         <option value="No">Tắt </option>
                                     </select>
@@ -284,16 +286,22 @@
                                     <input type="text"   readonly  value="{{$banner->Tour->tour_code}}" class="form-control">
                                    </div>
                                 <div class="col-lg-3">
-                                    <a class="btn btn-primary"href=""><i class="fas fa-edit"></i></a>
+                                    <button type="submit"class="btn btn-primary" ><i class="fas fa-edit"></i></button>
 
                                 </div>
+                                
+                               </form>
                                 <div class="col-lg-4">
-                                        <a class="btn btn-danger"href=""><i class="fas fa-trash-alt"></i></a>
+                                        <form action="/banner/{{$banner->id}}" method="POST">
+                                            @csrf
+                                           @method('DELETE')
+                                            <button type="submit"  class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                        </form>
                                 </div>
                                   
                                 </div>
 
-                               </form>
+                             
                         </div>
                            
                        </div>

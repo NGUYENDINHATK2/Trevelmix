@@ -48,7 +48,7 @@ Route::get('admin/searchtour', [admincontroller::class,'search_tour'])->middlewa
 Route::get('admin/manageruser', [admincontroller::class,'manageruser'])->middleware('auth');
 Route::get('admin/managerorder', [admincontroller::class,'managerorder'])->middleware('auth');
 
-Route::get('admin/promotion', [admincontroller::class,'promotion'])->middleware('auth');
+Route::get('admin/promotion', [admincontroller::class,'promotion'])->middleware('auth')->name('banner');
 Route::get('admin/promotion-createbaner', [admincontroller::class,'promotiont'])->middleware('auth');
 
 Route::resource('book', Booktour::class);
@@ -57,8 +57,7 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 
-
-
+Route::get('/personal-page', [App\Http\Controllers\HomeController::class, 'personal'])->middleware('auth');
 Route::post('/upload', function (Request $request) {
    
 

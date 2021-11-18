@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Tour;
-use App\Models\Booktour;
+use App\Models\booktourmodel;
 use App\Models\Banner;
 
 use App\Models\User;
@@ -33,7 +33,7 @@ class admincontroller extends Controller
 
       $numbertour=Tour::count('id');
 
-      $numberbuy=Booktour::count('id');
+      $numberbuy=booktourmodel::count('id');
       
      
 
@@ -64,7 +64,7 @@ class admincontroller extends Controller
     // dd( $user->id);
     if (Auth::user()->is_Admin == 0 || Auth::user()->is_Admin == 1) {
 
-      $booktours=Booktour::Paginate(4);
+      $booktours=booktourmodel::orderBy('created_at','desc')->Paginate(4);
 
 
      
@@ -128,7 +128,7 @@ class admincontroller extends Controller
     if (Auth::user()->is_Admin == 0 || Auth::user()->is_Admin == 1) {
 
 
-      $datas = Tour::Paginate(4);
+      $datas = Tour::orderBy('created_at','desc')->Paginate(4);
 
 
       return view('layoutadmin.listtour')->with('datas', $datas);
@@ -142,7 +142,7 @@ class admincontroller extends Controller
     $tous = Tour::where('name_tour', 'LIKE', '%' . $request->keyword . '%')
       ->orWhere('tour_code', 'LIKE', '%' . $request->keyword . '%')
       ->orWhere('departure_day',   $request->keyword)
-      ->Paginate(4);
+      ->Paginate(5);
 
 
     foreach ($tous as $data) {

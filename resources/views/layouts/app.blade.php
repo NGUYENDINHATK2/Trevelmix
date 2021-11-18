@@ -127,6 +127,8 @@
                                     
                                  
                                       @endguest
+
+									  <a href="/personal-page" class="dropdown-item">Trang cá nhân</a>
                                     </div>
 
 									

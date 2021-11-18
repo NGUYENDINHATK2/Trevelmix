@@ -22,6 +22,7 @@ class CreateBooktoursTable extends Migration
             $table->string('sum_money');
      
             $table->string('date_book');
+            // $table->string('date_start');
             $table->set('thanhtoan',['yes','no']);
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('tour_id');

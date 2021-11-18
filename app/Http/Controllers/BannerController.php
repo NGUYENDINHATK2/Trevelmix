@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\UploadImgDrive;
 use App\Models\Banner;
 use Illuminate\Http\Request;
 
@@ -82,6 +83,21 @@ class BannerController extends Controller
     public function update(Request $request, $id)
     {
         //
+        
+
+        $request->validate([
+            'img' => 'required|mimes:png,jpg,jpeg,|max:15048',
+        ]);
+    
+        $upimg=new UploadImgDrive();
+        $data=[
+            'title'=>$request->title,
+            'img'=>$upimg->save($request->img),
+            'show'=>$request->show,
+        ];
+        Banner::where('id',$id)->update($data);
+        return redirect()->route('banner');
+
     }
 
     /**
@@ -90,8 +106,12 @@ class BannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Banner $banner)
+    
     {
         //
+    
+         $banner->delete();
+         return redirect()->route('banner');
     }
 }

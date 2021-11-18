@@ -36,4 +36,9 @@ class HomeController extends Controller
        ->with('banners',$banners);
        
     }
+    public function personal(){
+
+        
+        return view('personal');
+    }
 }

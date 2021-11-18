@@ -36,12 +36,17 @@ class BookTour extends Controller
     public function store(Request $request)
     {
         //
-        $data=[
-            'id_book_tour'=>'TVVN-'.date('Y-m-d').'-'.Auth::user()->id,
+      
+
+       if (isset(Auth::user()->id)) {
+          # code...
+          $data=[
+            'id_book_tour'=>'B'.$request->tour_code.'-'.Auth::user()->id.'-'.$request->tour_id.'-'.rand(10,100).'-'.date('Y-m-d'),
             'number_of_adults'=>$request->adults,
             'number_of_children'=>$request->children,
             'sum_money'=>$request->summoney,
-            'date_book'=>date('Y-m-d'),
+            'date_book'=>$request->date_start,
+           
             'thanhtoan'=>'no',
             'user_id'=>Auth::user()->id,
             'tour_id'=>$request->tour_id,
@@ -50,8 +55,16 @@ class BookTour extends Controller
       booktourmodel::create($data);
 
       $mail=new MailController();
-    $mail->Booktourmail(Auth::user()->email,'TVVN-'.date('Y-m-d').'-'.Auth::user()->id,$request->name_tour);
-    return view('Thankyou');
+    $mail->Booktourmail(Auth::user()->email,'B'.$request->tour_code.'-'.Auth::user()->id.'-'.$request->tour_id.'-'.rand(10,100).'-'.date('Y-m-d'),$request->name_tour);
+
+    $data=[
+        'nametour'=>$request->name_tour,
+    ];
+    return view('Thankyou')->with('data',$data);
+      }
+      else{
+          return redirect('/login');
+      }
 
     }
 

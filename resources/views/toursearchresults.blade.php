@@ -234,7 +234,7 @@
 								</div>
 								<div class="col-lg-8" >
 									<div class="offers_content " style="position: relative;">
-										<div class="offers_price" style="font-size: 27px;">{{$tour->name_tour}}</div>
+										<div class="offers_price" style="font-size: 27px;">{{$tour->name_tour}} Ngày Khởi Hành :{{$tour->departure_day}}</div>
 									
                                         <div class="mt-2">
                                             <h3>{{number_format($tour->price_adults)}} VND \ 1 Người </h3>
@@ -292,7 +292,7 @@
 								</div>
 								<div class="col-lg-8">
 									<div class="offers_content" style="position: relative;">
-										<div class="offers_price" style="font-size: 27px;">{{$tour->name_tour}}</div>
+										<div class="offers_price" style="font-size: 27px;">{{$tour->name_tour}} Ngày Khởi Hành :{{$tour->departure_day}}</div>
 									
                                         <div class="mt-2">
                                             <h3>{{number_format($tour->price_adults)}} VND \ 1 Người </h3>

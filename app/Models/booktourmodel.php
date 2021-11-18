@@ -18,6 +18,7 @@ class booktourmodel extends Model
         'sum_money' ,
     
         'date_book',
+      
         'thanhtoan',
         'user_id',
         'tour_id',
