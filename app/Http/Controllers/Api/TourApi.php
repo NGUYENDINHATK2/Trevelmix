@@ -65,7 +65,7 @@ class TourApi extends Controller
             'experience_tour'=>'required',
             'title_day_1'=>'required',
             'description_day_1'=>'required',
-            'title_day_2'=>'required',
+            
           
             
         ]);
