@@ -48,16 +48,16 @@ class TourApi extends Controller
         //
         $request->validate([
           
-            'img1' => 'required|mimes:png,jpg,jpeg,|max:15048',
-            'img2' => 'required|mimes:png,jpg,jpeg,|max:15048',
-            'img3' => 'required|mimes:png,jpg,jpeg,|max:15048',
-            'img4' => 'required|mimes:png,jpg,jpeg,|max:15048',
-            'img5' => 'required|mimes:png,jpg,jpeg,|max:5048',
-            'img6' => 'required|mimes:png,jpg,jpeg,|max:5048',
-            'img7' => 'required|mimes:png,jpg,jpeg,|max:5048',
-            'img8' => 'required|mimes:png,jpg,jpeg,|max:5048',
-            'img9' => 'required|mimes:png,jpg,jpeg,|max:5048',
-            'img10' => 'required|mimes:png,jpg,jpeg,|max:5048',
+            'img1' => 'required|mimes:png,jpg,jpeg,gift|max:15048',
+            'img2' => 'required|mimes:png,jpg,jpeg,gift|max:15048',
+            'img3' => 'required|mimes:png,jpg,jpeg,gift|max:15048',
+            'img4' => 'required|mimes:png,jpg,jpeg,gift|max:15048',
+            'img5' => 'required|mimes:png,jpg,jpeg,gift|max:5048',
+            'img6' => 'required|mimes:png,jpg,jpeg,gift|max:5048',
+            'img7' => 'required|mimes:png,jpg,jpeg,gift|max:5048',
+            'img8' => 'required|mimes:png,jpg,jpeg,gift|max:5048',
+            'img9' => 'required|mimes:png,jpg,jpeg,gift|max:5048',
+            'img10' => 'required|mimes:png,jpg,jpeg,gift|max:5048',
 
 
             'title'=>'required',
