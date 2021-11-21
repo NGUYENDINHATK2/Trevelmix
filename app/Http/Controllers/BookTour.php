@@ -36,7 +36,7 @@ class BookTour extends Controller
     public function store(Request $request)
     {
         //
-      
+     // $this->middleware('auth');
 
        if (isset(Auth::user()->id)) {
           # code...

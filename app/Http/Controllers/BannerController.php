@@ -86,7 +86,7 @@ class BannerController extends Controller
         
 
         $request->validate([
-            'img' => 'required|mimes:png,jpg,jpeg,|max:15048',
+            'img' => 'mimes:png,jpg,jpeg,|max:15048',
         ]);
     
         $upimg=new UploadImgDrive();

@@ -27,6 +27,7 @@ class TourController extends Controller
         ->Where('receiving_address','LIKE', '%' . $request->address_start . '%')
         ->where('time_tour',$request->numberday)
         ->where('status','Hoạt Động')
+        
        
         ->Paginate(15);
        

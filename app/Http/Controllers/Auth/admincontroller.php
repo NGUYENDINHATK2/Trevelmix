@@ -28,18 +28,65 @@ class admincontroller extends Controller
 
     if (Auth::user()->is_Admin == 0 || Auth::user()->is_Admin == 1) {
 
+      $tour=Tour::all();
+
+      $tourtodays=Tour::where('departure_day','LIKE',  '%' . date('Y-m-d') . '%')->get();
+      
+      foreach($tourtodays as $tour){
+       Tour::where('id',$tour->id)->update([
+        'status_tour' =>'Đang Trải Nghiệm',
+       ]);
+      }
+      
+
 
       $numberuser=User::count('id');
 
       $numbertour=Tour::count('id');
 
       $numberbuy=booktourmodel::count('id');
-      
-     
 
+      $summoney=booktourmodel::where('thanhtoan','yes')->sum('sum_money');
+
+      $summoneyday=booktourmodel::where('created_at','LIKE', '%' . date('Y-m-d') . '%')
+      ->where('thanhtoan','yes')->sum('sum_money');
+      
+      $sumorderday=booktourmodel::where('created_at','LIKE', '%' . date('Y-m-d') . '%')->count('id');
+
+
+      $booktours1=booktourmodel::orderBy('created_at','desc')->get();
+      
+      $booktour2=0;
+      $booktour3=0;
+      $booktour4=0;
+     foreach($booktours1 as $tour){
+      if ($tour->Tour->status_tour=='Chưa Khởi Hành') {
+
+         $booktour2++;
+          # code...
+      }
+      if ($tour->Tour->status_tour=='Đang Trải Nghiệm') {
+
+          $booktour3++;
+           # code...
+       }
+       if ($tour->Tour->status_tour=='Hoàn Thành') {
+
+          $booktour4++;
+           # code...
+       }
+     }
+
+    
       return view('layoutadmin.index')->with('numberuser',$numberuser)
       ->with('numbertour',$numbertour)
-      ->with('numberbuy',$numberbuy);
+      ->with('numberbuy',$numberbuy)
+      ->with('summoney',$summoney)
+      ->with('summoneyday',$summoneyday)
+      ->with('sumorderday',$sumorderday)
+      ->with('booktours2',$booktour2)
+      ->with('booktours3',$booktour3)
+      ->with('booktours4',$booktour4);
       # code...
     } else
       return view('index');
@@ -67,12 +114,14 @@ class admincontroller extends Controller
       $booktours=booktourmodel::orderBy('created_at','desc')->Paginate(4);
 
 
-     
+      $tourtodays=Tour::where('departure_day','LIKE',  '%' . date('Y-m-d') . '%')->get();
+      
       
      
 
       return view('layoutadmin.Managerorder')
-      ->with('booktours',$booktours);
+      ->with('booktours',$booktours)
+      ->with('tourtodays',$tourtodays);
   
       
       # code...

@@ -195,9 +195,40 @@
         
         <div class="main-panel">
             <div class="content">
+                <div class="container mb-3">
+                    <div class="row">
+                        <h3><b>Tour Khởi Hành Hôm Nay</b></h3>
+
+
+                    </div>
+
+                    <div class="row">
+
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                              <tr>
+                                <th>Mã Tour</th>
+                                <th>Thời Gian</th>
+                                <th>Email</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>john@example.com</td>
+                              </tr>
+                          
+                            </tbody>
+                          </table>
+
+                    </div>
+                </div>
+                <hr>
+                
                <div class="container">
                   <div class="row">
-                        <h3>Tour Đã Đặt</h3>
+                        <h3><b>Các Đơn  Đặt</b></h3>
                         <div class="row">
                             <input type="text" class="form-control" placeholder="Tìm Kiếm">
                         </div>
@@ -209,6 +240,7 @@
                                     <tr>
                                       <th scope="col">Mã Đặt Tour</th>
                                       <th scope="col">Mã Người Đặt</th>
+                                      <th>Mã Tour</th>
                                       <th scope="col">Tổng Tiền</th>
                                       <th scope="col">Thanh Toán </th>
                                       <th>Trạng Thái</th>
@@ -220,6 +252,7 @@
                                             <tr>
                                                 <td>{{$booktour->id_book_tour}}</td>
                                                 <td>TVVNUS: {{$booktour->user_id}}</td>
+                                                <td>Mã Tour :{{$booktour->Tour->tour_code}}</td>
                                                 <td>{{$booktour->sum_money}}</td>
                                                 <td>{{$booktour->thanhtoan}}</td>
                                                 <td>{{$booktour->Tour->status_tour}}</td>
@@ -240,6 +273,8 @@
             
               
                </div>
+
+              
             </div>
         
         </div>

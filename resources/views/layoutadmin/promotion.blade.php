@@ -266,6 +266,7 @@
                                    <div class="col-lg-6">
                                     <h6>Hiển Thị Banner</h6>
                                     <select name="show" id="" class="form-control">
+                                      
                                         <option value="Yes">Bật </option>
                                         <option value="No">Tắt </option>
                                     </select>

@@ -318,51 +318,20 @@
                             </div>
                         </div> -->
                     </div>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title">Task</h4>
-                                    <p class="card-category">Complete</p>
-                                </div>
-                                <div class="card-body">
-                                    <div id="task-complete" class="chart-circle mt-4 mb-3"></div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="legend"><i class="la la-circle text-primary"></i> Completed</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-9">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title">World Map</h4>
-                                    <p class="card-category">
-                                    Map of the distribution of users around the world</p>
-                                </div>
-                                <div class="card-body">
-                                    <div class="mapcontainer">
-                                        <div class="map">
-                                            <span>Alternative content for the map</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        
                     <div class="row row-card-no-pd">
                         <div class="col-md-4">
                             <div class="card">
                                 <div class="card-body">
-                                    <p class="fw-bold mt-1">My Balance</p>
-                                    <h4><b>$ 3,018</b></h4>
-                                    <a href="#" class="btn btn-primary btn-full text-left mt-3 mb-3"><i class="la la-plus"></i> Add Balance</a>
+                                    <p class="fw-bold mt-1">Tổng Doanh Thu : </p>
+                                    <h4><b>{{number_format($summoney)}} VND</b></h4>
+                                </div>
+                                <div class="card-body">
+                                    <p class="fw-bold mt-1">Doanh Thu Hôm Nay : </p>
+                                    <h4><b>{{number_format($summoneyday)}} VND</b></h4>
                                 </div>
                                 <div class="card-footer">
-                                    <ul class="nav">
-                                        <li class="nav-item"><a class="btn btn-default btn-link" href="#"><i class="la la-history"></i> History</a></li>
-                                        <li class="nav-item ml-auto"><a class="btn btn-default btn-link" href="#"><i class="la la-refresh"></i> Refresh</a></li>
-                                    </ul>
+                                  <p><b>Đơn Đặt Hôm Nay:{{$sumorderday}}</b> </p>
                                 </div>
                             </div>
                         </div>
@@ -371,32 +340,32 @@
                                 <div class="card-body">
                                     <div class="progress-card">
                                         <div class="d-flex justify-content-between mb-1">
-                                            <span class="text-muted">Profit</span>
-                                            <span class="text-muted fw-bold"> $3K</span>
+                                            <span class="text-muted">Tour Chưa Khởi Hành</span>
+                                            <span class="text-muted fw-bold">{{$booktours2}}</span>
                                         </div>
                                         <div class="progress mb-2" style="height: 7px;">
-                                            <div class="progress-bar bg-success" role="progressbar" style="width: 78%" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="78%"></div>
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: {{$booktours2}}%" aria-valuenow="{{$booktours2}}" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="{{$booktours2}}"></div>
                                         </div>
                                     </div>
                                     <div class="progress-card">
                                         <div class="d-flex justify-content-between mb-1">
-                                            <span class="text-muted">Orders</span>
-                                            <span class="text-muted fw-bold"> 76</span>
+                                            <span class="text-muted">Tour Đang Trải Nghiệm</span>
+                                            <span class="text-muted fw-bold">{{$booktours3}}</span>
                                         </div>
                                         <div class="progress mb-2" style="height: 7px;">
-                                            <div class="progress-bar bg-info" role="progressbar" style="width: 65%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="65%"></div>
+                                            <div class="progress-bar bg-info" role="progressbar" style="width: {{$booktours3}}%" aria-valuenow="{{$booktours3}}" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="{{$booktours3}}"></div>
                                         </div>
                                     </div>
                                     <div class="progress-card">
                                         <div class="d-flex justify-content-between mb-1">
-                                            <span class="text-muted">Tasks Complete</span>
-                                            <span class="text-muted fw-bold"> 70%</span>
+                                            <span class="text-muted">Tour Đã Hoàn Thành</span>
+                                            <span class="text-muted fw-bold"> {{$booktours4}}</span>
                                         </div>
                                         <div class="progress mb-2" style="height: 7px;">
-                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="70%"></div>
+                                            <div class="progress-bar bg-primary" role="progressbar" style="width: {{$booktours4}}%" aria-valuenow="{{$booktours4}}" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="{{$booktours4}}"></div>
                                         </div>
                                     </div>
-                                    <div class="progress-card">
+                                    {{-- <div class="progress-card">
                                         <div class="d-flex justify-content-between mb-1">
                                             <span class="text-muted">Open Rate</span>
                                             <span class="text-muted fw-bold"> 60%</span>
@@ -404,12 +373,12 @@
                                         <div class="progress mb-2" style="height: 7px;">
                                             <div class="progress-bar bg-warning" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="top" title="60%"></div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <div class="card card-stats">
+                            {{-- <div class="card card-stats">
                                 <div class="card-body">
                                     <p class="fw-bold mt-1">Statistic</p>
                                     <div class="row">
@@ -440,7 +409,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     <div class="row">
@@ -644,11 +613,11 @@
                     <nav class="pull-left">
                         <ul class="nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="http://www.themekita.com">
-                                    ThemeKita
+                                <a class="nav-link" href="/">
+                                    Về Trang Chính
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link" href="#">
                                     Help
                                 </a>
@@ -657,11 +626,11 @@
                                 <a class="nav-link" href="https://themewagon.com/license/#free-item">
                                     Licenses
                                 </a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </nav>
                     <div class="copyright ml-auto">
-                        2018, made with <i class="la la-heart heart text-danger"></i> by <a href="http://www.themekita.com">ThemeKita</a>
+                        {{-- 2021 <i class="la la-heart heart text-danger"></i>  <a href="http://www.themekita.com">ThemeKita</a> --}}
                     </div>				
                 </div>
             </footer>
