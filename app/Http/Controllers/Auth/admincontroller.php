@@ -59,6 +59,7 @@ class admincontroller extends Controller
       $booktour2=0;
       $booktour3=0;
       $booktour4=0;
+      
      foreach($booktours1 as $tour){
       if ($tour->Tour->status_tour=='Chưa Khởi Hành') {
 
@@ -97,7 +98,16 @@ class admincontroller extends Controller
     // $user=User::orderBy('ID', 'desc')->limit(1)->first();
     // dd( $user->id);
     if (Auth::user()->is_Admin == 0 || Auth::user()->is_Admin == 1) {
-      return view('layoutadmin.ManagerUser');
+
+
+      $admins=User::where('is_Admin','0')->get();
+     $categories=User::where('is_Admin','2')->get();
+     $clients=User::where('is_Admin','3')->get();
+
+      return view('layoutadmin.ManagerUser')
+      ->with('categories',$categories)
+      ->with('clients',$clients)
+      ->with('admins',$admins);
       # code...
     } else
       return view('index');
@@ -140,9 +150,10 @@ class admincontroller extends Controller
 
 
 
+      $categories=User::where('is_Admin','2')->get();
 
-
-      return view('layoutadmin.admintour');
+      return view('layoutadmin.admintour')
+      ->with('categories',$categories);
       # code...
     } else
       return view('index');

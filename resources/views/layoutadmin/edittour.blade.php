@@ -487,11 +487,18 @@
                         
                        </div>
                        <div class="mt-3">
-                        <h5 for="" class="">Mã Đội Quản Lý Tour</h5>
+                        <h5 for="" class="">Mã Người Quản Lý Tour</h5>
                        
-                          
-                        <input type="text" value="{{$data->guide_team_code_manager}}" class="border-0 ps-3" name="guide_team_code_manager"  style="width:100%;height: 40px;border-radius:2px; "  >
-                        
+                        <select name="guide_team_code_manager" class="form-control" id="">
+
+                            <option value="{{$data->guide_team_code_manager}}"> {{$data->guide_team_code_manager}}</option>
+
+                            @foreach ($categories as $categorie)
+   
+                            <option value="{{$categorie->id}}">{{$categorie->name}} - {{$categorie->id}}</option>
+                                
+                            @endforeach
+                           </select>                    
                        </div>
 
                        <div class="mt-3">

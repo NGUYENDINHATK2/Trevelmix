@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tour;
+use App\Models\User;
 use App\Models\Booktour;
 use App\Models\booktourmodel;
 use Illuminate\Support\Facades\Auth;
@@ -106,8 +107,9 @@ class TourController extends Controller
         //
 
         $data=Tour::where('id',$id)->first();
+        $categories=User::where('is_Admin','2')->get();
         
-        return  view('layoutadmin.edittour')->with('data', $data);
+        return  view('layoutadmin.edittour')->with('data', $data) ->with('categories',$categories);
     
     }
 

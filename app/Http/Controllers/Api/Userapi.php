@@ -19,11 +19,11 @@ class Userapi extends Controller
   
  
     //   echo  $data->infousera[0]['address'] ;
-    $data=User::get();
+    // $data=User::get();
 
    
  
-    return view('demo')->with('data',$data);
+   
    
     }
 

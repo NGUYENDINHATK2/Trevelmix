@@ -188,143 +188,129 @@
         
         <div class="main-panel">
         <div class="content">
-                <h3><b>Quản lý admin</b></h3>
+                <h3><b>Danh Sách Admin</b></h3>
         <table class="table  table-hover ">
                         <thead>
-                            <td>Tên</td>
+                            <td>Stt</td>
                             <td>Tài khoản</td>
                             <td>Email</td>
-                            <td>Mật khẩu</td>
+                           
+                            <th scope="col" class="text-center">Hành Động</th>
+                          </thead>
+                          <tbody id="listadmin">
+                         
+                           @foreach ($admins as $admin)
+                           @php
+                           $stt=1
+                       @endphp
+
+                           <tr>
+                            <td>{{$stt++}}</td>
+                            <td>{{$admin->name}}</td>
+                            <td>{{$admin->email}}</td>
+                       
+                          
+                            <td class="text-center">
+                             <a href=" " class="btn btn-warning"><i class="fas fa-edit"></i> </a>
+                             {{-- <button class="btn btn-warning" onclick="edittour({{$data->id}})">Sửa </button> --}}
+                             {{-- <button type="button" class="btn btn-warning" onclick="edittour({{$data->id}})" data-toggle="modal" data-target=".bd-example-modal-lg">Sửa</button> --}}
+                            
+                             
+                         </td>
+                         <td>
+                             <button href="" id="delete"  class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                         </td>
+                         <td>
+                             <a  class="btn btn-success" href="" id="details" > <i class="fas fa-eye"></i></a>
+ 
+                         </td>
+                           </tr>
+                               
+                           @endforeach
+                          </tbody>
+            </table>
+            <h3><b>Danh Sách Nhân Viên</b></h3>
+        <table class="table  table-hover ">
+                        <thead>
+                            <td>Stt</td>
+                            <td>Tài khoản</td>
+                            <td>Email</td>
+                       
                             <th scope="col" class="text-center">Hành Động</th>
                           </thead>
                           <tbody id="listtour">
-                           <td>1</td>
-                           <td>2</td>
-                           <td>3</td>
-                           <td>4</td>
-                           <td class="text-center">                            
-                                <button class="btn btn-warning" >Sửa </button>                              
-                            </td>
-                            <td>
-                                <button href="" id="delete"  class="btn btn-danger">Xoá</button>
-                            </td>
-                            <td>
-                                <a  class="btn btn-success" href="" id="details" > Chi Tiết</a>
-
-                            </td>
+                            @foreach ($categories as $admin)
+                            @php
+                            $stt=1
+                        @endphp
+ 
+                            <tr>
+                             <td>{{$stt++}}</td>
+                             <td>{{$admin->name}}</td>
+                             <td>{{$admin->email}}</td>
+                        
+                           
+                             <td class="text-center">
+                              <a href=" " class="btn btn-warning"><i class="fas fa-edit"></i> </a>
+                              {{-- <button class="btn btn-warning" onclick="edittour({{$data->id}})">Sửa </button> --}}
+                              {{-- <button type="button" class="btn btn-warning" onclick="edittour({{$data->id}})" data-toggle="modal" data-target=".bd-example-modal-lg">Sửa</button> --}}
+                             
+                              
+                          </td>
+                          <td>
+                              <button href="" id="delete"  class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                          </td>
+                          <td>
+                              <a  class="btn btn-success" href="" id="details" > <i class="fas fa-eye"></i></a>
+  
+                          </td>
+                            </tr>
+                                
+                            @endforeach
+                      
                           </tbody>
             </table>
-            <h3><b>Quản lý nhân viên</b></h3>
-        <table class="table  table-hover ">
-                        <thead>
-                            <td>Tên</td>
-                            <td>Tài khoản</td>
-                            <td>Email</td>
-                            <td>Mật khẩu</td>
-                            <th scope="col" class="text-center">Hành Động</th>
-                          </thead>
-                          <tbody id="listtour">
-                           <td>1</td>
-                           <td>2</td>
-                           <td>3</td>
-                           <td>4</td>
-                           <td class="text-center">                            
-                                <button class="btn btn-warning" >Sửa </button>                              
-                            </td>
-                            <td>
-                            <button href="" id="delete"  class="btn btn-danger">Xoá</button>
-                            </td>
-                            <td>
-                                <a  class="btn btn-success" href="" id="details" > Chi Tiết</a>
+            <h3><b>Danh Sách Người Dùng</b></h3>
+            <table class="table  table-hover ">
+                <thead>
+                    <td>Stt</td>
+                    <td>Tài khoản</td>
+                    <td>Email</td>
+               
+                    <th scope="col" class="text-center">Hành Động</th>
+                  </thead>
+                  <tbody id="listtour">
+                    @foreach ($clients as $admin)
+                    @php
+                    $stt=1
+                @endphp
 
-                            </td>
-                          </tbody>
-            </table>
-            <h3><b>Quản lý người dùng</b></h3>
-        <table class="table  table-hover ">
-                        <thead>
-                            <td>Tên</td>
-                            <td>Tài khoản</td>
-                            <td>Email</td>
-                            <td>Mật khẩu</td>
-                            <th scope="col" class="text-center">Hành Động</th>
-                          </thead>
-                          <tbody id="listtour">
-                           <td>1</td>
-                           <td>2</td>
-                           <td>3</td>
-                           <td>4</td>
-                           <td class="text-center">                            
-                               <!-- Button trigger modal -->
-<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter">
-  Sửa
-</button>
+                    <tr>
+                     <td>{{$stt++}}</td>
+                     <td>{{$admin->name}}</td>
+                     <td>{{$admin->email}}</td>
+                
+                   
+                     <td class="text-center">
+                      <a href=" " class="btn btn-warning"><i class="fas fa-edit"></i> </a>
+                      {{-- <button class="btn btn-warning" onclick="edittour({{$data->id}})">Sửa </button> --}}
+                      {{-- <button type="button" class="btn btn-warning" onclick="edittour({{$data->id}})" data-toggle="modal" data-target=".bd-example-modal-lg">Sửa</button> --}}
+                     
+                      
+                  </td>
+                  <td>
+                      <button href="" id="delete"  class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                  </td>
+                  <td>
+                      <a  class="btn btn-success" href="" id="details" > <i class="fas fa-eye"></i></a>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header ">
-        <h5 class="modal-title" id="exampleModalLongTitle">Thông tin</h5>
-        <button type="button" class="close border-0" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <form>
-  <div class="form-group row">
-    <label for="" class="col-sm-2 ">Tên</label>
-    <div class="col-sm-10">
-      <input type="text"  class="form-control" id="" value="" name = "name">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="" class="col-sm-2 ">Tài khoản</label>
-    <div class="col-sm-10">
-      <input type="text"  class="form-control" id="" value="" name="email">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="" class="col-sm-2 ">Email</label>
-    <div class="col-sm-10">
-      <input type="text"  class="form-control" id="" value="" name ="email">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="" class="col-sm-2 ">Mật khẩu</label>
-    <div class="col-sm-10">
-      <input type="password"  class="form-control" id="" value="" name="password">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="" class="col-sm-2 ">Quyền</label>
-    <div class="col-sm-10">
-      <select name="" id="" class="form-control" name="is_Admin">
-          <option value="0">Super Admin</option>
-          <option value="1">Admin</option>
-          <option value="2">Nhân viên</option>
-          <option value="3">Khách hàng</option>
-      </select>
-    </div>
-  </div>
-</form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-                            </td>
-                            <td>
-                                <button href="" id="delete"  class="btn btn-danger">Xoá</button>
-                            </td>
-                            <td>
-                                <a  class="btn btn-success" href="" id="details" > Chi Tiết</a>
-
-                            </td>
-                          </tbody>
-            </table>
+                  </td>
+                    </tr>
+                        
+                    @endforeach
+              
+                  </tbody>
+    </table>
 </div>
  
 </div>
