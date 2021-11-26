@@ -404,7 +404,7 @@
 
                          @foreach ($categories as $categorie)
 
-                         <option value="{{$categorie->id}}">{{$categorie->name}} - {{$categorie->id}}</option>
+                         <option value="{{$categorie->name}} - {{$categorie->id}}">{{$categorie->name}} - {{$categorie->id}}</option>
                              
                          @endforeach
                         </select>

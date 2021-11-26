@@ -293,9 +293,7 @@
                    
                      <td class="text-center">
                       <a href=" " class="btn btn-warning"><i class="fas fa-edit"></i> </a>
-                      {{-- <button class="btn btn-warning" onclick="edittour({{$data->id}})">Sửa </button> --}}
-                      {{-- <button type="button" class="btn btn-warning" onclick="edittour({{$data->id}})" data-toggle="modal" data-target=".bd-example-modal-lg">Sửa</button> --}}
-                     
+                  
                       
                   </td>
                   <td>

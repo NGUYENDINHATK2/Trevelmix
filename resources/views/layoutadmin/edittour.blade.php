@@ -495,7 +495,7 @@
 
                             @foreach ($categories as $categorie)
    
-                            <option value="{{$categorie->id}}">{{$categorie->name}} - {{$categorie->id}}</option>
+                            <option value="{{$categorie->name}} - {{$categorie->id}}">{{$categorie->name}} - {{$categorie->id}}</option>
                                 
                             @endforeach
                            </select>                    
@@ -505,6 +505,7 @@
                         <h5 for="" class="">Thạng Thái Hoạt Động</h5>
                        
                             <select name="status_tour" id="" class="form-control">
+                                <option value="{{$data->status_tour}}">{{$data->status_tour}}</option>
                                 <option value="Chưa Khởi Hành">Chưa Khởi Hành</option>
                                 <option value="Đang Trải Nghiệm">Đang Trải Nghiệm</option>
                                 <option value="Hoàn Thành">Hoàn Thành</option>

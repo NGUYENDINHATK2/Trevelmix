@@ -208,22 +208,68 @@
                             <thead>
                               <tr>
                                 <th>Mã Tour</th>
-                                <th>Thời Gian</th>
-                                <th>Email</th>
+                                <th>Tên Tour</th>
+                                <th>Người Quản Lý</th>
+                                
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
-                                <td>John</td>
-                                <td>Doe</td>
-                                <td>john@example.com</td>
-                              </tr>
+                                @foreach ($tourtodays as $tour)
+                                <tr>
+                                    <td>{{$tour->tour_code}}</td>
+                                    <td>{{$tour->name_tour}}</td>
+                                    <td>{{$tour->guide_team_code_manager}}</td>
+                                  </tr>
+                                    
+                                @endforeach
+                           
                           
                             </tbody>
                           </table>
 
                     </div>
                 </div>
+
+                <div class="container mb-3">
+                    <div class="row">
+                        <h3><b>Tour Sắp Khởi Hành</b></h3>
+
+
+                    </div>
+
+                    <div class="row">
+
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                              <tr>
+                                <th>Mã Tour</th>
+                                <th>Tên Tour</th>
+                                <th>Ngày Khởi Hành</th>
+                                <th>Người Quản Lý</th>
+                                <th><a href="" class="btn btn-primary">Thông Báo</a></th>
+                                
+                              </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($tourprepares as $tour)
+                                <tr>
+                                    <td>{{$tour->tour_code}}</td>
+                                    <td>{{$tour->name_tour}}</td>
+                                    <td>{{$tour->departure_day}}</td>
+                                    <td>{{$tour->guide_team_code_manager}}</td>
+                                    
+                                  </tr>
+                                    
+                                @endforeach
+                           
+                          
+                            </tbody>
+                          </table>
+
+                    </div>
+                </div>
+
+
                 <hr>
                 
                <div class="container">
