@@ -9,6 +9,13 @@ class infouser extends Model
 {
     use HasFactory;
     protected $table='infousers';
+    protected $fillable = [
+        'date',
+        'address',
+        'phonenumber',
+        'avatar' ,
+        'user_id' ,
+    ];
 
     public function User(){
         return $this->belongsTo(User::class);

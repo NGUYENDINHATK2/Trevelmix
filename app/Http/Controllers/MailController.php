@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\booktourmailm;
+use App\Mail\mailtour;
 use App\Mail\register;
 use App\Models\booktour;
 use Illuminate\Http\Request;
@@ -28,6 +29,20 @@ class MailController extends Controller
 
         ];
         Mail::to($email)->send(new booktourmailm($details));
+       
+    }
+
+    public static function mailtourm($email,$id_book_tour,$name_tour,$departure_day){
+       
+        $details = [
+
+            'title'=>'Mail from Travelvn',
+            'body'=>$id_book_tour,
+            'description'=>$name_tour,
+            'departure_day'=>$departure_day,
+
+        ];
+        Mail::to($email)->send(new mailtour($details));
        
     }
 }

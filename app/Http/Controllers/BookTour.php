@@ -88,6 +88,10 @@ class BookTour extends Controller
     public function edit($id)
     {
         //
+       booktourmodel::where('id', $id)->update([
+           'thanhtoan'=>'yes'
+       ]);
+       return redirect()->back();
     }
 
     /**
@@ -100,6 +104,13 @@ class BookTour extends Controller
     public function update(Request $request, $id)
     {
         //
+       booktourmodel::where('tour_id', $id)
+       ->where('date_book',$request->departure_day)->update(
+           [
+            'thanhtoan'=>'yes'
+           ]
+       );
+       return redirect()->back();
     }
 
     /**

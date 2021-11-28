@@ -194,140 +194,104 @@
 
         
         <div class="main-panel">
-            <div class="content">
-                <div class="container mb-3">
+            <div class="content" id="contenta">
+      
+
+                <div class="container">
                     <div class="row">
-                        <h3><b>Tour Khởi Hành Hôm Nay</b></h3>
-
-
+                        <h3 class="text-center"><b>Công Ty Dịch Vụ Du Lịch Travelvn</b></h3>
                     </div>
-
+                    <br>
                     <div class="row">
+                        <h4>{{$datatours->name_tour}}</h4>
+                    </div>
+                    <div class="row">
+                        <h5>Ngày Khởi Hành :{{$datatours->departure_day}}</h5>
+                    </div>
+                
+                    <div class="row">
+                        <h5>Số Đơn Đặt : {{$sumbook}}</h5>
+                    </div>
+                    <div class="row">
+                        <h5>Số Người Lớn : {{$sum1}}</h5>
+                    </div>
+                    <div class="row">
+                        <h5>Số Trẻ Em : {{$sum2}}</h5>
+                    </div>
+                    <div class="row">
+                        <h5>Người Quản Lý : {{$datatours->guide_team_code_manager}}</h5>
+                    </div>
+                 
+                        <button id="printf"  class="btn btn-primary mb-3" >In Danh Sách</button>
+                        
+                        <form action="/book/{{$datatours->id}}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
+                            <input type="text" style="display: none;" value="{{$datatours->departure_day}}" name="departure_day">
+                            <button type="submit" class="btn btn-success" id="successa">Xác Nhận Tất Cả Đã Thanh Toán</button>
 
-                        <table class="table table-hover table-bordered">
+                        </form>
+                </div>
+                <div class="container" id="tablebook">
+
+                    <br>
+                    <div class="row">
+                        <h4 class="text-center" ><b>Danh Sách Các Đơn Đặt</b></h4>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <table class="table table-striped table-bordered table-hover">
                             <thead>
-                              <tr>
-                                <th>Mã Tour</th>
-                                <th>Tên Tour</th>
-                                <th>Nơi Khởi Hành</th>
-                                <th>Người Quản Lý</th>
-                                <th>Chi Tiết </th>
-                                
-                              </tr>
+                                <tr>
+                                    <th >Mã Đặt</th>
+                                    <th>Tên </th>
+                                    <th>Tổng Tiền</th>
+                                    <th>Địa Chỉ</th>
+                                    <th>Số Lượng </th>
+                                    <th>Thanh Toán</th>
+                                    
+                                  </tr>
                             </thead>
                             <tbody>
-                                @foreach ($tourtodays as $tour)
-                                <tr>
-                                    <td>{{$tour->tour_code}}</td>
-                                    <td>{{$tour->name_tour}}</td>
-                                    <td>{{$tour->receiving_address}}</td>
-                                    <td>{{$tour->guide_team_code_manager}}</td>
-                                    <td><a class="btn btn-primary" href="/admin/tourdetails?id={{$tour->id}}">Chi Tiết Tour</a></td>
-                                  </tr>
-                                    
+
+                                @foreach ( $databooks as $book)
+
+                                <td>{{$book->id_book_tour}}</td>
+                                <td>{{$book->User->name}}</td>
+                                <td>{{number_format($book->sum_money)}} VND</td>
+                                <td>{{$book->User->Infouser->address}}</td>
+                                <td>{{$book->number_of_adults}} Người Lớn , {{$book->number_of_children}} Trẻ Em</td>
+                                <td >
+
+                                   @if ($book->thanhtoan=='no')
+
+                                   <select name="" id="" class="form-control">
+
+                                    <option value=""></option>
+                                    <option value="">Đã Thanh Toán</option>
+                                   </select>
+                                   <td id="a">
+                                    <a href="/book/{{$book->id}}/edit " class="btn btn-primary">
+                                        Xác Nhận Thanh Toán
+                                    </a>
+                                </td>
+                                       
+                                   @else
+                                       Đã Thanh Toán
+                                   @endif
+
+                                </td>
+                              
                                 @endforeach
-                           
-                          
+
                             </tbody>
-                          </table>
+                        </table>
 
                     </div>
                 </div>
 
-                <div class="container mb-3">
-                    <div class="row">
-                        <h3><b>Tour Sắp Khởi Hành</b></h3>
-
-
-                    </div>
-
-                    <div class="row">
-
-             
-                    <table class="table table-hover table-bordered">
-                        <thead>
-                          <tr>
-                            <th>Mã Tour</th>
-                            <th>Tên Tour</th>
-                            <th>Ngày Khởi Hành</th>
-                            <th>Người Quản Lý</th>
-                            <th>Thông Báo</th>
-                            
-                          </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($tourprepares as $tour)
-                            <tr>
-                                <td>{{$tour->tour_code}}</td>
-                                <td>{{$tour->name_tour}}</td>
-                                <td>{{$tour->departure_day}}</td>
-                                <td>{{$tour->guide_team_code_manager}}</td>
-                                <td ><a href="/admin/mailtourw?id={{$tour->id}}"  id="mailtour" class="btn btn-primary">Thông Báo Cho Khách Hàng</a></td>
-                                <td><a class="btn btn-primary" href="/admin/tourdetails?id={{$tour->id}}">Chi Tiết Tour</a></td>
-
-                                
-                              </tr>
-                                
-                            @endforeach
-                       
-                      
-                        </tbody>
-                      </table>
-          
-
-                    </div>
-                </div>
-
-
-                <hr>
-                
-               <div class="container">
-                  <div class="row">
-                        <h3><b>Các Đơn  Đặt</b></h3>
-                        <div class="row">
-                            <input type="text" class="form-control" placeholder="Tìm Kiếm">
-                        </div>
-                        <div class="row p-0">
-
-                            <table class="table  table-hover ">
-
-                                <thead>
-                                    <tr>
-                                      <th scope="col">Mã Đặt Tour</th>
-                                      <th scope="col">Mã Người Đặt</th>
-                                      <th>Mã Tour</th>
-                                      <th scope="col">Tổng Tiền</th>
-                                      <th scope="col">Thanh Toán </th>
-                                      <th>Trạng Thái</th>
-                                      <th scope="col" class="text-center"></th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                      @foreach ($booktours as  $booktour)
-                                            <tr>
-                                                <td>{{$booktour->id_book_tour}}</td>
-                                                <td>TVVNUS: {{$booktour->user_id}}</td>
-                                                <td>Mã Tour :{{$booktour->Tour->tour_code}}</td>
-                                                <td>{{$booktour->sum_money}}</td>
-                                                <td>{{$booktour->thanhtoan}}</td>
-                                                <td>{{$booktour->Tour->status_tour}}</td>
-                                                <td ><a href=""class="btn btn-warning">Sửa</a></td>
-                                                <td ><a href=""class="btn btn-danger">Xoá</a></td>
-                                                <td ><a href=""class="btn btn-success">Xem</a></td>
-                                            </tr>                                          
-                                      @endforeach
-                                  </tbody>
-
-
-                            </table>
-
-                        </div>
-                        <div class="row">{{$booktours->links()}}</div>
-                  </div>
-                  <hr>
-            
-              
-               </div>
+       
+         
 
               
             </div>
@@ -361,13 +325,30 @@
     </div>
 </div>
 
-{{-- <script>
+<script>
     $(document).ready(function(){
-  $("#mailtour").click(function(){
-   alert('');
-  });
+        $('#printf').click(function(){
+    //  $('#tablebook').printElement();
+        //    window.print();
+        $('#printf').hide();
+        $('#a').hide();
+        $('#successa').hide();
+        printContent('contenta')
+        })
+        $('#a').show();
+ 
 });
-</script> --}}
+
+function printContent(el){
+var restorepage = $('body').html();
+var printcontent = $('#' + el).clone();
+var enteredtext = $('#text').val();
+$('body').empty().html(printcontent);
+window.print();
+$('body').html(restorepage);
+$('#text').html(enteredtext);
+}
+</script>
 
 <script src="{{asset('assets/js/core/jquery.3.2.1.min.js')}}"></script>
 <script src="{{asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
@@ -382,7 +363,7 @@
 <script src="{{asset('assets/js/plugin/chart-circle/circles.min.js')}}"></script>
 <script src="{{asset('assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js')}}"></script>
 <script src="{{asset('assets/js/ready.min.js')}}"></script>
-<script src="{{asset('assets/js/demo.js')}}"></script>
+{{-- <script src="{{asset('assets/js/demo.js')}}"></script> --}}
 
     
 @endsection 

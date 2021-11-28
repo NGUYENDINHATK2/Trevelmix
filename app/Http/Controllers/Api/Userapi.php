@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\booktourmodel;
+use App\Models\infouser;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -16,15 +18,15 @@ class Userapi extends Controller
     public function index()
     {
         //
-  
- 
-    //   echo  $data->infousera[0]['address'] ;
-    // $data=User::get();
 
-   
- 
-   
-   
+
+        //   echo  $data->infousera[0]['address'] ;
+        // $data=User::get();
+
+
+
+
+
     }
 
     /**
@@ -46,8 +48,8 @@ class Userapi extends Controller
     public function store(Request $request)
     {
         //
-        
-        
+
+
     }
 
     /**
@@ -91,7 +93,13 @@ class Userapi extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
+
+
     {
         //
+        booktourmodel::where('user_id', $id)->delete();
+        infouser::where('user_id', $id)->delete();
+        User::where('id', $id)->delete();
+        return redirect('/admin/manageruser');
     }
 }

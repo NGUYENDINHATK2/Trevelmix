@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Tour;
 use App\Models\booktourmodel;
 use App\Models\Banner;
-
+use App\Http\Controllers\MailController;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
@@ -19,6 +19,12 @@ class admincontroller extends Controller
    *
    * @return \Illuminate\Http\Response
    */
+
+  public function __construct()
+  {
+      $this->middleware('auth');
+
+  }
   public function index()
   {
     //
@@ -308,4 +314,46 @@ class admincontroller extends Controller
     }
     return response()->json($output);
   }
+
+
+  public function MailTours(Request $request){
+   
+
+    $tours=Tour::find($request->id);
+
+    $booktour=booktourmodel::where('tour_id',$request->id)->get();
+    
+    $mail=new MailController();
+
+      foreach ($booktour as $book){
+        $mail->mailtourm($book->User->email,$book->id_book_tour,$book->Tour->name_tour,$book->Tour->departure_day);
+      }
+      return redirect('/admin/managerorder');
+
+  }
+
+ public function tourdetails(Request $request){
+ 
+
+
+    $datatours=Tour::find($request->id);
+    $databooks=booktourmodel::where('tour_id',$request->id)->where('date_book',$datatours->departure_day)->get();
+    // ->where('date_book',$datatours->departure_day);
+  $sumbook=booktourmodel::where('tour_id',$request->id)->where('date_book',$datatours->departure_day)->count('id');
+ 
+$sum1=0;
+$sum2=0;
+  foreach ($databooks as $book){
+    $sum1=$book->number_of_adults ;
+    $sum2=$book->number_of_children;
+  }
+  
+    return view('layoutadmin.TourDetails')
+    ->with('datatours',$datatours)
+    ->with('databooks',$databooks)
+    ->with('sumbook',$sumbook)
+    ->with('sum1', $sum1)
+    ->with('sum2', $sum2);
+
+ }
 }

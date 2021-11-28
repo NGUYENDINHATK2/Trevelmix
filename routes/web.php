@@ -48,9 +48,11 @@ Route::get('admin/listtour', [admincontroller::class,'listtour'])->middleware('a
 Route::get('admin/searchtour', [admincontroller::class,'search_tour'])->middleware('auth')->name('ajax.search');
 Route::get('admin/manageruser', [admincontroller::class,'manageruser'])->middleware('auth');
 Route::get('admin/managerorder', [admincontroller::class,'managerorder'])->middleware('auth');
+Route::get('admin/mailtourw', [admincontroller::class,'MailTours'])->name('mailtourw');
 
 Route::get('admin/promotion', [admincontroller::class,'promotion'])->middleware('auth')->name('banner');
 Route::get('admin/promotion-createbaner', [admincontroller::class,'promotiont'])->middleware('auth');
+Route::get('admin/tourdetails', [admincontroller::class,'tourdetails'])->name('tourdetails');
 
 Route::resource('book', Booktour::class)->middleware('auth');
 
@@ -59,6 +61,7 @@ Route::resource('book', Booktour::class)->middleware('auth');
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::post('/addinfouser', [App\Http\Controllers\HomeController::class, 'addinfouser'])->name('addinfo');
 
 Route::get('/personal-page', [App\Http\Controllers\HomeController::class, 'personal'])->middleware('auth');
 Route::post('/upload', function (Request $request) {

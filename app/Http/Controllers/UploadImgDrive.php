@@ -29,7 +29,7 @@ class UploadImgDrive extends Controller
 
         } catch (\Throwable $th) {
             //throw $th;
-           return 'https://cdn2.vectorstock.com/i/1000x1000/39/66/travel-banner-flat-vector-22663966.jpg';
+           return 'https://www.pngkey.com/png/detail/115-1150152_default-profile-picture-avatar-png-green.png';
         }
     }
 }

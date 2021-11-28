@@ -177,6 +177,8 @@ class TourApi extends Controller
     public function edit($id)
     {
         //
+
+        
     }
 
     /**

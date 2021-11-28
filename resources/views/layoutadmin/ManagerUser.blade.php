@@ -14,6 +14,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <div class="wrapper">
 
    
@@ -191,7 +192,7 @@
                 <h3><b>Danh Sách Admin</b></h3>
         <table class="table  table-hover ">
                         <thead>
-                            <td>Stt</td>
+                    
                             <td>Tài khoản</td>
                             <td>Email</td>
                            
@@ -200,12 +201,10 @@
                           <tbody id="listadmin">
                          
                            @foreach ($admins as $admin)
-                           @php
-                           $stt=1
-                       @endphp
+                       
 
                            <tr>
-                            <td>{{$stt++}}</td>
+                 
                             <td>{{$admin->name}}</td>
                             <td>{{$admin->email}}</td>
                        
@@ -218,7 +217,13 @@
                              
                          </td>
                          <td>
-                             <button href="" id="delete"  class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                             <form action="/api/admin/{{$admin->id}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" name=""  id="delete" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+
+
+                             </form>
                          </td>
                          <td>
                              <a  class="btn btn-success" href="" id="details" > <i class="fas fa-eye"></i></a>
@@ -232,7 +237,7 @@
             <h3><b>Danh Sách Nhân Viên</b></h3>
         <table class="table  table-hover ">
                         <thead>
-                            <td>Stt</td>
+                      
                             <td>Tài khoản</td>
                             <td>Email</td>
                        
@@ -245,12 +250,12 @@
                         @endphp
  
                             <tr>
-                             <td>{{$stt++}}</td>
+                  
                              <td>{{$admin->name}}</td>
                              <td>{{$admin->email}}</td>
                         
                            
-                             <td class="text-center">
+                             <td class="">
                               <a href=" " class="btn btn-warning"><i class="fas fa-edit"></i> </a>
                               {{-- <button class="btn btn-warning" onclick="edittour({{$data->id}})">Sửa </button> --}}
                               {{-- <button type="button" class="btn btn-warning" onclick="edittour({{$data->id}})" data-toggle="modal" data-target=".bd-example-modal-lg">Sửa</button> --}}
@@ -258,8 +263,13 @@
                               
                           </td>
                           <td>
-                              <button href="" id="delete"  class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
-                          </td>
+                            <form action="/api/admin/{{$admin->id}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" name=""  id="delete" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+
+
+                             </form>                          </td>
                           <td>
                               <a  class="btn btn-success" href="" id="details" > <i class="fas fa-eye"></i></a>
   
@@ -273,7 +283,7 @@
             <h3><b>Danh Sách Người Dùng</b></h3>
             <table class="table  table-hover ">
                 <thead>
-                    <td>Stt</td>
+                
                     <td>Tài khoản</td>
                     <td>Email</td>
                
@@ -281,12 +291,10 @@
                   </thead>
                   <tbody id="listtour">
                     @foreach ($clients as $admin)
-                    @php
-                    $stt=1
-                @endphp
+                    
 
                     <tr>
-                     <td>{{$stt++}}</td>
+              
                      <td>{{$admin->name}}</td>
                      <td>{{$admin->email}}</td>
                 
@@ -297,8 +305,13 @@
                       
                   </td>
                   <td>
-                      <button href="" id="delete"  class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
-                  </td>
+                    <form action="/api/admin/{{$admin->id}}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" name=""  id="delete" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+
+
+                     </form>                  </td>
                   <td>
                       <a  class="btn btn-success" href="" id="details" > <i class="fas fa-eye"></i></a>
 
@@ -335,56 +348,6 @@
 </div>
 
 
-<script>
-
-
-
-    function validateForm() {
-      let x = document.forms["myForm"]["name_tour"].value;
-
-   
-      if (x == "") {
-        alert("Tên Tour Không Để Trống");
-        return false;
-      }
-      let x1 = document.forms["myForm"]["time_tour"].value;
-
-   
-        if (x1== "") {
-        alert("Thời Gian Tour Không Để Trống");
-        return false;
-        }
-
-        let x2 = document.forms["myForm"]["price_adults"].value;
-
-   
-        if (x2== "") {
-        alert("Hãy Điền Vào Giá Người Lớn");
-        return false;
-        }
-
-        let x3 = document.forms["myForm"]["price_children"].value;
-
-        
-        if (x3== "") {
-        alert("Hãy Điền Vào Giá Trẻ Nhỏ");
-        return false;
-        }
-
-        let x7 = document.forms["myForm"]["receiving_address"].value;
-
-        
-        if (x7== "") {
-        alert("Nhập địa chỉ nhận khách" );
-        return false;
-        }
-
-        
-
-    }
-    
-
-</script>
 <script src="{{asset('assets/js/core/jquery.3.2.1.min.js')}}"></script>
 <script src="{{asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
 <script src="{{asset('assets/js/core/popper.min.js')}}"></script>

@@ -1,7 +1,7 @@
 .loginmain {
   background: linear-gradient(to right, #26f1f8, #d758f7);
   height: 850px;
-  padding: 50px;
+  padding: 40px;
 }
 
 .loginmain-form {
@@ -18,7 +18,7 @@
 .form-login form {
   width: 55%;
   margin: 0px auto;
-  margin-top: 55px;
+  margin-top: 20px;
 }
 
 .loginmain-form input {

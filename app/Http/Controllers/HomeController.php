@@ -5,9 +5,11 @@ use App\Models\Tour;
 use App\Models\User;
 use App\Models\Banner;
 use App\Models\booktourmodel;
+use App\Models\infouser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\UploadImgDrive;
 
 class HomeController extends Controller
 {
@@ -118,8 +120,14 @@ class HomeController extends Controller
       //   dd('ss');
       //   # code...
       // }
+      $data=  infouser::where('user_id', Auth::user()->id)->first();
+        if ($data==null) {
 
-        $data=User::find(Auth::user()->id);
+         return view('auth.register1');
+          # code...
+        }
+        else{
+          $data=User::find(Auth::user()->id);
         $booktours1=booktourmodel::where('user_id',Auth::user()->id)->orderBy('created_at','desc')->get();
       
         $booktour2=[];
@@ -152,6 +160,23 @@ class HomeController extends Controller
         ->with('booktours2',$booktour2)
         ->with('booktours3',$booktour3)
         ->with('booktours4',$booktour4);
+        
+        }
+        
+    }
+    public function addinfouser(Request $request){
+     
+      $upimg=new UploadImgDrive();
+
+    
+     infouser::create([
+        'date'=>$request->datea,
+        'address'=>$request->address,
+        'phonenumber'=>$request->phonenumber,
+        'avatar'=>$upimg->save($request->avatar),
+        'user_id' =>Auth::user()->id,
+      ]);
+      return redirect()->back();
     }
 
   
