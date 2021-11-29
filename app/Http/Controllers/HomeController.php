@@ -102,7 +102,24 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
+    
     {   
+
+      if(isset(Auth::user()->id)){
+        $data=  infouser::where('user_id', Auth::user()->id)->first();
+        if ($data==null) {
+
+         return view('auth.register1');
+          # code...
+        }
+      }
+
+      // $data=  infouser::where('user_id', Auth::user()->id)->first();
+      //   if ($data==null) {
+
+      //    return view('auth.register1');
+      //     # code...
+      //   }
         $datas=Tour::where('status','Hoạt Động')->orderBy('created_at','asc')->limit(6)->get();
         $tournew=Tour::where('status','Hoạt Động')->orderBy('created_at','desc')->limit(3)->get();
     

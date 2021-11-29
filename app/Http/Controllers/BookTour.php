@@ -107,7 +107,7 @@ class BookTour extends Controller
        booktourmodel::where('tour_id', $id)
        ->where('date_book',$request->departure_day)->update(
            [
-            'thanhtoan'=>'yes'
+            'thanhtoan'=>$request->content
            ]
        );
        return redirect()->back();

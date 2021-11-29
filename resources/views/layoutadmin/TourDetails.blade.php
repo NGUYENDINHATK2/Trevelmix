@@ -175,7 +175,7 @@
                         </a>
                     </li>
                     <li class="nav-item active">
-                        <a href="#" class="text-decoration-none">
+                        <a href="/admin/managerorder" class="text-decoration-none">
                             <i class="la la-font"></i>
                             <p>Quản Lý Đơn Đặt</p>
                         
@@ -227,6 +227,7 @@
                         <form action="/book/{{$datatours->id}}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
+                            <input type="text" style="display: none;" value="yes" name="content">
                             <input type="text" style="display: none;" value="{{$datatours->departure_day}}" name="departure_day">
                             <button type="submit" class="btn btn-success" id="successa">Xác Nhận Tất Cả Đã Thanh Toán</button>
 
@@ -278,6 +279,17 @@
                                        
                                    @else
                                        Đã Thanh Toán
+
+                                       <td>
+                                        <form action="/book/{{$datatours->id}}" method="post" enctype="multipart/form-data">
+                                            @csrf
+                                            @method('PUT')
+                                            <input type="text" style="display: none;" value="no" name="content">
+                                            <input type="text" style="display: none;" value="{{$datatours->departure_day}}" name="departure_day">
+                                            <button type="submit" class="btn btn-danger" id="successa">Chưa Thanh Toán</button>
+                
+                                        </form>
+                                       </td>
                                    @endif
 
                                 </td>

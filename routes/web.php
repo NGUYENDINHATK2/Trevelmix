@@ -64,10 +64,10 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('in
 Route::post('/addinfouser', [App\Http\Controllers\HomeController::class, 'addinfouser'])->name('addinfo');
 
 Route::get('/personal-page', [App\Http\Controllers\HomeController::class, 'personal'])->middleware('auth');
-Route::post('/upload', function (Request $request) {
+// Route::post('/upload', function (Request $request) {
    
 
-    $upimg=new UploadImgDrive();
-    return   $upimg->save($request->thing);
+//     $upimg=new UploadImgDrive();
+//     return   $upimg->save($request->thing);
 
-});
+// });
