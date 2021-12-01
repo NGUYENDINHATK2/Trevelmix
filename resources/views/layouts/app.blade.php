@@ -51,7 +51,7 @@
                                 <ul class="main_nav_list">
                                     <li class="main_nav_item"><a href="/">Home</a></li>
                                     <li class="main_nav_item"><a href="/about">About us</a></li>
-                                    <li class="main_nav_item"><a href="/offers">Offers</a></li>
+                                    {{-- <li class="main_nav_item"><a href="/offers">Offers</a></li> --}}
                                     <li class="main_nav_item"><a href="/blog">News</a></li>
                                     <li class="main_nav_item"><a href="/contact">Contact</a></li>
                                 </ul>
@@ -161,7 +161,7 @@
                 <ul>
                     <li class="menu_item"><a href="/">home</a></li>
                     <li class="menu_item"><a href="/about">about us</a></li>
-                    <li class="menu_item"><a href="/offers">offers</a></li>
+                    {{-- <li class="menu_item"><a href="/offers">offers</a></li> --}}
                     <li class="menu_item"><a href="/blog">news</a></li>
                     <li class="menu_item"><a href="/contact">contact</a></li>
                 </ul>
@@ -303,7 +303,7 @@ Travelvn &copy;<script>document.write(new Date().getFullYear());</script> Theo B
 							<ul class="footer_nav_list">
 								<li class="footer_nav_item"><a href="#">home</a></li>
 								<li class="footer_nav_item"><a href="about">about us</a></li>
-								<li class="footer_nav_item"><a href="offers">offers</a></li>
+								{{-- <li class="footer_nav_item"><a href="offers">offers</a></li> --}}
 								<li class="footer_nav_item"><a href="blog">news</a></li>
 								<li class="footer_nav_item"><a href="contact">contact</a></li>
 							</ul>

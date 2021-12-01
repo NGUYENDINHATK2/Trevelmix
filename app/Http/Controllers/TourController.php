@@ -29,6 +29,7 @@ class TourController extends Controller
         ->where('time_tour',$request->numberday)
         ->where('status','Hoạt Động')
         ->where('departure_day','!=',date('Y-m-d'))
+        ->orWhere('name_tour', 'LIKE', '%' . $request->text_search . '%')
         
        
         ->Paginate(15);

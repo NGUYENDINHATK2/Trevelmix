@@ -54,7 +54,7 @@ class admincontroller extends Controller
        
 
         if ($tour->time_tour == '1 N 1 D') {
-          if ($date == date('Y-m-d', strtotime($tour->departure_day . ' + 2 days'))) {
+          if ($date == date('Y-m-d', strtotime($tour->departure_day . ' + 2 days')) || $date >= date('Y-m-d', strtotime($tour->departure_day . ' + 2 days')) ) {
 
             # code...
             Tour::where('id', $tour->id)->update([
@@ -63,7 +63,7 @@ class admincontroller extends Controller
           }
         }
         if ($tour->time_tour == '2 N 1 D') {
-          if ($date == date('Y-m-d', strtotime($tour->departure_day . ' + 3 days'))) {
+          if ($date == date('Y-m-d', strtotime($tour->departure_day . ' + 3 days'))|| $date >= date('Y-m-d', strtotime($tour->departure_day . ' + 2 days'))) {
 
             # code...
             Tour::where('id', $tour->id)->update([
@@ -72,7 +72,7 @@ class admincontroller extends Controller
           }
         }
         if ($tour->time_tour == '3 N 2 D') {
-          if ($date == date('Y-m-d', strtotime($tour->departure_day . ' + 4 days'))) {
+          if ($date == date('Y-m-d', strtotime($tour->departure_day . ' + 4 days'))|| $date >= date('Y-m-d', strtotime($tour->departure_day . ' + 2 days'))) {
 
             # code...
             Tour::where('id', $tour->id)->update([
@@ -81,7 +81,7 @@ class admincontroller extends Controller
           }
         }
         if ($tour->time_tour == '4 N 3 D') {
-          if ($date == date('Y-m-d', strtotime($tour->departure_day . ' + 5 days'))) {
+          if ($date == date('Y-m-d', strtotime($tour->departure_day . ' + 5 days'))|| $date >= date('Y-m-d', strtotime($tour->departure_day . ' + 2 days'))) {
 
             # code...
             Tour::where('id', $tour->id)->update([
@@ -90,7 +90,7 @@ class admincontroller extends Controller
           }
         }
         if ($tour->time_tour == '5 N 4 D') {
-          if ($date == date('Y-m-d', strtotime($tour->departure_day . ' + 6 days'))) {
+          if ($date == date('Y-m-d', strtotime($tour->departure_day . ' + 6 days'))|| $date >= date('Y-m-d', strtotime($tour->departure_day . ' + 2 days'))) {
 
             # code...
             Tour::where('id', $tour->id)->update([
@@ -99,7 +99,7 @@ class admincontroller extends Controller
           }
         }
         if($tour->time_tour=='6 N 5 D'){
-          if ($date==date('Y-m-d', strtotime($tour->departure_day. ' + 7 days'))) {
+          if ($date==date('Y-m-d', strtotime($tour->departure_day. ' + 7 days'))|| $date >= date('Y-m-d', strtotime($tour->departure_day . ' + 2 days'))) {
            
             # code...
             Tour::where('id',$tour->id)->update([
@@ -119,7 +119,7 @@ class admincontroller extends Controller
 
       $summoney = booktourmodel::where('thanhtoan', 'yes')->sum('sum_money');
 
-      $summoneyday = booktourmodel::where('created_at', 'LIKE', '%' . date('Y-m-d') . '%')
+      $summoneyday = booktourmodel::where('updated_at', 'LIKE', '%' . date('Y-m-d') . '%')
         ->where('thanhtoan', 'yes')->sum('sum_money');
 
       $sumorderday = booktourmodel::where('created_at', 'LIKE', '%' . date('Y-m-d') . '%')->count('id');
@@ -206,10 +206,13 @@ class admincontroller extends Controller
       //   # code...
       // }
 
+      $experiencing=Tour::where('status_tour','Đang Trải Nghiệm')->get();
+
       return view('layoutadmin.Managerorder')
         ->with('booktours', $booktours)
         ->with('tourtodays', $tourtodays)
-        ->with('tourprepares',$tourprepares);
+        ->with('tourprepares',$tourprepares)
+        ->with('experiencing',$experiencing);
 
 
       # code...
