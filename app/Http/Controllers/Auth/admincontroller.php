@@ -35,6 +35,18 @@ class admincontroller extends Controller
     if (Auth::user()->is_Admin == 0 || Auth::user()->is_Admin == 1) {
 
       $tour = Tour::all();
+      foreach ($tour as $tour1) {
+
+        if ($tour1->departure_day<=date('Y-m-d')) {
+          # code...
+          Tour::where('id', $tour1->id)->update([
+            'status_tour' => 'Đang Trải Nghiệm',
+            'status'=>'Ngừng'
+          ]);
+        }
+
+      
+      }
 
       $tourtodays = Tour::where('departure_day', 'LIKE',  '%' . date('Y-m-d') . '%')->get();
 
@@ -43,8 +55,12 @@ class admincontroller extends Controller
           'status_tour' => 'Đang Trải Nghiệm',
         ]);
       }
+    
+
 
       $tourends = Tour::where('status_tour', 'Đang Trải Nghiệm')->get();
+
+     
 
       foreach ($tourends as $tour) {
         $date = date('Y-m-d');
@@ -54,56 +70,63 @@ class admincontroller extends Controller
        
 
         if ($tour->time_tour == '1 N 1 D') {
-          if ($date == date('Y-m-d', strtotime($tour->departure_day . ' + 2 days')) || $date >= date('Y-m-d', strtotime($tour->departure_day . ' + 2 days')) ) {
+          if ($date == date('Y-m-d', strtotime($tour->departure_day . ' + 2 days')) ) {
 
             # code...
-            Tour::where('id', $tour->id)->update([
+            
+          Tour::where('id', $tour->id)->update([
               'status_tour' => 'Hoàn Thành',
+              'status'=>'Ngừng'
             ]);
           }
         }
         if ($tour->time_tour == '2 N 1 D') {
-          if ($date == date('Y-m-d', strtotime($tour->departure_day . ' + 3 days'))|| $date >= date('Y-m-d', strtotime($tour->departure_day . ' + 2 days'))) {
+          if ($date == date('Y-m-d', strtotime($tour->departure_day . ' + 3 days'))) {
 
             # code...
             Tour::where('id', $tour->id)->update([
               'status_tour' => 'Hoàn Thành',
+              'status'=>'Ngừng'
             ]);
           }
         }
         if ($tour->time_tour == '3 N 2 D') {
-          if ($date == date('Y-m-d', strtotime($tour->departure_day . ' + 4 days'))|| $date >= date('Y-m-d', strtotime($tour->departure_day . ' + 2 days'))) {
+          if ($date == date('Y-m-d', strtotime($tour->departure_day . ' + 4 days'))) {
 
             # code...
             Tour::where('id', $tour->id)->update([
               'status_tour' => 'Hoàn Thành',
+              'status'=>'Ngừng'
             ]);
           }
         }
         if ($tour->time_tour == '4 N 3 D') {
-          if ($date == date('Y-m-d', strtotime($tour->departure_day . ' + 5 days'))|| $date >= date('Y-m-d', strtotime($tour->departure_day . ' + 2 days'))) {
+          if ($date == date('Y-m-d', strtotime($tour->departure_day . ' + 5 days')) ) {
 
             # code...
             Tour::where('id', $tour->id)->update([
               'status_tour' => 'Hoàn Thành',
+              'status'=>'Ngừng'
             ]);
           }
         }
         if ($tour->time_tour == '5 N 4 D') {
-          if ($date == date('Y-m-d', strtotime($tour->departure_day . ' + 6 days'))|| $date >= date('Y-m-d', strtotime($tour->departure_day . ' + 2 days'))) {
+          if ($date == date('Y-m-d', strtotime($tour->departure_day . ' + 6 days'))) {
 
             # code...
             Tour::where('id', $tour->id)->update([
               'status_tour' => 'Hoàn Thành',
+              'status'=>'Ngừng'
             ]);
           }
         }
         if($tour->time_tour=='6 N 5 D'){
-          if ($date==date('Y-m-d', strtotime($tour->departure_day. ' + 7 days'))|| $date >= date('Y-m-d', strtotime($tour->departure_day . ' + 2 days'))) {
+          if ($date==date('Y-m-d', strtotime($tour->departure_day. ' + 7 days'))) {
            
             # code...
             Tour::where('id',$tour->id)->update([
               'status_tour' =>'Hoàn Thành',
+              'status'=>'Ngừng'
              ]);
           }
       }
@@ -285,7 +308,8 @@ class admincontroller extends Controller
     $tous = Tour::where('name_tour', 'LIKE', '%' . $request->keyword . '%')
       ->orWhere('tour_code', 'LIKE', '%' . $request->keyword . '%')
       ->orWhere('departure_day',   $request->keyword)
-      ->Paginate(5);
+      ->orWhere('status',   $request->keyword)
+      ->Paginate(100);
 
 
     foreach ($tous as $data) {

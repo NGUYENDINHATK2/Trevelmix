@@ -34,7 +34,7 @@
           <h5> <b>Tên Tài Khoản :</b> {{Auth::user()->name}}</h5>
         </div>
         <div class="row  mt-3">
-          <h5> <b>Email Đăng Nhập :</b> {{$data->email}}</h5>
+          <h5> <b>Email Đăng Nhập :</b> {{$data->email}}</h5> 
         </div>
         @if ($data->Infouser!=null)
        
@@ -47,6 +47,11 @@
 
         <div class="row mt-3">
           <h5> <b>SDT:</b> {{$data->Infouser->phonenumber}}</h5>
+        </div>
+        <div class="row mt-3">
+          <a class="btn btn-link text-decoration-none mt-2" href="{{ route('password.request') }}">
+            {{ __('Đổi Mật Khẩu') }}
+        </a>
         </div>
 
             
