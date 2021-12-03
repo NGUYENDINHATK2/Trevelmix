@@ -64,11 +64,11 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="dropdown-toggle profile-pic text-decoration-none" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="assets/img/profile.jpg" alt="user-img" width="36" class="img-circle"><span > {{Auth::user()->name}}</span></span> </a>
+                        <a class="dropdown-toggle profile-pic text-decoration-none" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="{{$user->Infouser->avatar}}" alt="user-img" width="36" class="img-circle"><span > {{Auth::user()->name}}</span></span> </a>
                         <ul class="dropdown-menu dropdown-user">
                             <li>
                                 <div class="user-box">
-                                    <div class="u-img"><img src="assets/img/profile.jpg" alt="user"></div>
+                                    <div class="u-img"><img src="{{$user->Infouser->avatar}}" alt="user"></div>
                                     <div class="u-text">
                                         <h4> {{Auth::user()->name}}</h4>
                                         <p class="text-muted">{{Auth::user()->email}}</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">Xem lý Lịch</a></div>
@@ -98,7 +98,7 @@
             <div class="scrollbar-inner sidebar-wrapper">
                 <div class="user">
                     <div class="photo">
-                        <img src="assets/img/profile.jpg">
+                        <img src="{{$user->Infouser->avatar}}" >
                     </div>
                     <div class="info">
                         <a class="text-decoration-none" data-toggle="collapse" href="#collapseExample" aria-expanded="true">

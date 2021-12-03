@@ -235,9 +235,9 @@ function showSlides(n) {
 
 						<div class="container mt-5 p-0 text-dark">
 							<div class="row">
-								<h4><b>Số Người Tối Đa : {{$data->amountofpeople}}</b></h4>
+								<h4 ><b>Số Người Tối Đa : <font >{{$data->amountofpeople}}</font> </b></h4>
 
-								<h4><b>Số Chỗ Còn Lại : {{$data->amountofpeople-$slot}}</b></h4>
+								<h4><b>Số Chỗ Còn Lại : <font id="maxpeople">{{$data->amountofpeople-$slot}}</font></b></h4>
 							</div>
 							<div class="row">
 							<h2>	<b>{{$data->Tour_details->title}}</b></h2>
@@ -245,7 +245,12 @@ function showSlides(n) {
 							<div class="row">
 								<pre><p>{{$data->Tour_details->description}}</p></pre>
 							</div>
-
+							<div class="row">
+								@if ($data->gift!='')
+								<h5><b>Quà Tặng Trong Tour : {{$data->gift}}</b></h5>
+									
+								@endif
+							</div>
 							<div class="row mt-3">
 								<h2><b>Những Trải Nghiệm Thú Vị Trong Tour</b></h2>
 							</div>
@@ -389,7 +394,7 @@ function showSlides(n) {
 					  </div>
 					  <div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-						<button type="submit" class="btn btn-primary">Xác Nhận</button>
+						<button type="submit" id="summitbtn" class="btn btn-primary">Xác Nhận</button>
 					  </div>
 
 				</form>
@@ -406,8 +411,19 @@ $(document).ready(function() {
 
 $(document).on('keyup','#adults',function(){
 	
+var max=$('#maxpeople').text();
+
+
+var number=$(this).val();
+var number2=$('#children').val();
+
+if ((Number(number)+Number(number2))>Number(max)){ 
+
+	alert('Vượt Quá Số Người Quy Định');
+	$('#summitbtn').hide();
+	return false;
 	
-	var number=$(this).val();
+}
 
 var money1 =number*{{$data->price_adults}};
 var money2 =$('#children').val()*{{$data->price_children}};
@@ -416,16 +432,25 @@ money1=Number(money1);
 money2=Number(money2);
 
 $('#summoney').val(money1+money2);
-	console.log(Date('Y-m-d'));
 	
+$('#summitbtn').show();
 
 	
 });
 
 
 $(document).on('keyup','#children',function(){
-
+	var max=$('#maxpeople').text();
 	var number=$(this).val();
+	var number2=$('#adults').val();
+
+if ((Number(number)+Number(number2))>Number(max)){ 
+
+	alert('Vượt Quá Số Người Quy Định');
+	$('#summitbtn').hide();
+	return false;
+	
+}
 
 var money1 =number*{{$data->price_children}};
 var money2 =$('#adults').val()*{{$data->price_adults}};
@@ -434,7 +459,7 @@ money1=Number(money1);
 money2=Number(money2);
 
 $('#summoney').val(money1+money2 );
-	
+$('#summitbtn').show();
 });
 
 

@@ -240,6 +240,7 @@
                                             <h3>{{number_format($tour->price_adults)}} VND \ 1 Người </h3>
                                         </div>
 										<p class="offers_text">{{$tour->Tour_details->title}} </p>
+										<p class="">{{$tour->gift}} </p>
 										<div class="offers_icons">
                                           
 											<ul class="offers_icons_list">
