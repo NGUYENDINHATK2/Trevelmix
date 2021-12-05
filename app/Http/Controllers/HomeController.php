@@ -27,6 +27,7 @@ class HomeController extends Controller
       foreach ($tourtodays as $tour) {
         Tour::where('id', $tour->id)->update([
           'status_tour' => 'Đang Trải Nghiệm',
+          'status'=>'Ngừng'
         ]);
       }
 

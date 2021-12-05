@@ -210,7 +210,10 @@
                        
                           
                             <td class="text-center">
-                             <a href=" " class="btn btn-warning"><i class="fas fa-edit"></i> </a>
+                                <button type="button" class="btn btn-warning" onclick="edituser('{{$admin->name}}','{{$admin->email}}','{{$admin->is_Admin}}','{{$admin->id}}' )" data-toggle="modal" data-target="#exampleModalLong">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                             {{-- <a href=" " class="btn btn-warning"><i class="fas fa-edit"></i> </a> --}}
                              {{-- <button class="btn btn-warning" onclick="edittour({{$data->id}})">Sửa </button> --}}
                              {{-- <button type="button" class="btn btn-warning" onclick="edittour({{$data->id}})" data-toggle="modal" data-target=".bd-example-modal-lg">Sửa</button> --}}
                             
@@ -241,7 +244,7 @@
                             <td>Tài khoản</td>
                             <td>Email</td>
                        
-                            <th scope="col" class="text-center">Hành Động</th>
+                            <th scope="col" class="">Hành Động</th>
                           </thead>
                           <tbody id="listtour">
                             @foreach ($categories as $admin)
@@ -256,7 +259,9 @@
                         
                            
                              <td class="">
-                              <a href=" " class="btn btn-warning"><i class="fas fa-edit"></i> </a>
+                                <button type="button" class="btn btn-warning" onclick="edituser('{{$admin->name}}','{{$admin->email}}','{{$admin->is_Admin}}','{{$admin->id}}' )" data-toggle="modal" data-target="#exampleModalLong">
+                                    <i class="fas fa-edit"></i>
+                                </button>
                               {{-- <button class="btn btn-warning" onclick="edittour({{$data->id}})">Sửa </button> --}}
                               {{-- <button type="button" class="btn btn-warning" onclick="edittour({{$data->id}})" data-toggle="modal" data-target=".bd-example-modal-lg">Sửa</button> --}}
                              
@@ -287,7 +292,7 @@
                     <td>Tài khoản</td>
                     <td>Email</td>
                
-                    <th scope="col" class="text-center">Hành Động</th>
+                    <th scope="col" class="">Hành Động</th>
                   </thead>
                   <tbody id="listtour">
                     @foreach ($clients as $admin)
@@ -299,8 +304,10 @@
                      <td>{{$admin->email}}</td>
                 
                    
-                     <td class="text-center">
-                      <a href=" " class="btn btn-warning"><i class="fas fa-edit"></i> </a>
+                     <td class="">
+                        <button type="button" class="btn btn-warning" onclick="edituser('{{$admin->name}}','{{$admin->email}}','{{$admin->is_Admin}}','{{$admin->id}}' )" data-toggle="modal" data-target="#exampleModalLong">
+                            <i class="fas fa-edit"></i>
+                        </button>
                   
                       
                   </td>
@@ -326,14 +333,12 @@
  
 </div>
 <!-- Modal -->
-<div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePro" aria-hidden="true">
+{{-- <div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="modalUpdatePro" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header bg-primary">
                 <h6 class="modal-title"><i class="la la-frown-o"></i> Under Development</h6>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+              
             </div>
             <div class="modal-body text-center">									
                 <p>Currently the pro version of the <b>Ready Dashboard</b> Bootstrap is in progress development</p>
@@ -345,9 +350,60 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
+{{--  --}}
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle"><b>Chỉnh Sửa Tài Khoản</b></h5>
+        
+        
+          </button>
+        </div>
+        <form action="" id="myform" method="post">
+            @csrf
+            @method('PUT')
+            <div class="modal-body container">
 
+                <div class="row mb-2">
+                    <input name="name"  required="required" id="nameuser" type="text" class="form-control">
+                </div>
+                <div class="row mb-2">
+                    <input type="text" readonly required="required" id="emailuser" name="email" class="form-control">
+                </div>
+                <div class="row mb-2">
+                   <select name="is_Admin" id="admin" class="form-control">
+                       <option value="5" id="nochose">Quyền Hệ Thống</option>
+                       <option value="0">Quản Trị Hệ Thống</option>
+                       <option value="1">Quản Lý</option>
+                       <option value="2">Nhân Viên</option>
+                       <option value="3">Khách Hàng</option>
+                   </select>
+                </div>
+
+              
+           
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+                <button type="submit" class="btn btn-primary">Lưu Thay Đổi</button>
+              </div>
+        </form>
+      </div>
+    </div>
+  </div>
+<script>
+
+    function edituser(name,email,is_admin,id){ 
+     $('#nameuser').val(name);
+     $('#emailuser').val(email);
+     var link='/api/admin/'+id
+     $('#myform').prop('action',link);
+    }
+</script>
 <script src="{{asset('assets/js/core/jquery.3.2.1.min.js')}}"></script>
 <script src="{{asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
 <script src="{{asset('assets/js/core/popper.min.js')}}"></script>

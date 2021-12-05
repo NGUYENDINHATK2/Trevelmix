@@ -65,9 +65,7 @@ class TourApi extends Controller
             'experience_tour'=>'required',
             'title_day_1'=>'required',
             'description_day_1'=>'required',
-            
-          
-            
+
         ]);
 
         $sale=$request->sale;
@@ -80,7 +78,9 @@ class TourApi extends Controller
         $gift='';
         # code...
     }
+
     $tour_code=Tour::orderBy('ID', 'desc')->limit(1)->first();
+
       if (empty($tour_code)) {
           $tour_code1=1;
           # code...
@@ -105,6 +105,7 @@ class TourApi extends Controller
         ];
        // dd($request->img1->extension());
         Tour::create($datatour);
+        
         $id_tour = Tour::orderBy('ID', 'desc')->limit(1)->first()->id;
 
         $upimg=new UploadImgDrive();

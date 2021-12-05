@@ -84,6 +84,20 @@ class Userapi extends Controller
     public function update(Request $request, $id)
     {
         //
+        if ($request->is_Admin==5) {
+            User::where('id', $id)->update([
+                'name' => $request->name,
+             
+            ]);
+            return redirect()->back();
+            # code...
+        }
+       User::where('id', $id)->update([
+          'name' => $request->name,
+        'is_Admin'=>$request->is_Admin
+      ]);
+      return redirect()->back();
+  
     }
 
     /**

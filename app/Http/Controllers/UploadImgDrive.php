@@ -15,10 +15,11 @@ class UploadImgDrive extends Controller
         try {
             //code...
             $GoogleDriveStorage = Storage::disk("google");
-
+            //! Day anh len gg
             $newImageName = 'TVVN'.rand(10,100) . uniqid() . '.' . $img->extension();
             $GoogleDriveStorage->put($newImageName, file_get_contents($img->getRealPath()));
 
+            // ? Lấy link trên gg 
             $fileinfo = collect($GoogleDriveStorage->listContents())
                 ->where('type', 'file')
                 ->where('name', $newImageName)
