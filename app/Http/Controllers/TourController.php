@@ -81,7 +81,8 @@ class TourController extends Controller
         //
 
         $data=Tour::where('id',$id)->first();
-        $slot=booktourmodel::where('tour_id',$id)->get()->count();
+        $slot=booktourmodel::where('tour_id',$id)
+        ->where('date_book',$data->departure_day)->get()->count();
     
         return view('showtour')->with('data',$data)->with('slot',$slot);
 
