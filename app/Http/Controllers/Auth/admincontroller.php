@@ -145,7 +145,7 @@ class admincontroller extends Controller
 
       
       }
-
+     
       $tourtodays = Tour::where('departure_day', 'LIKE',  '%' . date('Y-m-d') . '%')->get();
 
       foreach ($tourtodays as $tour) {
@@ -246,24 +246,24 @@ class admincontroller extends Controller
       $sumorderday = booktourmodel::where('created_at', 'LIKE', '%' . date('Y-m-d') . '%')->count('id');
 
 
-      $booktours1 = booktourmodel::orderBy('created_at', 'desc')->get();
+      $booktours1 = Tour::orderBy('created_at', 'desc')->get();
 
       $booktour2 = 0;
       $booktour3 = 0;
       $booktour4 = 0;
 
       foreach ($booktours1 as $tour) {
-        if ($tour->Tour->status_tour == 'Chưa Khởi Hành') {
+        if ($tour->status_tour == 'Chưa Khởi Hành') {
 
           $booktour2++;
           # code...
         }
-        if ($tour->Tour->status_tour == 'Đang Trải Nghiệm') {
+        if ($tour->status_tour == 'Đang Trải Nghiệm') {
 
           $booktour3++;
           # code...
         }
-        if ($tour->Tour->status_tour == 'Hoàn Thành') {
+        if ($tour->status_tour == 'Hoàn Thành') {
 
           $booktour4++;
           # code...

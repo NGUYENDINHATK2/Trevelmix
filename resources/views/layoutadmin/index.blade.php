@@ -428,7 +428,7 @@
                         <div class="col-md-8">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">2018 Sales</h4>
+                                    <h4 class="card-title">2021 Sales</h4>
                                     <p class="card-category">
                                     Number of products sold</p>
                                 </div>
@@ -437,53 +437,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-header ">
-                                    <h4 class="card-title">Quản Lý Tài Khoản</h4>
-                                    <p class="card-category btn btn-primary text-light"><b>Thêm Tài Khoản</b></p>
-                                </div>
-                                <div class="card-body">
-                                    <table class="table table-head-bg-success table-striped table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">ID</th>
-                                                <th scope="col">Tên</th>
-                                                <th scope="col">Email</th>
-                                                <th scope="col">Quyền</th>
-                                                <th scope="col">Sửa</th>
-                                                <th scope="col">Xoá</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                                <td class="text-warning"><b>Sửa</b></td>
-                                                <td class="text-danger"><b>Xoá</b></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
-                                                <td class="text-warning"><b>Sửa</b></td>
-                                                <td class="text-danger"><b>Xoá</b></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td colspan="2">Larry the Bird</td>
-                                                <td>@twitter</td>
-                                                <td class="text-warning"><b>Sửa</b></td>
-                                                <td class="text-danger"><b>Xoá</b></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+                     
 
                         <!-- <div class="col-md-6">
                             <div class="card card-tasks">

@@ -312,7 +312,7 @@
 								<i></i>
 							</div>
 							<p class="cta_text">{{$banner->Tour->Tour_details->title}}</p>
-							<div class="button cta_button"><div class="button_bcg"></div><a href="/tour/{{$tour->id}}">Xem Thêm<span></span><span></span><span></span></a></div>
+							<div class="button cta_button"><div class="button_bcg"></div><a href="/tour/{{$banner->Tour->id}}">Xem Thêm<span></span><span></span><span></span></a></div>
 						</div>
 							
 						@endforeach
